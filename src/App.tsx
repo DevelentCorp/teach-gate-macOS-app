@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RootNavigator from './navigation/RootNavigator';
 import {Platform} from 'react-native';
+import {AuthProvider} from './context/AuthContext';
 
 if (Platform.OS !== 'macos') {
   try {
@@ -15,7 +16,9 @@ if (Platform.OS !== 'macos') {
 const App = () => {
   return (
     <NavigationContainer>
-      <RootNavigator />
+      <AuthProvider>
+        <RootNavigator />
+      </AuthProvider>
     </NavigationContainer>
   );
 };

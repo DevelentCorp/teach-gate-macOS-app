@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Button, StyleSheet, Text, Alert} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import axios from 'axios';
 import Logo from '../components/Logo';
 import CustomTextInput from '../components/TextInput';
+import {AuthContext} from '../context/AuthContext';
 
 type RootStackParamList = {
   Login: undefined;
@@ -21,6 +22,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigation = useNavigation<LoginScreenNavigationProp>();
+  const {login} = useContext(AuthContext);
 
   const handleLogin = async () => {
     if (!username || !password) {
@@ -32,13 +34,13 @@ const LoginScreen = () => {
       const response = await axios.post(
         'https://b-stg.cx-tg.develentcorp.com/api/auth/user/login',
         {
-          username: username,
-          password: password,
+          username,
+          password,
         },
       );
-      console.log('Login successful:', response.data);
+
       if (response.data.token) {
-        console.log('JWT Token:', response.data.token);
+        await login(response.data.token);
         navigation.navigate('Main');
       }
     } catch (err) {

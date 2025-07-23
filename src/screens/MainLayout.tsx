@@ -9,12 +9,17 @@ const MainLayout = () => {
   const [currentScreen, setCurrentScreen] = useState<
     'Home' | 'LiveTV' | 'Account'
   >('Home');
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const toggleSidebar = () => setSidebarVisible(prev => !prev);
 
+  const goToScreen = (screen: 'Home' | 'LiveTV' | 'Account') => {
+    setCurrentScreen(screen);
+    setSidebarVisible(false);
+  };
+
   const renderCurrentScreen = () => {
-    const screenProps = {toggleSidebar};
+    const screenProps = {toggleSidebar, goToScreen};
 
     switch (currentScreen) {
       case 'Home':
@@ -33,9 +38,10 @@ const MainLayout = () => {
       {sidebarVisible && (
         <Sidebar
           onSelect={(screen: string) =>
-            setCurrentScreen(screen as 'Home' | 'LiveTV' | 'Account')
+            goToScreen(screen as 'Home' | 'LiveTV' | 'Account')
           }
           selected={currentScreen}
+          onClose={() => setSidebarVisible(false)}
         />
       )}
       <View style={styles.content}>{renderCurrentScreen()}</View>

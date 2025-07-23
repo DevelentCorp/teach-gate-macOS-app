@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, Pressable, Image} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import ToggleSwitch from '../components/ToggleSwitch';
 
 interface Props {
   toggleSidebar: () => void;
+  goToScreen: (screen: string) => void;
 }
 
-const HomeScreen: React.FC<Props> = ({toggleSidebar}) => {
+const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
   const [isConnected, setIsConnected] = useState(true);
   const [time, setTime] = useState(0);
 
@@ -40,7 +40,7 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar}) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={toggleSidebar} style={styles.menuButton}>
-        <Ionicons name="menu" color="#0B2838" size={32} />
+        <Text style={{fontSize: 30, color: '#2A66EA'}}>☰</Text>
       </Pressable>
 
       <View style={styles.header}>
@@ -66,6 +66,17 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar}) => {
           </>
         )}
       </View>
+
+      {/* Live TV Button */}
+      <Pressable
+        onPress={() => goToScreen('LiveTV')}
+        style={styles.liveTVButton}>
+        <Image
+          source={require('../assets/images/logo-icon.png')}
+          style={{width: 20, height: 24, marginRight: 10}}
+        />
+        <Text style={styles.liveTVText}>Live TV</Text>
+      </Pressable>
     </View>
   );
 };
@@ -81,12 +92,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 40,
     left: 20,
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 30,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
     zIndex: 1,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+    marginTop: 40,
   },
   shield: {
     width: 80,
@@ -127,6 +147,32 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#000',
     marginTop: 10,
+  },
+  liveTVButton: {
+    position: 'absolute',
+    bottom: 30,
+    right: 30,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    height: 50,
+    width: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
+  liveTVText: {
+    color: '#000',
+    fontSize: 16,
+    marginTop: 2,
+    fontFamily: 'Poppins-Regular',
+    fontWeight: '600',
   },
 });
 
