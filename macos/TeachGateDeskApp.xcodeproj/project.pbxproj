@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3822DB7E2E317AB4004BEDFC /* Teach Gate.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3822DB742E317AB4004BEDFC /* Teach Gate.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3822DB842E317ABE004BEDFC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3822DB752E317AB4004BEDFC /* NetworkExtension.framework */; };
 		43A152B8350FE3FBD09DABCF /* libPods-TeachGateDeskApp-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0744B65BE3CB78AD5697E2 /* libPods-TeachGateDeskApp-macOS.a */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
@@ -14,11 +16,39 @@
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
 		9DB7559A4B2C66E780CD8904 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */; };
 		BC580F71E6048EE0D477F913 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */; };
+		E5B6A4C32A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/TeachGateVpn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B6A4C12A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/TeachGateVpn.swift */; };
+		E5B6A4C42A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B6A4C22A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3822DB7C2E317AB4004BEDFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3822DB732E317AB4004BEDFC;
+			remoteInfo = "Teach Gate";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3822DB832E317AB4004BEDFC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3822DB7E2E317AB4004BEDFC /* Teach Gate.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TeachGateDeskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachGateDeskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3822DB742E317AB4004BEDFC /* Teach Gate.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Teach Gate.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3822DB752E317AB4004BEDFC /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		514201492437B4B30078DB4F /* TeachGateDeskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachGateDeskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5142014B2437B4B30078DB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5142014C2437B4B30078DB4F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -29,15 +59,39 @@
 		514201592437B4B40078DB4F /* TeachGateDeskApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeachGateDeskApp.entitlements; sourceTree = "<group>"; };
 		76B36405F277DFA9636B0E37 /* Pods-TeachGateDeskApp-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachGateDeskApp-macOS.release.xcconfig"; path = "Target Support Files/Pods-TeachGateDeskApp-macOS/Pods-TeachGateDeskApp-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD0744B65BE3CB78AD5697E2 /* libPods-TeachGateDeskApp-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeachGateDeskApp-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B6A4C12A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/TeachGateVpn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ../src/native/macos/TeachGateVpn/TeachGateVpn.swift; sourceTree = "<group>"; };
+		E5B6A4C22A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F3A0D9819206EACF7E647349 /* Pods-TeachGateDeskApp-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachGateDeskApp-macOS.debug.xcconfig"; path = "Target Support Files/Pods-TeachGateDeskApp-macOS/Pods-TeachGateDeskApp-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3822DB7F2E317AB4004BEDFC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3822DB732E317AB4004BEDFC /* Teach Gate */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3822DB772E317AB4004BEDFC /* Teach Gate */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3822DB7F2E317AB4004BEDFC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Teach Gate"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3822DB712E317AB4004BEDFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3822DB842E317ABE004BEDFC /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +111,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				BD0744B65BE3CB78AD5697E2 /* libPods-TeachGateDeskApp-macOS.a */,
+				3822DB752E317AB4004BEDFC /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,7 +136,6 @@
 				F3A0D9819206EACF7E647349 /* Pods-TeachGateDeskApp-macOS.debug.xcconfig */,
 				76B36405F277DFA9636B0E37 /* Pods-TeachGateDeskApp-macOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,10 +151,12 @@
 			children = (
 				5142014A2437B4B30078DB4F /* TeachGateDeskApp-macOS */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				3822DB772E317AB4004BEDFC /* Teach Gate */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */,
 				7F4C38CC7E510D55C6331C89 /* Pods */,
+				E5B6A4C02A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -112,8 +168,18 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* TeachGateDeskApp.app */,
 				514201492437B4B30078DB4F /* TeachGateDeskApp.app */,
+				3822DB742E317AB4004BEDFC /* Teach Gate.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E5B6A4C02A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn */ = {
+			isa = PBXGroup;
+			children = (
+				E5B6A4C12A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/TeachGateVpn.swift */,
+				E5B6A4C22A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift */,
+			);
+			path = ../src/native/macos/TeachGateVpn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +203,28 @@
 			productReference = 13B07F961A680F5B00A75B9A /* TeachGateDeskApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3822DB732E317AB4004BEDFC /* Teach Gate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3822DB802E317AB4004BEDFC /* Build configuration list for PBXNativeTarget "Teach Gate" */;
+			buildPhases = (
+				3822DB702E317AB4004BEDFC /* Sources */,
+				3822DB712E317AB4004BEDFC /* Frameworks */,
+				3822DB722E317AB4004BEDFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3822DB772E317AB4004BEDFC /* Teach Gate */,
+			);
+			name = "Teach Gate";
+			packageProductDependencies = (
+			);
+			productName = "Teach Gate";
+			productReference = 3822DB742E317AB4004BEDFC /* Teach Gate.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		514201482437B4B30078DB4F /* TeachGateDeskApp-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "TeachGateDeskApp-macOS" */;
@@ -147,10 +235,12 @@
 				514201472437B4B30078DB4F /* Resources */,
 				381D8A6E24576A4E00465D17 /* Bundle React Native code and images */,
 				81ED67608C68CA38586731A0 /* [CP] Copy Pods Resources */,
+				3822DB832E317AB4004BEDFC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3822DB7D2E317AB4004BEDFC /* PBXTargetDependency */,
 			);
 			name = "TeachGateDeskApp-macOS";
 			productName = TeachGateDeskApp;
@@ -163,10 +253,14 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					3822DB732E317AB4004BEDFC = {
+						CreatedOnToolsVersion = 16.4;
 					};
 					514201482437B4B30078DB4F = {
 						CreatedOnToolsVersion = 11.4;
@@ -189,6 +283,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* TeachGateDeskApp-iOS */,
 				514201482437B4B30078DB4F /* TeachGateDeskApp-macOS */,
+				3822DB732E317AB4004BEDFC /* Teach Gate */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB7559A4B2C66E780CD8904 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3822DB722E317AB4004BEDFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,16 +409,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3822DB702E317AB4004BEDFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		514201452437B4B30078DB4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
+				E5B6A4C32A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/TeachGateVpn.swift in Sources */,
+				E5B6A4C42A6B1A4D00A9C3A1 /* ../src/native/macos/TeachGateVpn/PacketTunnelProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3822DB7D2E317AB4004BEDFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3822DB732E317AB4004BEDFC /* Teach Gate */;
+			targetProxy = 3822DB7C2E317AB4004BEDFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		514201532437B4B40078DB4F /* Main.storyboard */ = {
@@ -336,9 +455,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U34C6CU5T7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "TeachGateDeskApp-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_KEY_CFBundleDisplayName = "Teach Gate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -358,8 +482,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U34C6CU5T7;
 				INFOPLIST_FILE = "TeachGateDeskApp-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_KEY_CFBundleDisplayName = "Teach Gate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -372,6 +501,95 @@
 			};
 			name = Release;
 		};
+		3822DB812E317AB4004BEDFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Teach Gate/Teach_Gate.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U34C6CU5T7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Teach Gate/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Teach Gate";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.TeachGateDeskApp.Teach-Gate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3822DB822E317AB4004BEDFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Teach Gate/Teach_Gate.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = U34C6CU5T7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Teach Gate/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Teach Gate";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.TeachGateDeskApp.Teach-Gate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		5142015B2437B4B40078DB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3A0D9819206EACF7E647349 /* Pods-TeachGateDeskApp-macOS.debug.xcconfig */;
@@ -380,8 +598,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = "TeachGateDeskApp-macos/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "TeachGateDeskApp-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -403,8 +624,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = "TeachGateDeskApp-macos/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "TeachGateDeskApp-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -466,7 +690,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -474,10 +701,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -526,17 +750,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = false;
@@ -552,6 +776,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3822DB802E317AB4004BEDFC /* Build configuration list for PBXNativeTarget "Teach Gate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3822DB812E317AB4004BEDFC /* Debug */,
+				3822DB822E317AB4004BEDFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, Pressable, Image} from 'react-native';
 import ToggleSwitch from '../components/ToggleSwitch';
+import {VpnService} from '../services/vpn';
+import {VpnStatus} from '../services/types';
+
+const vpnService = new VpnService();
 
 interface Props {
   toggleSidebar: () => void;
@@ -8,22 +12,36 @@ interface Props {
 }
 
 const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
-  const [isConnected, setIsConnected] = useState(true);
+  const [vpnStatus, setVpnStatus] = useState<VpnStatus>(VpnStatus.DISCONNECTED);
   const [time, setTime] = useState(0);
 
   useEffect(() => {
+    const onStatusChanged = (status: VpnStatus) => setVpnStatus(status);
+    vpnService.on('statusChanged', onStatusChanged);
+
+    return () => {
+      vpnService.off('statusChanged', onStatusChanged);
+    };
+  }, []);
+
+  useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isConnected) {
+    if (vpnStatus === VpnStatus.CONNECTED) {
       timer = setInterval(() => {
         setTime(prevTime => prevTime + 1);
       }, 1000);
     }
     return () => clearInterval(timer);
-  }, [isConnected]);
+  }, [vpnStatus]);
 
   const toggleConnection = () => {
-    setIsConnected(prev => !prev);
-    setTime(0);
+    if (vpnStatus === VpnStatus.CONNECTED) {
+      vpnService.disconnect();
+    } else if (vpnStatus === VpnStatus.DISCONNECTED) {
+      vpnService.connect(
+        'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprQWVHaHF4WlI5UUlUZ21ZUUlZMk01@96.126.107.202:19834/?outline=1',
+      ); // Key management to be implemented
+    }
   };
 
   const formatTime = (seconds: number) => {
@@ -55,11 +73,14 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
       </View>
 
       <View style={styles.statusContainer}>
-        <ToggleSwitch isOn={isConnected} onToggle={toggleConnection} />
+        <ToggleSwitch
+          isOn={vpnStatus === VpnStatus.CONNECTED}
+          onToggle={toggleConnection}
+        />
         <Text style={styles.statusText}>
-          {isConnected ? 'Connected' : 'Disconnected'}
+          {vpnStatus === VpnStatus.CONNECTED ? 'Connected' : 'Disconnected'}
         </Text>
-        {isConnected && (
+        {vpnStatus === VpnStatus.CONNECTED && (
           <>
             <Text style={styles.timerText}>{formatTime(time)}</Text>
             <Text style={styles.ipText}>Your IP : 100.40.50.80</Text>
