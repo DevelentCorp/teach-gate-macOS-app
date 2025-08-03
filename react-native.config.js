@@ -1,7 +1,8 @@
 module.exports = {
   project: {
-    ios: {},
-    android: {},
+    macos: {
+      scheme: 'Teach Gate-macOS',
+    },
   },
   assets: ['./src/assets/fonts/'],
 };

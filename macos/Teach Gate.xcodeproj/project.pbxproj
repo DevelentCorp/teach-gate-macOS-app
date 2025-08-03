@@ -17,7 +17,8 @@
 
 /* Begin PBXFileReference section */
 		0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		514201492437B4B30078DB4F /* TeachGateDeskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachGateDeskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D859B42E3FA74F008031D3 /* TeachGateDeskApp-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TeachGateDeskApp-macOS.entitlements"; sourceTree = "<group>"; };
+		514201492437B4B30078DB4F /* Teach Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teach Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5142014B2437B4B30078DB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5142014C2437B4B30078DB4F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		514201512437B4B40078DB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		5142014A2437B4B30078DB4F /* TeachGateDeskApp-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				38D859B42E3FA74F008031D3 /* TeachGateDeskApp-macOS.entitlements */,
 				5142014B2437B4B30078DB4F /* AppDelegate.h */,
 				5142014C2437B4B30078DB4F /* AppDelegate.mm */,
 				514201512437B4B40078DB4F /* Assets.xcassets */,
@@ -100,7 +102,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				514201492437B4B30078DB4F /* TeachGateDeskApp.app */,
+				514201492437B4B30078DB4F /* Teach Gate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		514201482437B4B30078DB4F /* TeachGateDeskApp-macOS */ = {
+		514201482437B4B30078DB4F /* Teach Gate-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "TeachGateDeskApp-macOS" */;
+			buildConfigurationList = 5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "Teach Gate-macOS" */;
 			buildPhases = (
 				1A938104A937498D81B3BD3B /* [CP] Check Pods Manifest.lock */,
 				514201452437B4B30078DB4F /* Sources */,
@@ -123,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = "TeachGateDeskApp-macOS";
+			name = "Teach Gate-macOS";
 			productName = TeachGateDeskApp;
-			productReference = 514201492437B4B30078DB4F /* TeachGateDeskApp.app */;
+			productReference = 514201492437B4B30078DB4F /* Teach Gate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TeachGateDeskApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Teach Gate" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				514201482437B4B30078DB4F /* TeachGateDeskApp-macOS */,
+				514201482437B4B30078DB4F /* Teach Gate-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -275,6 +277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TeachGateDeskApp-macOS/TeachGateDeskApp-macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -287,8 +290,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TeachGateDeskApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teachgatedesk.develentcorp;
+				PRODUCT_NAME = "Teach Gate";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -301,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TeachGateDeskApp-macOS/TeachGateDeskApp-macOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K83SWH8YJ2;
@@ -312,8 +316,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TeachGateDeskApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teachgatedesk.develentcorp;
+				PRODUCT_NAME = "Teach Gate";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -375,10 +379,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -434,10 +435,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = false;
@@ -448,7 +446,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "TeachGateDeskApp-macOS" */ = {
+		5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "Teach Gate-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5142015B2437B4B40078DB4F /* Debug */,
@@ -457,7 +455,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TeachGateDeskApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Teach Gate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

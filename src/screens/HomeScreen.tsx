@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     fontWeight: '700',
     color: '#CA2611',
+    marginLeft: 26,
   },
   statusContainer: {
     alignItems: 'center',
