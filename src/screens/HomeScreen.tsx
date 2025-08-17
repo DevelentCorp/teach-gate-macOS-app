@@ -1,41 +1,147 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, Pressable, Image} from 'react-native';
+import {View, Text, StyleSheet, Pressable, Image, Platform} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Buffer} from 'buffer';
 import ToggleSwitch from '../components/ToggleSwitch';
+// @ts-ignore - Will be available after linking
+import OutlineVpn from 'react-native-outline-vpn';
 
 interface Props {
   toggleSidebar: () => void;
   goToScreen: (screen: string) => void;
 }
 
+const CONNECTION_START_KEY = 'vpnConnectionStartTime';
+
 const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
-  const [isConnected, setIsConnected] = useState(true);
-  const [time, setTime] = useState(0);
+  const [isConnected, setIsConnected] = useState(false);
+  const [connectionTime, setConnectionTime] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+  const [loading, setLoading] = useState(false);
+  const [connecting, setConnecting] = useState(false);
+  const [vpnConfig, setVpnConfig] = useState<any>(null);
+
+  const calculateElapsed = async () => {
+    const startTimeStr = await AsyncStorage.getItem(CONNECTION_START_KEY);
+    if (startTimeStr) {
+      const startTime = parseInt(startTimeStr, 10);
+      const now = Date.now();
+      const diffSeconds = Math.floor((now - startTime) / 1000);
+      const hours = Math.floor(diffSeconds / 3600);
+      const minutes = Math.floor((diffSeconds % 3600) / 60);
+      const seconds = diffSeconds % 60;
+      setConnectionTime({hours, minutes, seconds});
+    }
+  };
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    const checkVpnStatus = async () => {
+      try {
+        if (Platform.OS === 'macos') {
+          const status = await OutlineVpn.getVpnStatus();
+          setIsConnected(status);
+          if (status) {
+            calculateElapsed();
+          }
+        }
+      } catch (err) {
+        console.warn('Could not check VPN status', err);
+      }
+    };
+    checkVpnStatus();
+  }, []);
+
+  useEffect(() => {
+    let interval: any;
     if (isConnected) {
-      timer = setInterval(() => {
-        setTime(prevTime => prevTime + 1);
+      calculateElapsed(); // initial sync
+      interval = setInterval(() => {
+        calculateElapsed();
       }, 1000);
     }
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, [isConnected]);
 
-  const toggleConnection = () => {
-    setIsConnected(prev => !prev);
-    setTime(0);
+  const parseAccessUrl = (accessUrl: string) => {
+    try {
+      if (
+        !accessUrl.startsWith(
+          'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1',
+        )
+      )
+        throw new Error('Invalid Shadowsocks URL');
+      const cleaned = accessUrl.replace('ss://', '');
+      const [base64Part, addressPart] = cleaned.split('@');
+      if (!base64Part || !addressPart) throw new Error('Malformed URL');
+
+      // For macOS we need to decode properly
+      const decoded = Buffer.from(base64Part, 'base64').toString('utf-8');
+      const [method, password] = decoded.split(':');
+      const [host, portStr] = addressPart.split(':');
+      const port = parseInt(portStr, 10);
+
+      return {
+        host,
+        port,
+        password,
+        method,
+        prefix: '\u0005\u00DC\u005F\u00E0\u0001\u0020',
+        providerBundleIdentifier: 'com.teachgatedesk.develentcorp.TeachGateVPN',
+        serverAddress: 'TeachGateServer',
+        tunnelId: 'TeachGateServer',
+        localizedDescription: 'Teach Gate VPN',
+      };
+    } catch (err) {
+      console.warn('Failed to parse accessUrl:', err);
+      return null;
+    }
   };
 
-  const formatTime = (seconds: number) => {
-    const h = Math.floor(seconds / 3600)
-      .toString()
-      .padStart(2, '0');
-    const m = Math.floor((seconds % 3600) / 60)
-      .toString()
-      .padStart(2, '0');
-    const s = (seconds % 60).toString().padStart(2, '0');
-    return `${h} : ${m} : ${s}`;
+  const toggleConnection = async () => {
+    if (Platform.OS !== 'macos') {
+      // Fallback for non-macOS platforms
+      setIsConnected(prev => !prev);
+      return;
+    }
+
+    try {
+      setConnecting(true);
+
+      if (isConnected) {
+        // Disconnect VPN with delay (8s)
+        setTimeout(async () => {
+          await OutlineVpn.stopVpn();
+          setIsConnected(false);
+          await AsyncStorage.removeItem(CONNECTION_START_KEY);
+          setConnectionTime({hours: 0, minutes: 0, seconds: 0});
+          setConnecting(false);
+        }, 8000);
+      } else {
+        // ✅ Use your Shadowsocks access URL
+        const accessUrl =
+          'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1';
+
+        const config = parseAccessUrl(accessUrl);
+        if (!config) {
+          throw new Error('Invalid VPN config');
+        }
+
+        await OutlineVpn.startVpn(config);
+        await AsyncStorage.setItem(CONNECTION_START_KEY, Date.now().toString());
+        setIsConnected(true);
+        setConnectionTime({hours: 0, minutes: 0, seconds: 0});
+        setConnecting(false);
+      }
+    } catch (err) {
+      console.error('Error toggling VPN:', err);
+      setConnecting(false);
+    }
   };
+
+  const formatTime = (value: number) => value.toString().padStart(2, '0');
 
   return (
     <View style={styles.container}>
@@ -59,10 +165,19 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
         <Text style={styles.statusText}>
           {isConnected ? 'Connected' : 'Disconnected'}
         </Text>
+        {connecting && (
+          <Text style={styles.connectingText}>
+            Establishing secure connection...
+          </Text>
+        )}
         {isConnected && (
           <>
-            <Text style={styles.timerText}>{formatTime(time)}</Text>
-            <Text style={styles.ipText}>Your IP : 100.40.50.80</Text>
+            <Text style={styles.timerText}>
+              {formatTime(connectionTime.hours)}:
+              {formatTime(connectionTime.minutes)}:
+              {formatTime(connectionTime.seconds)}
+            </Text>
+            <Text style={styles.ipText}>Your Connection is Secure</Text>
           </>
         )}
       </View>
@@ -167,6 +282,13 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.2,
     shadowRadius: 4,
+  },
+  connectingText: {
+    fontSize: 16,
+    color: '#555',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: 20,
   },
   liveTVText: {
     color: '#000',

@@ -1,5 +1,8 @@
 PODS:
   - boost (1.84.0)
+  - CocoaLumberjack/Core (3.9.0)
+  - CocoaLumberjack/Swift (3.9.0):
+    - CocoaLumberjack/Core
   - DoubleConversion (1.1.6)
   - fast_float (6.1.4)
   - FBLazyVector (0.78.3)
@@ -1209,6 +1212,9 @@ PODS:
     - React-jsiexecutor
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
+  - react-native-outline-vpn (1.0.0):
+    - CocoaLumberjack/Swift
+    - React-Core
   - react-native-safe-area-context (5.5.2):
     - React-Core
   - react-native-webview (13.15.0):
@@ -1677,6 +1683,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native-macos/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native-macos/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native-macos/ReactCommon/react/nativemodule/microtasks`)
+  - react-native-outline-vpn (from `../node_modules/react-native-outline-vpn`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-NativeModulesApple (from `../node_modules/react-native-macos/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1711,6 +1718,10 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - SocketRocket (from `../node_modules/react-native-macos/third-party-podspecs/SocketRocket.podspec`)
   - Yoga (from `../node_modules/react-native-macos/ReactCommon/yoga`)
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
 
 EXTERNAL SOURCES:
   boost:
@@ -1785,6 +1796,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-macos/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native-macos/ReactCommon/react/nativemodule/microtasks"
+  react-native-outline-vpn:
+    :path: "../node_modules/react-native-outline-vpn"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -1856,6 +1869,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 7d49a506d1ac47358fea28558d184dd6431170ca
+  CocoaLumberjack: 5644158777912b7de7469fa881f8a3f259c2512a
   DoubleConversion: 10f51d3e1238973c033faac2d84c0ea114942f53
   fast_float: 44983b3bddb2d2ed3021a98be86f60ec8abc9ffd
   FBLazyVector: b61b46a4137164b884a21e2ae3e289e1ccef5700
@@ -1891,6 +1905,7 @@ SPEC CHECKSUMS:
   React-logger: 403502d548fbc097ab2c5a783ca98f5e84390bad
   React-Mapbuffer: 3815edc6553967769cdd5e9127284926416270f0
   React-microtasksnativemodule: 67e75d6d737a78daaee8ea4300ddb555ef0909b0
+  react-native-outline-vpn: 19fb0629ab9251d568e2dbe3809d29579b7ad165
   react-native-safe-area-context: 0f7bf11598f9a61b7ceac8dc3f59ef98697e99e1
   react-native-webview: c2be2cae509a2cc03c2b28270ce0a448754fe83e
   React-NativeModulesApple: b575fb27ea57ed5be05928d26ebae10ec2784a43
