@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   # Vendored frameworks (we'll add Tun2socks here)
   s.ios.vendored_frameworks = "Frameworks/ios/Tun2socks.xcframework"
-  s.osx.vendored_frameworks = "Frameworks/macos/Tun2socks.xcframework"
+  s.osx.vendored_frameworks = "Frameworks/macos/Tun2socks.framework"
   
   # Preserve debug symbols
   s.preserve_paths = "**/*.xcframework"

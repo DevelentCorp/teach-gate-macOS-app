@@ -28,31 +28,38 @@ const startVpn: startVPN = (data: vpnOptions) => {
     port,
     password,
     method,
-    prefix,
+    prefix = '',
     providerBundleIdentifier,
     serverAddress,
     tunnelId,
     localizedDescription,
   } = data;
+
   return new Promise(async (resolve, reject) => {
     if (Platform.OS === 'ios' || Platform.OS === 'macos') {
-      await OutlineVpn.startVpn(
-        host,
-        port,
-        password,
-        method,
-        prefix,
-        providerBundleIdentifier,
-        serverAddress,
-        tunnelId,
-        localizedDescription,
-        (x: string) => {
-          resolve(x);
-        },
-        (e: string) => {
-          reject(e);
-        },
-      );
+      try {
+        // For macOS, pass individual parameters as expected by Swift implementation
+        const result = await OutlineVpn.startVpn(
+          host,
+          port,
+          password,
+          method,
+          prefix,
+          providerBundleIdentifier,
+          serverAddress,
+          tunnelId,
+          localizedDescription,
+          (successMessage: string) => {
+            resolve(successMessage);
+          },
+          (errorMessage: string) => {
+            reject(new Error(errorMessage));
+          },
+        );
+        resolve(result);
+      } catch (error) {
+        reject(error);
+      }
     } else {
       // Android implementation
       OutlineVpn.saveCredential(host, port, password, method, prefix).then(

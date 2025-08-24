@@ -2,13 +2,49 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>com.apple.security.app-sandbox</key>
-    <true/>
+	<!-- App Sandbox requirement -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	
+	<!-- Network Extension entitlements -->
 	<key>com.apple.developer.networking.networkextension</key>
 	<array>
 		<string>packet-tunnel-provider</string>
 		<string>app-proxy-provider</string>
 		<string>content-filter-provider</string>
 	</array>
+	
+	<!-- Application Groups for shared data between app and extension -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.teachgatedesk.develentcorp</string>
+	</array>
+	
+	<!-- Keychain Access Groups for secure credential storage -->
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.teachgatedesk.develentcorp.TeachGate-macOS</string>
+		<string>$(AppIdentifierPrefix)group.com.teachgatedesk.develentcorp</string>
+	</array>
+	
+	<!-- Network access for VPN functionality -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.security.network.server</key>
+	<true/>
+	
+	<!-- File access for logging and configuration -->
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+	<key>com.apple.security.files.bookmarks.app-scope</key>
+	<true/>
+	
+	<!-- Allow outgoing network connections -->
+	<key>com.apple.security.network.outgoing</key>
+	<true/>
+	
+	<!-- System extension development (for debugging) -->
+	<key>com.apple.security.get-task-allow</key>
+	<true/>
 </dict>
 </plist>
