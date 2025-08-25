@@ -8,6 +8,11 @@ begin
     Pod::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
   end
   Pod::Project::DEFAULT_OBJECT_VERSION = '60'
+  # Also change xcodeproj default to ensure new projects use the older object version
+  if defined?(Xcodeproj::Project::DEFAULT_OBJECT_VERSION)
+    Xcodeproj::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
+  end
+  Xcodeproj::Project::DEFAULT_OBJECT_VERSION = 60
   # Ensure xcodeproj knows how to map objectVersion '70' to a compatibility string (Xcode 16)
   if defined?(Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION)
     Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION['70'] ||= 'Xcode 16.0'
@@ -54,6 +59,13 @@ end
 
 # Combined post_install hook for both targets
 post_install do |installer|
+  # Ensure Pods project uses a supported object version even if defaults change
+  begin
+    installer.pods_project.object_version = '60'
+  rescue => e
+    puts "Podfile post_install: failed to set pods_project.object_version: #{e}"
+  end
+
   # React Native post install
   react_native_post_install(installer)
   
