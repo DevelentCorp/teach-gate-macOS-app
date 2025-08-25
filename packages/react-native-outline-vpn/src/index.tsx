@@ -23,58 +23,20 @@ const OutlineVpn = NativeModules.OutlineVpn
     );
 
 const startVpn: startVPN = (data: vpnOptions) => {
-  const {
-    host,
-    port,
-    password,
-    method,
-    prefix = '',
-    providerBundleIdentifier,
-    serverAddress,
-    tunnelId,
-    localizedDescription,
-  } = data;
-
   return new Promise(async (resolve, reject) => {
     if (Platform.OS === 'ios' || Platform.OS === 'macos') {
       try {
-        // For macOS, pass individual parameters as expected by Swift implementation
-        const result = await OutlineVpn.startVpn(
-          host,
-          port,
-          password,
-          method,
-          prefix,
-          providerBundleIdentifier,
-          serverAddress,
-          tunnelId,
-          localizedDescription,
-          (successMessage: string) => {
-            resolve(successMessage);
-          },
-          (errorMessage: string) => {
-            reject(new Error(errorMessage));
-          },
+        await OutlineVpn.startVpn(
+          data,
+          (successMessage: string) => resolve(successMessage),
+          (errorMessage: string) => reject(new Error(errorMessage)),
         );
-        resolve(result);
       } catch (error) {
         reject(error);
       }
     } else {
-      // Android implementation
-      OutlineVpn.saveCredential(host, port, password, method, prefix).then(
-        (credentialResult: any) => {
-          if (credentialResult) {
-            OutlineVpn.getCredential().then(() => {
-              OutlineVpn.prepareLocalVPN().then(() => {
-                OutlineVpn.connectLocalVPN()
-                  .then(() => resolve(true))
-                  .catch((e: any) => reject(e));
-              });
-            });
-          }
-        },
-      );
+      // Non-Apple platforms not implemented in this package.
+      resolve(false);
     }
   });
 };

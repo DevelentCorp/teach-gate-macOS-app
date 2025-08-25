@@ -104,7 +104,7 @@ async function checkLogs() {
 
   // Get recent VPN logs
   await runCommand(
-    'log show --last 2m --predicate \'subsystem CONTAINS "TeachGateVPN"\' --style compact',
+    'log show --last 2m --predicate \'subsystem CONTAINS "com.teachgatedesk.develentcorp"\' --style compact',
     'Getting recent Network Extension logs',
   );
 
@@ -113,7 +113,7 @@ async function checkLogs() {
 
   // Look for specific log patterns
   const logCheck = await runCommand(
-    'log show --last 5m --predicate \'subsystem CONTAINS "TeachGateVPN"\' | grep -E "(Tun2socks|CRITICAL|framework not available|fallback)"',
+    'log show --last 5m --predicate \'subsystem CONTAINS "com.teachgatedesk.develentcorp"\' | grep -E "(Tun2socks|CRITICAL|framework not available|fallback)"',
     'Checking for Tun2socks availability',
   );
 
@@ -208,7 +208,7 @@ async function provideSolution(diagnosticResult) {
       console.log('🔧 NEXT STEPS:');
       console.log('1. Connect to VPN and immediately run:');
       console.log(
-        '   log stream --predicate \'subsystem CONTAINS "TeachGateVPN"\'',
+        '   log stream --predicate \'subsystem CONTAINS "com.teachgatedesk.develentcorp"\'',
       );
       console.log('2. Look for "Tun2socks framework" messages');
       console.log('3. Check for "CRITICAL" or "fallback" messages');

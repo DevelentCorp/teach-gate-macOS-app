@@ -11,15 +11,7 @@
 
 @interface RCT_EXTERN_MODULE(OutlineVpn, NSObject)
 
-RCT_EXTERN_METHOD(startVpn:(nonnull NSString *)host
-                  port:(nonnull NSNumber *)port
-                  password:(nonnull NSString *)password
-                  method:(nonnull NSString *)method
-                  prefix:(nonnull NSString *)prefix
-                  providerBundleIdentifier:(nullable NSString *)providerBundleIdentifier
-                  serverAddress:(nullable NSString *)serverAddress
-                  tunnelId:(nullable NSString *)tunnelId
-                  localizedDescription:(nullable NSString *)localizedDescription
+RCT_EXTERN_METHOD(startVpn:(nonnull NSDictionary *)config
                   successCallback:(nonnull RCTResponseSenderBlock)successCallback
                   errorCallback:(nonnull RCTResponseSenderBlock)errorCallback)
 

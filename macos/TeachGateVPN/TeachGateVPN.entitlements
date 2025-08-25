@@ -23,8 +23,8 @@
 	<!-- Keychain Access Groups for secure credential storage -->
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.teachgatedesk.develentcorp.TeachGate-macOS</string>
-		<string>$(AppIdentifierPrefix)group.com.teachgatedesk.develentcorp</string>
+		<string>$(AppIdentifierPrefix)com.teachgatedesk.develentcorp</string>
+		<string>$(AppIdentifierPrefix)com.teachgatedesk.develentcorp.TeachGateVPN</string>
 	</array>
 	
 	<!-- Network access for VPN functionality -->

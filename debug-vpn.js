@@ -44,7 +44,7 @@ async function debugVPN() {
   const homeDir = process.env.HOME;
   const appGroupPath = path.join(
     homeDir,
-    'Library/Group Containers/group.com.teachgate.vpn',
+    'Library/Group Containers/group.com.teachgatedesk.develentcorp',
   );
 
   try {
@@ -70,7 +70,7 @@ async function debugVPN() {
   console.log('4. Checking Console Logs for VPN Activity');
   console.log('=========================================');
   await runCommand(
-    'log show --last 5m --predicate \'subsystem CONTAINS "com.teachgate.vpn"\' --info',
+    'log show --last 5m --predicate \'subsystem CONTAINS "com.teachgatedesk.develentcorp"\' --info',
     'Recent VPN logs',
   );
 
@@ -102,7 +102,7 @@ async function debugVPN() {
   );
   console.log('\nFor real-time monitoring, run:');
   console.log(
-    'log stream --predicate \'subsystem CONTAINS "com.teachgate.vpn"\'',
+    'log stream --predicate \'subsystem CONTAINS "com.teachgatedesk.develentcorp"\'',
   );
 }
 

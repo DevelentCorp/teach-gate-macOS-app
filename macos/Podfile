@@ -1,3 +1,22 @@
+# --- Workaround for CocoaPods/xcodeproj incompatibility with objectVersion '70' on Ruby 2.6 ---
+# Force Pods project object version to a stable value supported by current xcodeproj, and add missing mapping.
+begin
+  require 'cocoapods'
+  require 'xcodeproj'
+  # Prefer generating Pods project with an older, widely supported object version
+  if defined?(Pod::Project::DEFAULT_OBJECT_VERSION)
+    Pod::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
+  end
+  Pod::Project::DEFAULT_OBJECT_VERSION = '60'
+  # Ensure xcodeproj knows how to map objectVersion '70' to a compatibility string (Xcode 16)
+  if defined?(Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION)
+    Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION['70'] ||= 'Xcode 16.0'
+  end
+rescue => e
+  puts "Podfile workaround: failed to set DEFAULT_OBJECT_VERSION or mapping: #{e}"
+end
+# -----------------------------------------------------------------------------------------------
+
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
@@ -18,11 +37,16 @@ target 'Teach Gate-macOS' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # Structured logging for app (CocoaLumberjack)
+  pod 'CocoaLumberjack/Swift'
 end
 
 # Network Extension target for VPN functionality
 target 'TeachGateVPN' do
   platform :macos, '11.0'
+  
+  # Structured logging for extension (CocoaLumberjack)
+  pod 'CocoaLumberjack/Swift'
   
   # Network Extension doesn't need React Native dependencies
   # The Tun2socks framework will be linked directly in Xcode project settings

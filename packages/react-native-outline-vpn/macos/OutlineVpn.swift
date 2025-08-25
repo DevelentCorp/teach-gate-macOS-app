@@ -14,12 +14,14 @@ typealias RCTResponseSenderBlock = ([Any]) -> Void
 @objc(OutlineVpn)
 class OutlineVpn: NSObject {
     
-    private let logger = OSLog(subsystem: "com.teachgate.vpn", category: "OutlineVpn")
+    private let logger = OSLog(subsystem: "com.teachgatedesk.develentcorp", category: "OutlineVpn")
     private let appGroup = "group.com.teachgatedesk.develentcorp"
     private let providerBundleIdentifier = "com.teachgatedesk.develentcorp.TeachGateVPN"
     private var statusObserver: NSObjectProtocol?
     private var lastStatusLogTime: Date = Date.distantPast
     private let statusLogThrottle: TimeInterval = 1.0 // Only log status changes once per second
+    // Track last tunnelId used so we can query status via OutlineVpnProduction
+    private var lastTunnelId: String?
     
     override init() {
         super.init()
@@ -74,23 +76,11 @@ class OutlineVpn: NSObject {
         }
     }
     
-    // MARK: - VPN Error Types
-    private enum VpnError: Error {
-        case vpnPermissionNotGranted(cause: Error)
-        case setupSystemVPNFailed(cause: Error)
-        case internalError(message: String)
-    }
-    
-    private func mapProductionError(_ error: Error) -> String {
-        if let vpnError = error as? VpnError {
-            switch vpnError {
-            case .vpnPermissionNotGranted(let cause):
-                return "VPN permission not granted: \(cause.localizedDescription)"
-            case .setupSystemVPNFailed(let cause):
-                return "Failed to setup system VPN: \(cause.localizedDescription)"
-            case .internalError(let message):
-                return "Internal error: \(message)"
-            }
+    // MARK: - Error Mapping (OutlineError integration)
+    private func mapOutlineError(_ error: Error) -> String {
+        // Use LocalizedError to avoid hard dependency on the concrete type at compile-time.
+        if let localized = (error as? LocalizedError)?.errorDescription {
+            return localized
         }
         return error.localizedDescription
     }
@@ -102,139 +92,106 @@ class OutlineVpn: NSObject {
     
     @objc
     func startVpn(
-        _ host: String,
-        port: NSNumber,
-        password: String,
-        method: String,
-        prefix: String,
-        providerBundleIdentifier: String?,
-        serverAddress: String?,
-        tunnelId: String?,
-        localizedDescription: String?,
+        _ config: NSDictionary,
         successCallback: @escaping ([Any]) -> Void,
         errorCallback: @escaping ([Any]) -> Void
     ) {
+        // Parse Outline-Apps style configuration dictionary.
+        // Expected keys:
+        // - id: String
+        // - name: String? (aka localized description)
+        // - transport: String | Dictionary (will be serialized to JSON String)
+        // - autoConnect: Bool?
+        // - onDemandRules: [Dictionary]?
+        // - connectivityCheck: Dictionary?
+        os_log("🚀 Starting VPN with Outline-Apps config format", log: logger, type: .info)
         
-        os_log("🚀 Starting VPN with production implementation - Host: %@, Port: %@, Method: %@", log: logger, type: .info, host, port, method)
-        
-        let bundleId = providerBundleIdentifier ?? self.providerBundleIdentifier
-        let tunnelIdToUse = tunnelId ?? "TeachGateVPN"
-        
-        // Validate configuration
-        guard !host.isEmpty, !password.isEmpty, !method.isEmpty else {
-            os_log("❌ Invalid VPN configuration provided", log: logger, type: .error)
+        guard let cfg = config as? [String: Any] else {
+            os_log("❌ Invalid config: not a dictionary", log: logger, type: .error)
             DispatchQueue.main.async {
                 errorCallback(["Invalid VPN configuration provided"])
             }
             return
         }
         
-        // Create transport configuration in format expected by production implementation
-        let transportConfig = """
-        {
-            "host": "\(host)",
-            "port": \(port),
-            "password": "\(password)",
-            "method": "\(method)",
-            "prefix": "\(prefix.isEmpty ? "" : prefix)"
+        // Backward-compat shim: if legacy fields exist (host/port/password/method), build transport.
+        var effectiveConfig = cfg
+        if effectiveConfig["transport"] == nil,
+           let host = effectiveConfig["host"] as? String,
+           let port = effectiveConfig["port"],
+           let password = effectiveConfig["password"] as? String,
+           let method = effectiveConfig["method"] as? String {
+            let prefix = (effectiveConfig["prefix"] as? String) ?? ""
+            let legacyTransport: [String: Any] = [
+                "host": host,
+                "port": port,
+                "password": password,
+                "method": method,
+                "prefix": prefix
+            ]
+            effectiveConfig["transport"] = legacyTransport
+            if effectiveConfig["id"] == nil {
+                effectiveConfig["id"] = effectiveConfig["tunnelId"] as? String ?? "TeachGateVPN"
+            }
+            if effectiveConfig["name"] == nil {
+                effectiveConfig["name"] = effectiveConfig["localizedDescription"] as? String ?? "Teach Gate VPN"
+            }
         }
-        """
+        
+        let tunnelIdToUse = (effectiveConfig["id"] as? String) ?? "TeachGateVPN"
+        let name = (effectiveConfig["name"] as? String) ?? "Teach Gate VPN"
+        let autoConnect = effectiveConfig["autoConnect"] as? Bool
+        let onDemandRules = effectiveConfig["onDemandRules"] as? [[String: Any]]
+        let connectivityCheck = effectiveConfig["connectivityCheck"] as? [String: Any]
+        
+        // Build transport JSON string
+        var transportConfigString: String?
+        if let transportString = effectiveConfig["transport"] as? String {
+            transportConfigString = transportString
+        } else if let transportDict = effectiveConfig["transport"] as? [String: Any] {
+            do {
+                let data = try JSONSerialization.data(withJSONObject: transportDict, options: [])
+                transportConfigString = String(data: data, encoding: .utf8)
+            } catch {
+                os_log("❌ Failed to serialize transport: %@", log: logger, type: .error, error.localizedDescription)
+            }
+        }
+        
+        guard let transportConfig = transportConfigString, !transportConfig.isEmpty else {
+            os_log("❌ Missing or invalid transport configuration", log: logger, type: .error)
+            DispatchQueue.main.async {
+                errorCallback(["Invalid VPN configuration: missing transport"])
+            }
+            return
+        }
         
         // Use Task to handle async production VPN implementation
         Task {
             do {
-                try await self.startProductionVpn(
-                    tunnelId: tunnelIdToUse,
-                    name: localizedDescription ?? "Teach Gate VPN",
-                    transportConfig: transportConfig
+                try await OutlineVpnProduction.shared.start(
+                    tunnelIdToUse,
+                    named: name,
+                    withTransport: transportConfig,
+                    autoConnect: autoConnect,
+                    onDemandRules: onDemandRules,
+                    connectivityCheck: connectivityCheck
                 )
-                
+                self.lastTunnelId = tunnelIdToUse
                 DispatchQueue.main.async {
                     successCallback(["VPN connection started successfully"])
                 }
             } catch {
                 os_log("❌ Production VPN start failed: %@", log: self.logger, type: .error, error.localizedDescription)
                 DispatchQueue.main.async {
-                    errorCallback(["Failed to start VPN: \(self.mapProductionError(error))"])
+                    errorCallback(["Failed to start VPN: \(self.mapOutlineError(error))"])
                 }
             }
         }
     }
     
-    // Production-style VPN start implementation
-    private func startProductionVpn(tunnelId: String, name: String, transportConfig: String) async throws {
-        // Stop any existing active session
-        if let manager = await getTunnelManager(), isActiveSession(manager.connection) {
-            os_log("Stopping active session before starting new one", log: logger, type: .debug)
-            await stopSession(manager)
-        }
-
-        let manager: NETunnelProviderManager
-        do {
-            manager = try await setupProductionVpn(withId: tunnelId, named: name, withTransport: transportConfig)
-        } catch {
-            os_log("Failed to setup VPN: %@", log: logger, type: .error, error.localizedDescription)
-            throw VpnError.vpnPermissionNotGranted(cause: error)
-        }
-        
-        let session = manager.connection as! NETunnelProviderSession
-
-        // Start the session with production-style error handling
-        do {
-            try session.startTunnel(options: [:])
-            os_log("VPN tunnel start initiated successfully", log: logger, type: .info)
-        } catch {
-            os_log("Failed to start VPN: %@", log: logger, type: .error, error.localizedDescription)
-            throw VpnError.setupSystemVPNFailed(cause: error)
-        }
-
-        // Wait for connection to complete
-        try await waitForConnectionCompletion(manager: manager)
-        
-        // Set up on-demand rules for auto-connect
-        await setOnDemandRules(manager: manager)
-    }
+    // Using OutlineVpnProduction for all start/stop/status operations.
     
-    private func waitForConnectionCompletion(manager: NETunnelProviderManager) async throws {
-        try await withCheckedThrowingContinuation { continuation in
-            var observer: NSObjectProtocol?
-            observer = NotificationCenter.default.addObserver(forName: .NEVPNStatusDidChange, object: manager.connection, queue: nil) { notification in
-                guard let connection = notification.object as? NETunnelProviderSession else {
-                    return
-                }
-                
-                let status = connection.status
-                os_log("VPN status during start: %@", log: self.logger, type: .debug, self.vpnStatusString(status))
-                
-                if status == .connected || status == .disconnected || status == .invalid {
-                    if let obs = observer {
-                        NotificationCenter.default.removeObserver(obs, name: .NEVPNStatusDidChange, object: connection)
-                    }
-                    
-                    switch status {
-                    case .connected:
-                        continuation.resume()
-                    case .disconnected, .invalid:
-                        continuation.resume(throwing: VpnError.internalError(message: "Connection failed"))
-                    default:
-                        continuation.resume(throwing: VpnError.internalError(message: "Unexpected connection status"))
-                    }
-                }
-            }
-        }
-    }
     
-    private func setOnDemandRules(manager: NETunnelProviderManager) async {
-        do {
-            try await manager.loadFromPreferences()
-            let connectRule = NEOnDemandRuleConnect()
-            connectRule.interfaceTypeMatch = .any
-            manager.onDemandRules = [connectRule]
-            try await manager.saveToPreferences()
-        } catch {
-            os_log("Failed to set on-demand rules: %@", log: logger, type: .error, error.localizedDescription)
-        }
-    }
     
     @objc
     func disconnectVpn(
@@ -245,53 +202,26 @@ class OutlineVpn: NSObject {
         os_log("🛑 Disconnecting VPN with production implementation", log: logger, type: .info)
         
         Task {
-            do {
-                await self.stopProductionVpn()
-                DispatchQueue.main.async {
-                    successCallback(["VPN disconnected successfully"])
-                }
-            } catch {
-                os_log("❌ Production VPN stop failed: %@", log: self.logger, type: .error, error.localizedDescription)
-                DispatchQueue.main.async {
-                    errorCallback(["Failed to disconnect VPN: \(error.localizedDescription)"])
-                }
+            await OutlineVpnProduction.shared.stopActiveVpn()
+            DispatchQueue.main.async {
+                successCallback(["VPN disconnected successfully"])
             }
         }
     }
     
-    // Production-style VPN stop implementation
-    private func stopProductionVpn() async {
-        guard let manager = await getTunnelManager(),
-              isActiveSession(manager.connection) else {
-            os_log("No active VPN session to stop", log: logger, type: .debug)
-            return
-        }
-        await stopSession(manager)
-    }
     
     @objc
     func getVpnConnectionStatus(_ callback: @escaping ([Any]) -> Void) {
         os_log("📊 Checking VPN connection status with production implementation", log: logger, type: .info)
         
         Task {
-            let isActive = await self.isProductionVpnActive()
+            let isActive = await OutlineVpnProduction.shared.isActive(self.lastTunnelId)
             DispatchQueue.main.async {
                 callback([NSNull(), isActive])
             }
         }
     }
     
-    // Production-style VPN status check implementation
-    private func isProductionVpnActive() async -> Bool {
-        guard let manager = await getTunnelManager() else {
-            os_log("No VPN manager found for status check", log: logger, type: .debug)
-            return false
-        }
-        
-        let isActive = isActiveSession(manager.connection)
-        os_log("VPN status check result: %@", log: logger, type: .debug, isActive ? "ACTIVE" : "INACTIVE")
-        return isActive
-    }
     
     // MARK: - Private Methods
     
@@ -346,71 +276,7 @@ class OutlineVpn: NSObject {
     }
     
     // MARK: - Production VPN Helper Methods
-    
-    private func getTunnelManager() async -> NETunnelProviderManager? {
-        do {
-            let managers: [NETunnelProviderManager] = try await NETunnelProviderManager.loadAllFromPreferences()
-            return managers.first
-        } catch {
-            os_log("Failed to get tunnel manager: %@", log: logger, type: .error, error.localizedDescription)
-            return nil
-        }
-    }
-    
-    private func isActiveSession(_ session: NEVPNConnection?) -> Bool {
-        let vpnStatus = session?.status
-        return vpnStatus == .connected || vpnStatus == .connecting || vpnStatus == .reasserting
-    }
-    
-    private func stopSession(_ manager: NETunnelProviderManager) async {
-        do {
-            try await manager.loadFromPreferences()
-            manager.connection.stopVPNTunnel()
-            // Wait for stop to be completed
-            await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
-                var observer: NSObjectProtocol?
-                observer = NotificationCenter.default.addObserver(forName: .NEVPNStatusDidChange, object: manager.connection, queue: nil) { notification in
-                    if manager.connection.status == .disconnected {
-                        if let obs = observer {
-                            NotificationCenter.default.removeObserver(obs, name: .NEVPNStatusDidChange, object: manager.connection)
-                        }
-                        continuation.resume()
-                    }
-                }
-            }
-        } catch {
-            os_log("Failed to stop VPN: %@", log: logger, type: .error, error.localizedDescription)
-        }
-    }
-    
-    private func setupProductionVpn(withId id: String, named name: String, withTransport transportConfig: String) async throws -> NETunnelProviderManager {
-        let managers = try await NETunnelProviderManager.loadAllFromPreferences()
-        let manager: NETunnelProviderManager
-        
-        if managers.count > 0 {
-            manager = managers.first!
-        } else {
-            manager = NETunnelProviderManager()
-        }
-
-        manager.localizedDescription = name
-        manager.onDemandRules = nil
-
-        // Configure the protocol
-        let config = NETunnelProviderProtocol()
-        config.serverAddress = "Outline"
-        config.providerBundleIdentifier = providerBundleIdentifier
-        config.providerConfiguration = [
-            "id": id,
-            "transport": transportConfig
-        ]
-        manager.protocolConfiguration = config
-        manager.isEnabled = true
-
-        try await manager.saveToPreferences()
-        try await manager.loadFromPreferences()
-        return manager
-    }
+    // All production VPN operations are delegated to OutlineVpnProduction.
 }
 
 // MARK: - React Native Bridge
@@ -418,14 +284,44 @@ class OutlineVpn: NSObject {
 #if canImport(React)
 @objc(OutlineVpnBridge)
 class OutlineVpnBridge: RCTEventEmitter {
-    
+    private var isObserving = false
+
     override func supportedEvents() -> [String]! {
         return ["VPNStatusChanged"]
     }
-    
+
     @objc
     override static func requiresMainQueueSetup() -> Bool {
         return true
+    }
+
+    override func startObserving() {
+        isObserving = true
+        OutlineVpnProduction.shared.onVpnStatusChange { [weak self] status, tunnelId in
+            guard let self = self, self.isObserving else { return }
+            self.sendEvent(withName: "VPNStatusChanged", body: [
+                "status": self.statusString(status),
+                "tunnelId": tunnelId
+            ])
+        }
+    }
+
+    override func stopObserving() {
+        isObserving = false
+        // Remove observer by installing a no-op handler
+        OutlineVpnProduction.shared.onVpnStatusChange { _, _ in }
+    }
+
+    private func statusString(_ status: NEVPNStatus) -> String {
+        switch status {
+        case .invalid: return "INVALID"
+        case .disconnected: return "DISCONNECTED"
+        case .connecting: return "CONNECTING"
+        case .connected: return "CONNECTED"
+        case .reasserting: return "REASSERTING"
+        case .disconnecting: return "DISCONNECTING"
+        @unknown default: return "UNKNOWN"
+        }
     }
 }
 #endif

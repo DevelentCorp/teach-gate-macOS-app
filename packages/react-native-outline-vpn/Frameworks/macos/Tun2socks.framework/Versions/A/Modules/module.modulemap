@@ -1,6 +1,0 @@
-framework module Tun2socks {
-  umbrella header "Tun2socks.h"
-  
-  export *
-  module * { export * }
-}

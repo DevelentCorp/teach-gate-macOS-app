@@ -1,44 +1,38 @@
-import { NativeModules, Platform } from 'react-native';
-const LINKING_ERROR = `The package 'react-native-outline-vpn' doesn't seem to be linked. Make sure: \n\n` + Platform.select({
-  ios: "- You have run 'pod install'\n",
-  macos: "- You have run 'pod install'\n",
-  default: ''
-}) + '- You rebuilt the app after installing the package\n' + '- You are not using Expo Go\n';
-const OutlineVpn = NativeModules.OutlineVpn ? NativeModules.OutlineVpn : new Proxy({}, {
-  get() {
-    throw new Error(LINKING_ERROR);
-  }
-});
+import {NativeModules, Platform} from 'react-native';
+const LINKING_ERROR =
+  `The package 'react-native-outline-vpn' doesn't seem to be linked. Make sure: \n\n` +
+  Platform.select({
+    ios: "- You have run 'pod install'\n",
+    macos: "- You have run 'pod install'\n",
+    default: '',
+  }) +
+  '- You rebuilt the app after installing the package\n' +
+  '- You are not using Expo Go\n';
+const OutlineVpn = NativeModules.OutlineVpn
+  ? NativeModules.OutlineVpn
+  : new Proxy(
+      {},
+      {
+        get() {
+          throw new Error(LINKING_ERROR);
+        },
+      },
+    );
 const startVpn = data => {
-  const {
-    host,
-    port,
-    password,
-    method,
-    prefix,
-    providerBundleIdentifier,
-    serverAddress,
-    tunnelId,
-    localizedDescription
-  } = data;
   return new Promise(async (resolve, reject) => {
     if (Platform.OS === 'ios' || Platform.OS === 'macos') {
-      await OutlineVpn.startVpn(host, port, password, method, prefix, providerBundleIdentifier, serverAddress, tunnelId, localizedDescription, x => {
-        resolve(x);
-      }, e => {
-        reject(e);
-      });
+      try {
+        await OutlineVpn.startVpn(
+          data,
+          x => resolve(x),
+          e => reject(e),
+        );
+      } catch (error) {
+        reject(error);
+      }
     } else {
-      // Android implementation
-      OutlineVpn.saveCredential(host, port, password, method, prefix).then(credentialResult => {
-        if (credentialResult) {
-          OutlineVpn.getCredential().then(() => {
-            OutlineVpn.prepareLocalVPN().then(() => {
-              OutlineVpn.connectLocalVPN().then(() => resolve(true)).catch(e => reject(e));
-            });
-          });
-        }
-      });
+      // Non-Apple platforms not implemented in this package.
+      resolve(false);
     }
   });
 };
@@ -61,14 +55,20 @@ const getVpnConnectionStatus = () => {
 const stopVpn = () => {
   return new Promise((resolve, reject) => {
     if (Platform.OS === 'ios' || Platform.OS === 'macos') {
-      OutlineVpn.disconnectVpn(null, successResult => {
-        resolve(successResult[0]);
-      }, errorResult => {
-        reject(new Error(errorResult[0]));
-      });
+      OutlineVpn.disconnectVpn(
+        null,
+        successResult => {
+          resolve(successResult[0]);
+        },
+        errorResult => {
+          reject(new Error(errorResult[0]));
+        },
+      );
     } else {
       // Android implementation
-      OutlineVpn.disconnectVpn().then(result => resolve(result)).catch(error => reject(error));
+      OutlineVpn.disconnectVpn()
+        .then(result => resolve(result))
+        .catch(error => reject(error));
     }
   });
 };
@@ -81,6 +81,6 @@ export default {
   },
   getVpnStatus() {
     return getVpnConnectionStatus();
-  }
+  },
 };
 //# sourceMappingURL=index.js.map
