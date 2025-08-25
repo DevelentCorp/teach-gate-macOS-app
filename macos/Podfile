@@ -15,7 +15,7 @@ begin
   Xcodeproj::Project::DEFAULT_OBJECT_VERSION = 60
   # Ensure xcodeproj knows how to map objectVersion '70' to a compatibility string (Xcode 16)
   if defined?(Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION)
-    Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION['70'] ||= 'Xcode 16.0'
+    Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION[70] ||= 'Xcode 16.0'
   end
 rescue => e
   puts "Podfile workaround: failed to set DEFAULT_OBJECT_VERSION or mapping: #{e}"
@@ -52,22 +52,23 @@ target 'TeachGateVPN' do
   
   # Structured logging for extension (CocoaLumberjack)
   pod 'CocoaLumberjack/Swift'
+  # Outline VPN package (provides Tun2socks.xcframework and extension sources)
+  pod 'react-native-outline-vpn', :path => '../packages/react-native-outline-vpn'
   
-  # Network Extension doesn't need React Native dependencies
-  # The Tun2socks framework will be linked directly in Xcode project settings
 end
 
 # Combined post_install hook for both targets
 post_install do |installer|
   # Ensure Pods project uses a supported object version even if defaults change
   begin
-    installer.pods_project.object_version = '60'
+    installer.pods_project.object_version = 60
   rescue => e
     puts "Podfile post_install: failed to set pods_project.object_version: #{e}"
   end
 
   # React Native post install
   react_native_post_install(installer)
+
   
   # Network Extension specific configurations
   installer.pods_project.targets.each do |target|
