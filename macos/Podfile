@@ -1,21 +1,48 @@
+# --- Additional monkeypatch for Xcodeproj object version 70 incompatibility ---
+begin
+  require 'xcodeproj'
+  # Force LAST_KNOWN_OBJECT_VERSION to 60 so CocoaPods/xcodeproj don't attempt to use 70
+  if defined?(Xcodeproj::Constants::LAST_KNOWN_OBJECT_VERSION)
+    Xcodeproj::Constants.send(:remove_const, :LAST_KNOWN_OBJECT_VERSION) rescue nil
+    Xcodeproj::Constants.const_set(:LAST_KNOWN_OBJECT_VERSION, 60)
+  end
+  if defined?(Xcodeproj::Project::LAST_KNOWN_OBJECT_VERSION)
+    Xcodeproj::Project.send(:remove_const, :LAST_KNOWN_OBJECT_VERSION) rescue nil
+    Xcodeproj::Project.const_set(:LAST_KNOWN_OBJECT_VERSION, 60)
+  end
+  # Ensure mapping exists for 70 to avoid ArgumentError when encountered
+  if defined?(Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION)
+    Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION[70] ||= 'Xcode 16.0'
+  end
+rescue => e
+  puts "Podfile workaround 2: failed to force LAST_KNOWN_OBJECT_VERSION: #{e}"
+end
+# -------------------------------------------------------------------------------
 # --- Workaround for CocoaPods/xcodeproj incompatibility with objectVersion '70' on Ruby 2.6 ---
 # Force Pods project object version to a stable value supported by current xcodeproj, and add missing mapping.
 begin
   require 'cocoapods'
   require 'xcodeproj'
+
   # Prefer generating Pods project with an older, widely supported object version
-  if defined?(Pod::Project::DEFAULT_OBJECT_VERSION)
-    Pod::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
+  if defined?(Xcodeproj::Constants::DEFAULT_OBJECT_VERSION)
+    Xcodeproj::Constants.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
   end
-  Pod::Project::DEFAULT_OBJECT_VERSION = '60'
-  # Also change xcodeproj default to ensure new projects use the older object version
-  if defined?(Xcodeproj::Project::DEFAULT_OBJECT_VERSION)
-    Xcodeproj::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
-  end
-  Xcodeproj::Project::DEFAULT_OBJECT_VERSION = 60
+  Xcodeproj::Constants.const_set(:DEFAULT_OBJECT_VERSION, 60)
+
   # Ensure xcodeproj knows how to map objectVersion '70' to a compatibility string (Xcode 16)
   if defined?(Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION)
     Xcodeproj::Constants::COMPATIBILITY_VERSION_NAMES_BY_OBJECT_VERSION[70] ||= 'Xcode 16.0'
+  end
+
+  # Also change project-level defaults (some Cocoapods versions read from here)
+  if defined?(Xcodeproj::Project::DEFAULT_OBJECT_VERSION)
+    Xcodeproj::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
+    Xcodeproj::Project.const_set(:DEFAULT_OBJECT_VERSION, 60)
+  end
+  if defined?(Pod::Project::DEFAULT_OBJECT_VERSION)
+    Pod::Project.send(:remove_const, :DEFAULT_OBJECT_VERSION) rescue nil
+    Pod::Project.const_set(:DEFAULT_OBJECT_VERSION, '60')
   end
 rescue => e
   puts "Podfile workaround: failed to set DEFAULT_OBJECT_VERSION or mapping: #{e}"

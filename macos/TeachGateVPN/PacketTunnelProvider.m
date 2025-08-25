@@ -35,6 +35,7 @@
 #import <Foundation/Foundation.h>
 #import <NetworkExtension/NetworkExtension.h>
 #import <Tun2socks/Tun2socks.h>
+#import <objc/message.h>
 
 #if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
   #import <CocoaLumberjack/CocoaLumberjack.h>
@@ -61,10 +62,6 @@
   #endif
 #endif
 
-// Not exposed by gobind headers in this build for Objective-C.
-// Declare as a weak-import symbol so the binary links even if the symbol is absent.
-FOUNDATION_EXTERN __attribute__((weak_import)) Tun2socksConnectOutlineTunnelResult*
-Tun2socksConnectOutlineTunnel(id<Tun2socksTunWriter> writer, id client, BOOL isUdpSupported);
 
 NSString *const kDefaultPathKey = @"defaultPath";
 
@@ -343,15 +340,23 @@ bool getIpAddressString(const struct sockaddr *sa, char *s, socklen_t maxbytes) 
   }
   PacketTunnelProvider * __unsafe_unretained weakSelf = self;
 
-  // In the production Outline build, a Go Outline client object is created and passed here.
-  // That API is not available in this project. Attempt to call the Go-bound symbol if available.
-  if (Tun2socksConnectOutlineTunnel == NULL) {
-    DDLogError(@"Tun2socksConnectOutlineTunnel symbol not found in Tun2socks.framework");
-    return [SwiftBridge newInternalOutlineErrorWithMessage:@"Tun2socksConnectOutlineTunnel not available"];
+  // Use the Objective-C API exported by Tun2socks.xcframework if available.
+  // The gobind-generated headers expose Objective-C classes/protocols (Tun2socksConnectOutlineTunnelResult,
+  // Tun2socksTunnel, Tun2socksTunWriter). Try to invoke a class-level connect method dynamically.
+  Class tun2socksClass = NSClassFromString(@"Tun2socks");
+  SEL connectSel = NSSelectorFromString(@"connectOutlineTunnelWithWriter:client:isUdpSupported:");
+  Tun2socksConnectOutlineTunnelResult *result = nil;
+  if (tun2socksClass && [tun2socksClass respondsToSelector:connectSel]) {
+    IMP imp = [tun2socksClass methodForSelector:connectSel];
+    id (*func)(id, SEL, id, id, BOOL) = (void *)imp;
+    result = func(tun2socksClass, connectSel, weakSelf, nil, isUdpSupported);
+  } else {
+    // The explicit ObjC connect API wasn't found. The legacy C symbol is not available in
+    // gobind-produced frameworks that only expose ObjC classes. Treat this as a missing API.
+    DDLogError(@"Tun2socks connect API not found in Tun2socks.framework");
+    return [SwiftBridge newInternalOutlineErrorWithMessage:@"Tun2socks connect API not available"];
   }
-  Tun2socksConnectOutlineTunnelResult *result =
-      Tun2socksConnectOutlineTunnel(weakSelf, nil, isUdpSupported);
-
+ 
   // Some gobind builds omit the 'error' property from the result. We conservatively check tunnel only.
   id<Tun2socksTunnel> tunnel = result ? result.tunnel : nil;
   if (!tunnel) {
