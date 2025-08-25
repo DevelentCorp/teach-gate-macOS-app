@@ -13,6 +13,7 @@ typealias RCTResponseSenderBlock = ([Any]) -> Void
 
 @objc(OutlineVpn)
 class OutlineVpn: NSObject {
+    public static let shared = OutlineVpn()
     
     private let logger = OSLog(subsystem: "com.teachgatedesk.develentcorp", category: "OutlineVpn")
     private let appGroup = "group.com.teachgatedesk.develentcorp"
@@ -22,6 +23,7 @@ class OutlineVpn: NSObject {
     private let statusLogThrottle: TimeInterval = 1.0 // Only log status changes once per second
     // Track last tunnelId used so we can query status via OutlineVpnProduction
     private var lastTunnelId: String?
+    private var vpnStatusHandler: ((NEVPNStatus, String?) -> Void)?
     
     override init() {
         super.init()
@@ -165,16 +167,13 @@ class OutlineVpn: NSObject {
             return
         }
         
-        // Use Task to handle async production VPN implementation
+        // Use Task to handle async VPN implementation (canonical Outline-Apps API)
         Task {
             do {
-                try await OutlineVpnProduction.shared.start(
+                try await OutlineVpn.shared.start(
                     tunnelIdToUse,
                     named: name,
-                    withTransport: transportConfig,
-                    autoConnect: autoConnect,
-                    onDemandRules: onDemandRules,
-                    connectivityCheck: connectivityCheck
+                    withTransport: transportConfig
                 )
                 self.lastTunnelId = tunnelIdToUse
                 DispatchQueue.main.async {
@@ -202,7 +201,7 @@ class OutlineVpn: NSObject {
         os_log("🛑 Disconnecting VPN with production implementation", log: logger, type: .info)
         
         Task {
-            await OutlineVpnProduction.shared.stopActiveVpn()
+            await OutlineVpn.shared.stopActiveVpn()
             DispatchQueue.main.async {
                 successCallback(["VPN disconnected successfully"])
             }
@@ -215,7 +214,7 @@ class OutlineVpn: NSObject {
         os_log("📊 Checking VPN connection status with production implementation", log: logger, type: .info)
         
         Task {
-            let isActive = await OutlineVpnProduction.shared.isActive(self.lastTunnelId)
+            let isActive = await OutlineVpn.shared.isActive(self.lastTunnelId)
             DispatchQueue.main.async {
                 callback([NSNull(), isActive])
             }
@@ -275,8 +274,124 @@ class OutlineVpn: NSObject {
         }
     }
     
-    // MARK: - Production VPN Helper Methods
-    // All production VPN operations are delegated to OutlineVpnProduction.
+    // MARK: - VPN Operations (migrated from Outline-Apps OutlineVpn)
+
+    // Registers a callback for VPN status changes.
+    func onVpnStatusChange(_ handler: @escaping (NEVPNStatus, String?) -> Void) {
+        self.vpnStatusHandler = handler
+        // Recreate observer with the latest handler to avoid multiple notifications
+        if let observer = statusObserver {
+            NotificationCenter.default.removeObserver(observer)
+            statusObserver = nil
+        }
+        statusObserver = NotificationCenter.default.addObserver(
+            forName: .NEVPNStatusDidChange,
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            guard let self = self else { return }
+            let status = (notification.object as? NEVPNConnection)?.status ?? .invalid
+            self.vpnStatusHandler?(status, self.lastTunnelId)
+        }
+    }
+
+    // Start the VPN by saving config to the App Group and bringing up the tunnel.
+    func start(_ tunnelId: String,
+               named name: String,
+               withTransport transportConfig: String) async throws {
+
+        var config: [String: Any] = [
+            "id": tunnelId,
+            "name": name,
+            "transport": transportConfig
+        ]
+
+        _ = saveVpnConfigToAppGroup(config)
+
+        let manager = try await loadOrCreateManager(named: name)
+        let proto = NETunnelProviderProtocol()
+        proto.providerBundleIdentifier = providerBundleIdentifier
+        proto.serverAddress = "localhost"
+        proto.providerConfiguration = ["id": tunnelId, "transport": transportConfig]
+
+        manager.protocolConfiguration = proto
+        manager.localizedDescription = name
+        manager.isEnabled = true
+
+        try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
+            manager.saveToPreferences { error in
+                if let error = error { cont.resume(throwing: error) }
+                else { cont.resume() }
+            }
+        }
+
+        // Reload to ensure the manager reflects saved preferences before starting.
+        try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
+            manager.loadFromPreferences { error in
+                if let error = error { cont.resume(throwing: error) }
+                else { cont.resume() }
+            }
+        }
+
+        // Start the tunnel; manager already has providerConfiguration with id/transport.
+        do {
+            try manager.connection.startVPNTunnel()
+        } catch {
+            throw error
+        }
+
+        self.lastTunnelId = tunnelId
+    }
+
+    // Stop any active VPN connection started by this app.
+    func stopActiveVpn() async {
+        let managers = (try? await loadManagers()) ?? []
+        for m in managers {
+            if m.connection.status == .connected || m.connection.status == .connecting || m.connection.status == .reasserting {
+                m.connection.stopVPNTunnel()
+            }
+        }
+    }
+
+    // Returns whether a VPN is currently connected (optionally for a given tunnelId).
+    func isActive(_ tunnelId: String?) async -> Bool {
+        let managers = (try? await loadManagers()) ?? []
+        for m in managers {
+            if m.connection.status == .connected {
+                return true
+            }
+        }
+        return false
+    }
+
+    // MARK: - Private helpers
+
+    private func loadManagers() async throws -> [NETunnelProviderManager] {
+        try await withCheckedThrowingContinuation { (cont: CheckedContinuation<[NETunnelProviderManager], Error>) in
+            NETunnelProviderManager.loadAllFromPreferences { managers, error in
+                if let error = error {
+                    cont.resume(throwing: error)
+                } else {
+                    cont.resume(returning: managers ?? [])
+                }
+            }
+        }
+    }
+
+    private func loadOrCreateManager(named name: String) async throws -> NETunnelProviderManager {
+        let managers = try await loadManagers()
+        if let existing = managers.first(where: { ($0.protocolConfiguration as? NETunnelProviderProtocol)?.providerBundleIdentifier == self.providerBundleIdentifier }) {
+            return existing
+        }
+        let manager = NETunnelProviderManager()
+        let proto = NETunnelProviderProtocol()
+        proto.providerBundleIdentifier = providerBundleIdentifier
+        proto.serverAddress = "localhost"
+        manager.protocolConfiguration = proto
+        manager.localizedDescription = name
+        manager.isEnabled = true
+        return manager
+    }
 }
 
 // MARK: - React Native Bridge
@@ -297,7 +412,7 @@ class OutlineVpnBridge: RCTEventEmitter {
 
     override func startObserving() {
         isObserving = true
-        OutlineVpnProduction.shared.onVpnStatusChange { [weak self] status, tunnelId in
+        OutlineVpn.shared.onVpnStatusChange { [weak self] status, tunnelId in
             guard let self = self, self.isObserving else { return }
             self.sendEvent(withName: "VPNStatusChanged", body: [
                 "status": self.statusString(status),
@@ -309,7 +424,7 @@ class OutlineVpnBridge: RCTEventEmitter {
     override func stopObserving() {
         isObserving = false
         // Remove observer by installing a no-op handler
-        OutlineVpnProduction.shared.onVpnStatusChange { _, _ in }
+        OutlineVpn.shared.onVpnStatusChange { _, _ in }
     }
 
     private func statusString(_ status: NEVPNStatus) -> String {

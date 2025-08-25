@@ -189,15 +189,11 @@ func getNetworkInterfaceAddresses() -> [String] {
   var interface = interfaces
   while interface != nil {
     if let addr = interface?.pointee.ifa_addr, addr.pointee.sa_family == UInt8(AF_INET) {
-      let data = withUnsafePointer(to: &UnsafePointer<sockaddr_in>(OpaquePointer(addr).assumingMemoryBound(to: sockaddr_in.self)).pointee) { (ptr) -> in_addr in
-        return ptr.sin_addr
+      let sa = UnsafeRawPointer(addr).assumingMemoryBound(to: sockaddr_in.self)
+      let ipString = withUnsafePointer(to: sa.pointee.sin_addr) { ptr in
+        String(cString: inet_ntoa(ptr.pointee))
       }
-      var cString = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-      var dataCopy = data
-      inet_ntop(AF_INET, &dataCopy, &cString, socklen_t(INET_ADDRSTRLEN))
-      if let ip = String(validatingUTF8: cString) {
-        addresses.append(ip)
-      }
+      addresses.append(ipString)
     }
     interface = interface?.pointee.ifa_next
   }

@@ -1906,7 +1906,7 @@ SPEC CHECKSUMS:
   React-logger: 7692258489bc7f1fc9b27f65eb0ddcd80ede1aa1
   React-Mapbuffer: e67b47b96890c68b3bf1277345e0bf3b43189ccb
   React-microtasksnativemodule: 678a11284092266b066e9d473ade17a4bf77d98f
-  react-native-outline-vpn: b0471d996df4c1f368269f8e699a7f72e4d9177e
+  react-native-outline-vpn: ded836341287f050a060e194563b5eea7a02c150
   react-native-safe-area-context: 63c9a6def15e6f6377e59cea51566148a2774d62
   react-native-webview: 5eb23986126d4f3318a5c941cede6b89433d16a0
   React-NativeModulesApple: 535d6b2d9634a3e62c61204784c690ea45c3d8e4
@@ -1942,6 +1942,6 @@ SPEC CHECKSUMS:
   SocketRocket: 03f7111df1a343b162bf5b06ead333be808e1e0a
   Yoga: c79665f74da3cc6ce3f464e4d38e2c34cb429bad
 
-PODFILE CHECKSUM: 558f012af80f4b586cac50d37dcd41fb3e34c902
+PODFILE CHECKSUM: eb1b9942b9fb980cac064e6b4809955d771574cb
 
 COCOAPODS: 1.16.2

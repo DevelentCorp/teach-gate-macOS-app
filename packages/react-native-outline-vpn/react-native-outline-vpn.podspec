@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   s.osx.source_files = "macos/**/*.{h,m,mm,swift}"
+  s.osx.exclude_files = "macos/OutlineVpnProduction.swift"
   
   s.dependency "React-Core"
   
