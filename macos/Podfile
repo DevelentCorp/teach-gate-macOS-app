@@ -73,6 +73,13 @@ target 'Teach Gate-macOS' do
   pod 'CocoaLumberjack/Swift'
 end
 
+target 'TeachGateVPN' do
+  platform :macos, '11.0'
+  pod 'CocoaLumberjack'
+  # Use static pods for app extensions
+  use_static_pods = true
+end
+
 
 # Combined post_install hook for both targets
 post_install do |installer|

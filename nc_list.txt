@@ -1,0 +1,10 @@
+Available network connection services in the current set (*=enabled):
+* (Disconnected)   B1066681-D804-4511-A8E4-9BC1FA03B021 VPN (com.wireguard.macos) "t1"                             [VPN:com.wireguard.macos]
+* (Disconnected)   2A440D4B-3AB0-4EB5-B397-8BBF0495CB5F VPN (com.wireguard.macos) "usa"                            [VPN:com.wireguard.macos]
+* (Disconnected)   EFD062E9-34F5-4DFE-8DB9-A02F7DEE73AC VPN (com.wireguard.macos) "vbom"                           [VPN:com.wireguard.macos]
+* (Disconnected)   F319E8AE-77CE-4263-929B-694E6693349A VPN (com.wireguard.macos) "macm1_wg0"                      [VPN:com.wireguard.macos]
+* (Disconnected)   96F9FEAA-50A9-4C18-A68C-EBE3826C075B VPN (com.teachgatedesk.develentcorp) "Teach Gate VPN"                 [VPN:com.teachgatedesk.develentcorp]
+* (Disconnected)   90667F55-1C0A-4C1D-A51D-C5D84D9BF106 VPN (com.wireguard.macos) "newyork"                        [VPN:com.wireguard.macos]
+* (Disconnected)   7755745A-506F-4636-B2C3-BCE425077C7A IPSec              "VPN"                            [IPSec]
+* (Disconnected)   7185E7F2-874E-4051-844B-DC5F0E0BA15D VPN (com.wireguard.macos) "d1"                             [VPN:com.wireguard.macos]
+* (Disconnected)   3BC4967F-8787-4209-8F45-07BBF47125A3 VPN (com.wireguard.macos) "london"                         [VPN:com.wireguard.macos]

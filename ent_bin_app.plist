@@ -1,0 +1,22 @@
+Executable=/Applications/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/MacOS/TeachGateVPN
+Identifier=com.teachgatedesk.develentcorp.TeachGateVPN
+Format=bundle with Mach-O thin (arm64)
+CodeDirectory v=20500 size=40023 flags=0x10000(runtime) hashes=1243+3 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=4efdcc9bf148489fc4d0fa88478c049275bf070e
+CandidateCDHashFull sha256=4efdcc9bf148489fc4d0fa88478c049275bf070eb80f061c4e677d48980dfbc7
+Hash choices=sha256
+CMSDigest=4efdcc9bf148489fc4d0fa88478c049275bf070eb80f061c4e677d48980dfbc7
+CMSDigestType=2
+CDHash=4efdcc9bf148489fc4d0fa88478c049275bf070e
+Signature size=4785
+Authority=Apple Development: Obed Sayyad (L68KR9DKYL)
+Authority=Apple Worldwide Developer Relations Certification Authority
+Authority=Apple Root CA
+Signed Time=26 Aug 2025 at 10:19:06 AM
+Info.plist entries=21
+TeamIdentifier=K83SWH8YJ2
+Runtime Version=15.5.0
+Sealed Resources version=2 rules=13 files=1
+Internal requirements count=1 size=204
+warning: Specifying ':' in the path is deprecated and will not work in a future release

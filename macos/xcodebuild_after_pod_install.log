@@ -1,0 +1,1340 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project "macos/Teach Gate.xcodeproj" -target "Teach Gate-macOS" -configuration Debug clean build -allowProvisioningUpdates
+
+ComputePackagePrebuildTargetDependencyGraph
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+error: Could not delete `/Users/obedsayyad/teach-gate-macOS-app/macos/build` because it was not created by the build system.
+    note: To mark this directory as deletable by the build system, run `xattr -w com.apple.xcode.CreatedByBuildSystem true /Users/obedsayyad/teach-gate-macOS-app/macos/build` when it is created.
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+warning: Building targets in manual order is deprecated - check "Parallelize build for command-line builds" in the project editor, or set DISABLE_MANUAL_TARGET_ORDER_BUILD_WARNING in any of the targets in the current build to suppress this warning
+note: Target dependency graph (2 targets)
+    Target 'Teach Gate-macOS' in project 'Teach Gate'
+        ➜ Explicit dependency on target 'TeachGateVPN' in project 'Teach Gate'
+    Target 'TeachGateVPN' in project 'Teach Gate' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+Build description signature: b27e61ac97722690f7b7e204bd64821b
+Build description path: /Users/obedsayyad/teach-gate-macOS-app/macos/build/XCBuildData/b27e61ac97722690f7b7e204bd64821b.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -o /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+
+CreateBuildDirectory /Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate.xcodeproj
+    builtin-create-build-directory /Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug
+
+CreateBuildDirectory /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate.xcodeproj
+    builtin-create-build-directory /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug
+
+ProcessXCFramework /Users/obedsayyad/teach-gate-macOS-app/packages/react-native-outline-vpn/Frameworks/macos/Tun2socks.xcframework /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Tun2socks.framework macos
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate.xcodeproj
+    builtin-process-xcframework --xcframework /Users/obedsayyad/teach-gate-macOS-app/packages/react-native-outline-vpn/Frameworks/macos/Tun2socks.xcframework --platform macos --target-path /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/MacOS (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/MacOS
+
+ProcessProductPackaging /Users/obedsayyad/Library/Developer/Xcode/UserData/Provisioning\ Profiles/430cd8ee-43a6-49d5-8b50-f0d8ccdaa24d.provisionprofile /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/embedded.provisionprofile (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-productPackagingUtility /Users/obedsayyad/Library/Developer/Xcode/UserData/Provisioning\ Profiles/430cd8ee-43a6-49d5-8b50-f0d8ccdaa24d.provisionprofile -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/embedded.provisionprofile
+
+ProcessProductPackaging /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/TeachGateVPN.entitlements /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Entitlements:
+    
+    {
+    "com.apple.application-identifier" = "K83SWH8YJ2.com.teachgatedesk.develentcorp.TeachGateVPN";
+    "com.apple.developer.networking.networkextension" =     (
+        "packet-tunnel-provider"
+    );
+    "com.apple.developer.team-identifier" = K83SWH8YJ2;
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.application-groups" =     (
+        "group.com.teachgatedesk.develentcorp"
+    );
+    "com.apple.security.files.bookmarks.app-scope" = 1;
+    "com.apple.security.files.user-selected.read-write" = 1;
+    "com.apple.security.get-task-allow" = 1;
+    "com.apple.security.network.client" = 1;
+    "com.apple.security.network.outgoing" = 1;
+    "com.apple.security.network.server" = 1;
+    "keychain-access-groups" =     (
+        "K83SWH8YJ2.com.teachgatedesk.develentcorp",
+        "K83SWH8YJ2.com.teachgatedesk.develentcorp.TeachGateVPN"
+    );
+}
+    
+    builtin-productPackagingUtility /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/TeachGateVPN.entitlements -entitlements -format xml -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent
+
+ProcessProductPackagingDER /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent.der (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /usr/bin/derq query -f xml -i /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent.der --raw
+
+ScanDependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o
+
+ScanDependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o
+
+ProcessInfoPlistFile /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/Info.plist (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/Info.plist -producttype com.apple.product-type.app-extension -expandbuildsettings -platform macosx -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/Info.plist
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftsourceinfo (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftsourceinfo /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.swiftmodule /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftmodule (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftmodule /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.swiftmodule
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.abi.json /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.abi.json (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.abi.json /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.abi.json
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.swiftdoc /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftdoc (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftdoc /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/x86_64-apple-macos.swiftdoc
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.abi.json /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.abi.json (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.abi.json /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.swiftdoc /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftdoc (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftdoc /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.swiftmodule /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftmodule (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftmodule /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/Project/x86_64-apple-macos.swiftsourceinfo /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftsourceinfo (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftsourceinfo /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.swiftmodule/Project/x86_64-apple-macos.swiftsourceinfo
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdarg-8WPEGHRJVG9LJTXH7U6X1JX32.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdarg-8WPEGHRJVG9LJTXH7U6X1JX32.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_fenv-9663OGKPHNJTYG6XY7UMUWJQ2.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_fenv-9663OGKPHNJTYG6XY7UMUWJQ2.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability_internal-2RL51K63MBZDNBAKMSQM9N20X.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability_internal-2RL51K63MBZDNBAKMSQM9N20X.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stddef-A1MDM6JOCJ39QWV6HIYT1J3IJ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stddef-A1MDM6JOCJ39QWV6HIYT1J3IJ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrauth-8TL6DL5BAHB9QETX9NDJ7F6FJ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrauth-8TL6DL5BAHB9QETX9NDJ7F6FJ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdbool-3T8Q2PYES4Y8RJF06ZHG6LA40.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdbool-3T8Q2PYES4Y8RJF06ZHG6LA40.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/TargetConditionals-3UINSBQXMXF56SM9XL6D4T22V.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/TargetConditionals-3UINSBQXMXF56SM9XL6D4T22V.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_iso646-8JYQNT2L4KRJ8JA588XKRZK8U.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_iso646-8JYQNT2L4KRJ8JA588XKRZK8U.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrcheck-B9RIBMUVCPIYFVFT2VXGYTX77.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrcheck-B9RIBMUVCPIYFVFT2VXGYTX77.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_float-7C6Y0YTO8NT7J3S382V9HRL87.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_float-7C6Y0YTO8NT7J3S382V9HRL87.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdbool-AH1H62XOLV07ZEPO0IUAW3G0O.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdbool-AH1H62XOLV07ZEPO0IUAW3G0O.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrauth-6VARAEGT1L8B7DVUHZJOJDF32.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrauth-6VARAEGT1L8B7DVUHZJOJDF32.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/TargetConditionals-15RDZKO1UDCS0FL4RAHHG0X49.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/TargetConditionals-15RDZKO1UDCS0FL4RAHHG0X49.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability_internal-702RLH0H694K8LPLEIQM931K4.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability_internal-702RLH0H694K8LPLEIQM931K4.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_iso646-9PRQTCXUT4BY2Q7IST2CDXGD.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_iso646-9PRQTCXUT4BY2Q7IST2CDXGD.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrcheck-64AT9RZU5XX87H4PBD1CKHWR4.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ptrcheck-64AT9RZU5XX87H4PBD1CKHWR4.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_float-EZMGQ0RZMWLC29AN43GAKNRPR.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_float-EZMGQ0RZMWLC29AN43GAKNRPR.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdarg-C89XCUBLC5Y48MYGR1O0UUZUZ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdarg-C89XCUBLC5Y48MYGR1O0UUZUZ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_fenv-3UAJWWIRCZ7JN2P09QNTC656Q.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_fenv-3UAJWWIRCZ7JN2P09QNTC656Q.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stddef-E9IOSPH0F30GA66KGYC3APJVH.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stddef-E9IOSPH0F30GA66KGYC3APJVH.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_float-4MOMMGFDSZVC3Y35KROP3810M.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_float-4MOMMGFDSZVC3Y35KROP3810M.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability-4YYGCGZ0I2FITOYJ8KO38JKRB.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability-4YYGCGZ0I2FITOYJ8KO38JKRB.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_float-AHHWXCBQKAL6KG9UTTQA3YOAF.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_float-AHHWXCBQKAL6KG9UTTQA3YOAF.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability-Q43UR9F4L94C32FQTDL3U5LD.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_availability-Q43UR9F4L94C32FQTDL3U5LD.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/AvailabilityMacros-51UFQA829D2KPQLYS4G9GSSB.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/AvailabilityMacros-51UFQA829D2KPQLYS4G9GSSB.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DarwinFoundation-A5PH531AVA75UFMKF9LAKXSE7.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DarwinFoundation-A5PH531AVA75UFMKF9LAKXSE7.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/AvailabilityMacros-9OVLFOYNJIH28TCA1SQ8W8AAN.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/AvailabilityMacros-9OVLFOYNJIH28TCA1SQ8W8AAN.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DarwinFoundation-8QT0DBBQRTAY3NRVZJ2CDLK8I.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DarwinFoundation-8QT0DBBQRTAY3NRVZJ2CDLK8I.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_sys_select-44U2R954EYSL4YCZGAVB8H3ZC.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_sys_select-44U2R954EYSL4YCZGAVB8H3ZC.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/mach-3O2PTL96EWOVFKE8X65B5KF5A.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/mach-3O2PTL96EWOVFKE8X65B5KF5A.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/netinet_in-7HSGOB5GMYZ1F9SDESPLH8ENY.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/netinet_in-7HSGOB5GMYZ1F9SDESPLH8ENY.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_math-E6VEWU36CDDDP86RT4QX1FSLJ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_math-E6VEWU36CDDDP86RT4QX1FSLJ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_time-8U1UCC8QRT7SDMU0RTEDLL3LP.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_time-8U1UCC8QRT7SDMU0RTEDLL3LP.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/uuid-CA58TIIMC7KXYYBGO0UM19VP8.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/uuid-CA58TIIMC7KXYYBGO0UM19VP8.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/alloca-3U4ALS6ESWW3FD8W0UFJSU6MK.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/alloca-3U4ALS6ESWW3FD8W0UFJSU6MK.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_limits-45OX6EXRWLWPMXS7JIKK206QU.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_limits-45OX6EXRWLWPMXS7JIKK206QU.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_complex-1R9QC3SYSRWCZN9QZZ73IRQCN.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_complex-1R9QC3SYSRWCZN9QZZ73IRQCN.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_assert-5LEP9CREWR1SVIDKUFT7RYI7Z.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_assert-5LEP9CREWR1SVIDKUFT7RYI7Z.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdint-1OZH3JG7PFA62G3ZWMHYNYHRR.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdint-1OZH3JG7PFA62G3ZWMHYNYHRR.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_math-57F4JMJ4MO18UA5YZGIDJZQSF.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_math-57F4JMJ4MO18UA5YZGIDJZQSF.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/mach-EKZ58WTK98ZRPWRXHYSMLNK0I.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/mach-EKZ58WTK98ZRPWRXHYSMLNK0I.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/alloca-96SLUPZXBWQKKAECY6D32AXBQ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/alloca-96SLUPZXBWQKKAECY6D32AXBQ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_limits-AOHJDRXW9H24PTML0VN64MZIV.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_limits-AOHJDRXW9H24PTML0VN64MZIV.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/netinet_in-4PE788BU1V3YYILILM9XZGYKH.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/netinet_in-4PE788BU1V3YYILILM9XZGYKH.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_strings-DC7QBW0VTAY4ME3GE96EKEW1.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_strings-DC7QBW0VTAY4ME3GE96EKEW1.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_setjmp-6EGJ6BMTWWPK5DFIT3O4EJRR.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_setjmp-6EGJ6BMTWWPK5DFIT3O4EJRR.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_complex-3CFLECLEB84450Y6YXKK7VFME.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_complex-3CFLECLEB84450Y6YXKK7VFME.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_tgmath-52RXC05WD3RS3HT78S9UKGSUI.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_tgmath-52RXC05WD3RS3HT78S9UKGSUI.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdint-6MHRXKICUTU7B4J3XJ46RBQ43.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdint-6MHRXKICUTU7B4J3XJ46RBQ43.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_limits-9NXFETH0YD24HJ8P4QWLQ9JB4.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_limits-9NXFETH0YD24HJ8P4QWLQ9JB4.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/uuid-BWK2IG142QRFINZFNEW5GEP9D.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/uuid-BWK2IG142QRFINZFNEW5GEP9D.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_time-BB4QEJ2E50DAZDJM75CR3L9AX.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_time-BB4QEJ2E50DAZDJM75CR3L9AX.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_errno-42WXZIVM3I92Z0PQVY63HNYFF.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_errno-42WXZIVM3I92Z0PQVY63HNYFF.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_limits-41XCR9XY85JMSB3YHD4DTBYJR.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_limits-41XCR9XY85JMSB3YHD4DTBYJR.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_sys_select-BGZ0ZTO9TN9IW61ENKYFKC8YB.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_sys_select-BGZ0ZTO9TN9IW61ENKYFKC8YB.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/runetype-7YZ59MTTS7S01SF2OAXPTNEKF.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/runetype-7YZ59MTTS7S01SF2OAXPTNEKF.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_errno-CX25MY4YG39CBB7IIOT2P8Z33.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_errno-CX25MY4YG39CBB7IIOT2P8Z33.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_tgmath-DBCX1GXNDVG1G9809C4P70Y3Q.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_tgmath-DBCX1GXNDVG1G9809C4P70Y3Q.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_tgmath-4UXOOGJ6RYKCJR21TR6BXWQCG.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_tgmath-4UXOOGJ6RYKCJR21TR6BXWQCG.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_locale-XMIMJM7Q66D981WNWLE3AZJ0.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_locale-XMIMJM7Q66D981WNWLE3AZJ0.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_assert-7IS8QL70Q9MF14K1RTV0552D6.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_assert-7IS8QL70Q9MF14K1RTV0552D6.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdint-1ZP0XV999QUXSMCFZHW3FFIU0.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdint-1ZP0XV999QUXSMCFZHW3FFIU0.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdint-D9KLWCZZJB4FYW27SY13D1CSD.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdint-D9KLWCZZJB4FYW27SY13D1CSD.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_useconds_t-28OX105SGON7OD1GJB54S1XIE.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_useconds_t-28OX105SGON7OD1GJB54S1XIE.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_setjmp-8HPL4N6JCPGCPH5D6IWDLTVY2.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_setjmp-8HPL4N6JCPGCPH5D6IWDLTVY2.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_useconds_t-B0NT5Q5N556HUEXPB9HHQ53R2.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_useconds_t-B0NT5Q5N556HUEXPB9HHQ53R2.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_locale-4N62IB1A5BFHOEAQHJ65LJKAV.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_locale-4N62IB1A5BFHOEAQHJ65LJKAV.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_strings-964XTYMTK4LDTO4D2Q2A7FNLI.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_strings-964XTYMTK4LDTO4D2Q2A7FNLI.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_ctype-BYF6B66BJANW8P6GKR7KEXGXQ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_ctype-BYF6B66BJANW8P6GKR7KEXGXQ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_tgmath-6CXMXZEUECJSA3GX76JQMQX6O.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_tgmath-6CXMXZEUECJSA3GX76JQMQX6O.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/runetype-55UQOX6T5718U4IFD31O6LSP6.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/runetype-55UQOX6T5718U4IFD31O6LSP6.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/xlocale-7VW6M9ZNVFCD48MUQW98HA13I.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/xlocale-7VW6M9ZNVFCD48MUQW98HA13I.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_types-CO3ZDEAUE9KXYGW7NX1KXBSII.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_types-CO3ZDEAUE9KXYGW7NX1KXBSII.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_inttypes-BAEVSMDTEMP4VRIX0WS8P6T7L.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_inttypes-BAEVSMDTEMP4VRIX0WS8P6T7L.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_inttypes-19UBZD755BAJEGTRX65H5Q2LZ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_inttypes-19UBZD755BAJEGTRX65H5Q2LZ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdatomic-3ZH12IOBSG01P9X3MG9V88QZP.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdatomic-3ZH12IOBSG01P9X3MG9V88QZP.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_types-AGCSSN1QARZNOOIV1U9XFE5JY.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_types-AGCSSN1QARZNOOIV1U9XFE5JY.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdatomic-84MDS7E3WYPHG9U6LS19GPWU8.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_stdatomic-84MDS7E3WYPHG9U6LS19GPWU8.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/xlocale-5B56RT96MV258IP22JW4WJX2X.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/xlocale-5B56RT96MV258IP22JW4WJX2X.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_ctype-DWTL7342HG3BF0NFRA7NKVZ3A.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_ctype-DWTL7342HG3BF0NFRA7NKVZ3A.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/__wctype-D03AM49QNGJPL8PELXFJQYDNE.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/__wctype-D03AM49QNGJPL8PELXFJQYDNE.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_inttypes-DOC4Q4YPRDHJUBXTYNLU5KDT9.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_inttypes-DOC4Q4YPRDHJUBXTYNLU5KDT9.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_string-9FQZILSYOOHZRDHPX67ERZTM7.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_string-9FQZILSYOOHZRDHPX67ERZTM7.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_resource-5OJFJXLMJYG4XNCHE1P41JCLA.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_resource-5OJFJXLMJYG4XNCHE1P41JCLA.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/nl_types-AP9WXPNVE1O02QY2RKNX8X8S7.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/nl_types-AP9WXPNVE1O02QY2RKNX8X8S7.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_signal-1KPZHBLAWFQ9IZCQJFA0WATDN.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_signal-1KPZHBLAWFQ9IZCQJFA0WATDN.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdio-8VBTOD34QTGNCZ8EZUO7PIXPG.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdio-8VBTOD34QTGNCZ8EZUO7PIXPG.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_inttypes-DOUEP37PGDKZ533E5E2BGVCBB.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_inttypes-DOUEP37PGDKZ533E5E2BGVCBB.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/nl_types-7B7DJKR7E68YZ7MSMTE0FCXV5.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/nl_types-7B7DJKR7E68YZ7MSMTE0FCXV5.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/__wctype-7BJO0MCS5GJZB0D5FOVSWKJTQ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/__wctype-7BJO0MCS5GJZB0D5FOVSWKJTQ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdio-7ECCD3ZC4DLNSXOJO8TH6AGW1.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdio-7ECCD3ZC4DLNSXOJO8TH6AGW1.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_signal-9YXNOL9IX3QQI9Z1P0XR33IOK.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_signal-9YXNOL9IX3QQI9Z1P0XR33IOK.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_time-677ILMWB1CVBOW8JCD0PCJXRO.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_time-677ILMWB1CVBOW8JCD0PCJXRO.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_string-CIUZG6EWXA3UWZ8D7JCFRARTY.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_string-CIUZG6EWXA3UWZ8D7JCFRARTY.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_time-EBHHHKABQGE3JQCX8YVDUQ27V.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_time-EBHHHKABQGE3JQCX8YVDUQ27V.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libDER-81XZ5X8DB042YRLCQO36PH6M6.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libDER-81XZ5X8DB042YRLCQO36PH6M6.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wctype-6FV16MKSU4NAB4KNNGELFME6T.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wctype-6FV16MKSU4NAB4KNNGELFME6T.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_resource-8ATH7CCBGFYI4M3GC31L0ON4Q.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_resource-8ATH7CCBGFYI4M3GC31L0ON4Q.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wctype-BZUT2B65MI7K88HOCSDXQ3ZVB.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wctype-BZUT2B65MI7K88HOCSDXQ3ZVB.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_wait-BNYBV2RW2E1OFNQEQI475FE3T.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_wait-BNYBV2RW2E1OFNQEQI475FE3T.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libDER-9EFYWXSN6BY65VPXH4BDD706B.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libDER-9EFYWXSN6BY65VPXH4BDD706B.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_select-1GSO6XCWF3DU2EHJQ4QZ8BTPK.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_select-1GSO6XCWF3DU2EHJQ4QZ8BTPK.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/pthread-9BUDEALF1WODACM07NYUU9OJJ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/pthread-9BUDEALF1WODACM07NYUU9OJJ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wchar-3DUDBE03JHIZ3V9R5KNA5XNGD.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wchar-3DUDBE03JHIZ3V9R5KNA5XNGD.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/gethostuuid-1X55O9552VQIQBZKARNUJP8VE.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/gethostuuid-1X55O9552VQIQBZKARNUJP8VE.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wchar-C25OBWKOFGFN08ORIU62PSOHL.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_wchar-C25OBWKOFGFN08ORIU62PSOHL.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_select-2K09NY05A0H3RQE888A05JT9A.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_select-2K09NY05A0H3RQE888A05JT9A.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/gethostuuid-1SOTBD8OWBWLH87EI7L51T8OQ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/gethostuuid-1SOTBD8OWBWLH87EI7L51T8OQ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/pthread-7RU6EG832WUUE3NCHSN7P0FT1.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/pthread-7RU6EG832WUUE3NCHSN7P0FT1.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdlib-2WWWT5GOLZNYJVG6UK2LL2RSP.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdlib-2WWWT5GOLZNYJVG6UK2LL2RSP.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_wait-CSBNEN4EAKWON6MPGI1CMTTR7.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/sys_wait-CSBNEN4EAKWON6MPGI1CMTTR7.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/unistd-CS9W6CUWAX5CB63OUMHAGU9QP.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/unistd-CS9W6CUWAX5CB63OUMHAGU9QP.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/unistd-D15TTLKQG7U3NLRVN9MBY9M67.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/unistd-D15TTLKQG7U3NLRVN9MBY9M67.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdlib-61S41LRCGPY5FFWGBMFDNBTO1.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_stdlib-61S41LRCGPY5FFWGBMFDNBTO1.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_intrinsics-BHCZYTH7BZVSOPIV9J55RMTXV.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/_Builtin_intrinsics-BHCZYTH7BZVSOPIV9J55RMTXV.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Darwin-EUHB0MGSMRXTW4DD9JLGR1D80.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Darwin-EUHB0MGSMRXTW4DD9JLGR1D80.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Darwin-E34C17MWEW3D7XELZ2HEWZH9O.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Darwin-E34C17MWEW3D7XELZ2HEWZH9O.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/launch-I2PEGAY6GQRGOZV6R5I4YB38.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/launch-I2PEGAY6GQRGOZV6R5I4YB38.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/MachO-1EXNGPKRGWYSJYY7IUG0DPHPR.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/MachO-1EXNGPKRGWYSJYY7IUG0DPHPR.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libkern-E5D6FM69D1U0147LI2ZGZEWAQ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libkern-E5D6FM69D1U0147LI2ZGZEWAQ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/launch-4FDEIJPB8GA65GL697SRBJBF6.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/launch-4FDEIJPB8GA65GL697SRBJBF6.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/MachO-C2QHLXZBJ42A4GNQBT1A1M60W.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/MachO-C2QHLXZBJ42A4GNQBT1A1M60W.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libkern-CP63IJJF02DFI48KAH6TN05ZW.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/libkern-CP63IJJF02DFI48KAH6TN05ZW.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ObjectiveC-634JEBVB4DNUJWC1Y8KIR3H0E.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ObjectiveC-634JEBVB4DNUJWC1Y8KIR3H0E.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ObjectiveC-37E1AOULLO747ZHQFIQZ3GEF5.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/ObjectiveC-37E1AOULLO747ZHQFIQZ3GEF5.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_object-2Z91DLXEJ9TXBAQZTBI4T3YM6.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_object-2Z91DLXEJ9TXBAQZTBI4T3YM6.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_workgroup-F498ONRX0EDX56KG0ED76A9T4.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_workgroup-F498ONRX0EDX56KG0ED76A9T4.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_object-5BNNE5B16CI3TJC3G7H4SARUT.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_object-5BNNE5B16CI3TJC3G7H4SARUT.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Dispatch-7M20W455T47N6DBLMC9B1UYXI.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Dispatch-7M20W455T47N6DBLMC9B1UYXI.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_workgroup-E6QH0GYVHQO09G9BO43PPCCCG.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/os_workgroup-E6QH0GYVHQO09G9BO43PPCCCG.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Dispatch-8CT8T1G86IN3PRGWOWV07HIOZ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Dispatch-8CT8T1G86IN3PRGWOWV07HIOZ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreFoundation-AEBPY7USU1NXXUQ8NP36QPJ83.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreFoundation-AEBPY7USU1NXXUQ8NP36QPJ83.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/dnssd-DAUNHKUZVGFPO7DXU9ZOIU27I.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/dnssd-DAUNHKUZVGFPO7DXU9ZOIU27I.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/XPC-5KFUXHD5CA04JVLCGV3AN9EH2.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/XPC-5KFUXHD5CA04JVLCGV3AN9EH2.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/XPC-D72NKHVEBGH2G0SGHRB66TVSY.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/XPC-D72NKHVEBGH2G0SGHRB66TVSY.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreFoundation-74LK9HMSM80OO6G8CNXLD7QII.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreFoundation-74LK9HMSM80OO6G8CNXLD7QII.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/dnssd-651J0INYRB17SQ5M07LMFFYZN.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/dnssd-651J0INYRB17SQ5M07LMFFYZN.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Security-1C99847H1S2MPBQQLDHSWR273.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Security-1C99847H1S2MPBQQLDHSWR273.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CFNetwork-2GJHY6CBN89QULSM7SRBQX1JE.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CFNetwork-2GJHY6CBN89QULSM7SRBQX1JE.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/IOKit-6XJKZ8QCI5SBFQ35206NB8TXH.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/IOKit-6XJKZ8QCI5SBFQ35206NB8TXH.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Security-9U44OUH20NRUO4M35F6QOMPCV.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Security-9U44OUH20NRUO4M35F6QOMPCV.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/IOKit-9J3L2KBCF9U9247U83VII9958.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/IOKit-9J3L2KBCF9U9247U83VII9958.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CFNetwork-7YIWMV2YTNWET5RGZLMD0W0O4.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CFNetwork-7YIWMV2YTNWET5RGZLMD0W0O4.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreGraphics-3HCI079DEDR0AAGTAL3FZLDK9.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreGraphics-3HCI079DEDR0AAGTAL3FZLDK9.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DiskArbitration-4LWIQBRI08YBZ9UDHT6U1FC6Y.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DiskArbitration-4LWIQBRI08YBZ9UDHT6U1FC6Y.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreServices-KYYCYVAHMXQ3EFWZFXAGOZS7.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreServices-KYYCYVAHMXQ3EFWZFXAGOZS7.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreGraphics-2CBBDT4U6UCXVWRT0JBT9VTV0.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreGraphics-2CBBDT4U6UCXVWRT0JBT9VTV0.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DiskArbitration-1CS6JSDFH0OMLG00BL7TOHZT8.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/DiskArbitration-1CS6JSDFH0OMLG00BL7TOHZT8.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreServices-L8MQLY8QXA35YVGCVE1JHA19.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/CoreServices-L8MQLY8QXA35YVGCVE1JHA19.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Foundation-AABFIO6W17FJJRPPTSQAQJKTL.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Foundation-AABFIO6W17FJJRPPTSQAQJKTL.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Foundation-1L4X4K8KAHHRQ7EB3EVEVC0HJ.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Foundation-1L4X4K8KAHHRQ7EB3EVEVC0HJ.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Tun2socks-CXVQ28IQ0SVHWPZMMDIMJWFBA.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Tun2socks-CXVQ28IQ0SVHWPZMMDIMJWFBA.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Network-5VIWL09X428QXIXBR61A46A5L.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Network-5VIWL09X428QXIXBR61A46A5L.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Network-OCH6X84D3UD6OUYF2UIQ9TW2.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Network-OCH6X84D3UD6OUYF2UIQ9TW2.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Tun2socks-EEUUHSDCFC9QBBT2BVO9ZW0M9.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/Tun2socks-EEUUHSDCFC9QBBT2BVO9ZW0M9.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/NetworkExtension-3TK5KB9AKBR9EW7151D7NT8ZI.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/NetworkExtension-3TK5KB9AKBR9EW7151D7NT8ZI.scan
+
+PrecompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/NetworkExtension-1QNMZ2HXS028AJ2KE8UCLJRMS.scan
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-precompileModule /Users/obedsayyad/teach-gate-macOS-app/macos/build/ExplicitPrecompiledModules/NetworkExtension-1QNMZ2HXS028AJ2KE8UCLJRMS.scan
+
+CompileC /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:249:30: warning: 'NWPath' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  249 | - (void)handleNetworkChange:(NWPath *)newDefaultPath {
+      |                              ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:52:12: note: 'NWPath' has been explicitly marked deprecated here
+   52 | @interface NWPath : NSObject
+      |            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:137:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  137 |     return startDone([SwiftBridge newInvalidConfigOutlineErrorWithMessage:@"no config specified"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:641:1: note: class method 'newInvalidConfigOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  641 | + (id _Nullable)newInvalidConfigOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:143:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  143 |     return startDone([SwiftBridge newInternalOutlineErrorWithMessage:@"no tunnel ID specified"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:642:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  642 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:149:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  149 |     return startDone([SwiftBridge newInvalidConfigOutlineErrorWithMessage:@"config is not a String"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:641:1: note: class method 'newInvalidConfigOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  641 | + (id _Nullable)newInvalidConfigOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:173:32: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  173 |               return startDone([SwiftBridge newOutlineErrorFromNsError:error]);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:643:1: note: class method 'newOutlineErrorFromNsError:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  643 | + (id _Nullable)newOutlineErrorFromNsError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:238:3: warning: 'NWPath' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  238 |   NWPath *lastPath = change[NSKeyValueChangeOldKey];
+      |   ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:52:12: note: 'NWPath' has been explicitly marked deprecated here
+   52 | @interface NWPath : NSObject
+      |            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:239:55: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  239 |   if (lastPath == nil || [lastPath isEqualToPath:self.defaultPath] ||
+      |                                                       ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:239:36: warning: 'isEqualToPath:' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_is_equal` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  239 |   if (lastPath == nil || [lastPath isEqualToPath:self.defaultPath] ||
+      |                                    ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:83:1: note: 'isEqualToPath:' has been explicitly marked deprecated here
+   83 | - (BOOL)isEqualToPath:(NWPath *)path
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:240:50: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  240 |       [lastPath.description isEqualToString:self.defaultPath.description]) {
+      |                                                  ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:245:36: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  245 |     [self handleNetworkChange:self.defaultPath];
+      |                                    ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:251:22: warning: 'status' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_get_status` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  251 |   if (newDefaultPath.status == NWPathStatusSatisfied) {
+      |                      ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:58:46: note: 'status' has been explicitly marked deprecated here
+   58 | @property (nonatomic, readonly) NWPathStatus status
+      |                                              ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:251:32:
+ warning: 'NWPathStatusSatisfied' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_status_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  251 |   if (newDefaultPath.status == NWPathStatusSatisfied) {
+      |                                ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:30:28: note: 'NWPathStatus' has been explicitly marked deprecated here
+   30 | typedef NS_ENUM(NSInteger, NWPathStatus) {
+      |                            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:357:12: warning: incompatible pointer types returning 'SwiftBridge * _Nullable' from a function with result type 'NSError *' [-Wincompatible-pointer-types]
+  357 |     return [SwiftBridge newInternalOutlineErrorWithMessage:@"Tun2socks connect API not available"];
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:642:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  642 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:364:12: warning: incompatible pointer types returning 'SwiftBridge * _Nullable' from a function with result type 'NSError *' [-Wincompatible-pointer-types]
+  364 |     return [SwiftBridge newInternalOutlineErrorWithMessage:@"tun2socks failed to return a tunnel"];
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:642:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  642 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+14 warnings generated.
+
+CompileC /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/PacketTunnelProvider-2f7a9d0c22b5096e080fcb0635ab42a3.o
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:249:30: warning: 'NWPath' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  249 | - (void)handleNetworkChange:(NWPath *)newDefaultPath {
+      |                              ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:52:12: note: 'NWPath' has been explicitly marked deprecated here
+   52 | @interface NWPath : NSObject
+      |            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:137:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  137 |     return startDone([SwiftBridge newInvalidConfigOutlineErrorWithMessage:@"no config specified"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:313:1: note: class method 'newInvalidConfigOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  313 | + (id _Nullable)newInvalidConfigOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:143:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  143 |     return startDone([SwiftBridge newInternalOutlineErrorWithMessage:@"no tunnel ID specified"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:314:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  314 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:149:22: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  149 |     return startDone([SwiftBridge newInvalidConfigOutlineErrorWithMessage:@"config is not a String"]);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:313:1: note: class method 'newInvalidConfigOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  313 | + (id _Nullable)newInvalidConfigOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:173:32: warning: incompatible pointer types passing 'SwiftBridge * _Nullable' to parameter of type 'NSError *' [-Wincompatible-pointer-types]
+  173 |               return startDone([SwiftBridge newOutlineErrorFromNsError:error]);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:315:1: note: class method 'newOutlineErrorFromNsError:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  315 | + (id _Nullable)newOutlineErrorFromNsError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:238:3: warning: 'NWPath' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  238 |   NWPath *lastPath = change[NSKeyValueChangeOldKey];
+      |   ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:52:12: note: 'NWPath' has been explicitly marked deprecated here
+   52 | @interface NWPath : NSObject
+      |            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:239:55: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  239 |   if (lastPath == nil || [lastPath isEqualToPath:self.defaultPath] ||
+      |                                                       ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:239:36: warning: 'isEqualToPath:' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_is_equal` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  239 |   if (lastPath == nil || [lastPath isEqualToPath:self.defaultPath] ||
+      |                                    ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:83:1: note: 'isEqualToPath:' has been explicitly marked deprecated here
+   83 | - (BOOL)isEqualToPath:(NWPath *)path
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:240:50: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  240 |       [lastPath.description isEqualToString:self.defaultPath.description]) {
+      |                                                  ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:245:36: warning: 'defaultPath' is deprecated: first deprecated in macOS 15.0 - Use nw_path_monitor_t in Network framework instead [-Wdeprecated-declarations]
+  245 |     [self handleNetworkChange:self.defaultPath];
+      |                                    ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEProvider.h:155:40: note: 'defaultPath' has been explicitly marked deprecated here
+  155 | @property (readonly, nullable) NWPath *defaultPath API_DEPRECATED("Use nw_path_monitor_t in Network framework instead", macos(10.11, 15.0), ios(9.0, 18.0), tvos(17.0, 18.0), visionos(1.0, 2.0)) API_UNAVAILABLE(watchos);
+      |                                        ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:251:22: warning: 'status' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_get_status` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  251 |   if (newDefaultPath.status == NWPathStatusSatisfied) {
+      |                      ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:58:46: note: 'status' has been explicitly marked deprecated here
+   58 | @prope
+rty (nonatomic, readonly) NWPathStatus status
+      |                                              ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:251:32: warning: 'NWPathStatusSatisfied' is deprecated: first deprecated in macOS 15.0 - Use `nw_path_status_t` in Network framework instead, see deprecation notice in <NetworkExtension/NWPath.h> [-Wdeprecated-declarations]
+  251 |   if (newDefaultPath.status == NWPathStatusSatisfied) {
+      |                                ^
+In module 'NetworkExtension' imported from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.h:18:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NWPath.h:30:28: note: 'NWPathStatus' has been explicitly marked deprecated here
+   30 | typedef NS_ENUM(NSInteger, NWPathStatus) {
+      |                            ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:357:12: warning: incompatible pointer types returning 'SwiftBridge * _Nullable' from a function with result type 'NSError *' [-Wincompatible-pointer-types]
+  357 |     return [SwiftBridge newInternalOutlineErrorWithMessage:@"Tun2socks connect API not available"];
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:314:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  314 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+/Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:364:12: warning: incompatible pointer types returning 'SwiftBridge * _Nullable' from a function with result type 'NSError *' [-Wincompatible-pointer-types]
+  364 |     return [SwiftBridge newInternalOutlineErrorWithMessage:@"tun2socks failed to return a tunnel"];
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m:17:
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/TeachGateVPN-Swift.h:314:1: note: class method 'newInternalOutlineErrorWithMessage:' is assumed to return an instance of its receiver type ('SwiftBridge * _Nullable')
+  314 | + (id _Nullable)newInternalOutlineErrorWithMessage:(NSString * _Nonnull)message SWIFT_WARN_UNUSED_RESULT;
+      | ^
+14 warnings generated.
+
+Ld /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/Binary/TeachGateVPN normal x86_64 (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-macos15.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug -L/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/usr/lib/swift -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -F/Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug -F/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug -filelist /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks -Xlinker -object_path_lto -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN_dependency_info.dat -fobjc-arc -fobjc-link-runtime -fapplication-extension -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.swiftmodule -ObjC -framework NetworkExtension -framework Tun2socks -Xlinker -no_adhoc_codesign -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/Binary/TeachGateVPN
+
+Ld /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/Binary/TeachGateVPN normal arm64 (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug -L/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/usr/lib/swift -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -F/Users/obedsayyad/teach-gate-macOS-app/macos/build/EagerLinkingTBDs/Debug -F/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug -filelist /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks -Xlinker -object_path_lto -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN_dependency_info.dat -fobjc-arc -fobjc-link-runtime -fapplication-extension -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.swiftmodule -ObjC -framework NetworkExtension -framework Tun2socks -Xlinker -no_adhoc_codesign -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/Binary/TeachGateVPN
+
+CreateUniversalBinary /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/MacOS/TeachGateVPN normal arm64\ x86_64 (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/Binary/TeachGateVPN /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/Binary/TeachGateVPN -output /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/MacOS/TeachGateVPN
+
+ExtractAppIntentsMetadata (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name TeachGateVPN --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk --xcode-version 16F6 --platform-family macOS --deployment-target 15.0 --bundle-identifier com.teachgatedesk.develentcorp.TeachGateVPN --output /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/Resources --target-triple arm64-apple-macos15.0 --target-triple x86_64-apple-macos15.0 --binary-file /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex/Contents/MacOS/TeachGateVPN --dependency-file /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN_dependency_info.dat --dependency-file /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN_dependency_info.dat --stringsdata-file /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.SwiftFileList --source-file-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.SwiftFileList --metadata-file-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.DependencyMetadataFileList --static-metadata-file-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.DependencyStaticMetadataFileList --swift-const-vals-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/arm64/TeachGateVPN.SwiftConstValuesFileList --swift-const-vals-list /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/Objects-normal/x86_64/TeachGateVPN.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-08-26 09:36:17.339 appintentsmetadataprocessor[10145:3755522] Starting appintentsmetadataprocessor export
+2025-08-26 09:36:17.341 appintentsmetadataprocessor[10145:3755522] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Signing Identity:     "Apple Development: Obed Sayyad (L68KR9DKYL)"
+    Provisioning Profile: "Mac Team Provisioning Profile: com.teachgatedesk.develentcorp.TeachGateVPN"
+                          (430cd8ee-43a6-49d5-8b50-f0d8ccdaa24d)
+    
+    /usr/bin/codesign --force --sign 4628374751363885AE08EEF47AA13EAE9FAA6F14 -o runtime --entitlements /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/TeachGateVPN.build/TeachGateVPN.appex.xcent --timestamp\=none --generate-entitlement-der /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex
+
+RegisterExecutionPolicyException /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-RegisterExecutionPolicyException /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex
+
+Touch /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /usr/bin/touch -c /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/TeachGateVPN.appex
+
+warning: ONLY_ACTIVE_ARCH=YES requested with multiple ARCHS and no active architecture could be computed; building for all applicable architectures (in target 'Teach Gate-macOS' from project 'Teach Gate')
+warning: Run script build phase 'Bundle React Native code and images' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'Teach Gate-macOS' from project 'Teach Gate')
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/PlugIns (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/PlugIns
+
+MkDir /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/MacOS (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/MacOS
+
+ProcessProductPackaging /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/Teach\ Gate-macOS.entitlements /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Entitlements:
+    
+    {
+    "com.apple.application-identifier" = "K83SWH8YJ2.com.teachgatedesk.develentcorp";
+    "com.apple.developer.networking.networkextension" =     (
+        "packet-tunnel-provider"
+    );
+    "com.apple.developer.team-identifier" = K83SWH8YJ2;
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.application-groups" =     (
+        "group.com.teachgatedesk.develentcorp"
+    );
+    "com.apple.security.get-task-allow" = 1;
+    "com.apple.security.network.client" = 1;
+    "com.apple.security.network.server" = 1;
+}
+    
+    builtin-productPackagingUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/Teach\ Gate-macOS.entitlements -entitlements -format xml -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent
+
+ProcessProductPackaging /Users/obedsayyad/Library/Developer/Xcode/UserData/Provisioning\ Profiles/0f90fb2e-854a-4260-b478-ec489ee479f9.provisionprofile /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/embedded.provisionprofile (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-productPackagingUtility /Users/obedsayyad/Library/Developer/Xcode/UserData/Provisioning\ Profiles/0f90fb2e-854a-4260-b478-ec489ee479f9.provisionprofile -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/embedded.provisionprofile
+
+ProcessProductPackagingDER /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent.der (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /usr/bin/derq query -f xml -i /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Teach\ Gate.app.xcent.der --raw
+
+PhaseScriptExecution [CP]\ Check\ Pods\ Manifest.lock /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Script-CE88090B881818ADC55A2C67.sh (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/sh -c /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\\\ Gate.build/Debug/Teach\\\ Gate-macOS.build/Script-CE88090B881818ADC55A2C67.sh
+
+CompileC /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/AppDelegate.o /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/AppDelegate.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/Teach Gate-macOS.build/Objects-normal/x86_64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -Wno-comma -Wno-shorten-64-to-32 @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/af3fcb34312c57c0f52879cdce924b91-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/AppDelegate.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/AppDelegate.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/AppDelegate.mm -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/AppDelegate.o
+
+CompileC /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/AppDelegate.o /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/AppDelegate.mm normal arm64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/Teach Gate-macOS.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -Wno-comma -Wno-shorten-64-to-32 @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/AppDelegate.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/AppDelegate.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/AppDelegate.mm -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/AppDelegate.o
+
+ScanDependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/main.o /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/Teach Gate-macOS.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/main.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/main.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/main.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/x86_64/main.o
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+
+ScanDependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/main.o /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/main.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/Teach Gate-macOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/main.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/com.apple.DeveloperTools/16.4-16F6/Xcode/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/var/folders/lg/8zjgbnq53mg76bgrmj7fyk6r0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/main.d --serialize-diagnostics /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/main.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/main.m -o /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Objects-normal/arm64/main.o
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/CocoaLumberjack/CocoaLumberjack.modulemap' not found (in target 'Teach Gate-macOS' from project 'Teach Gate')
+
+CpResource /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources/PrivacyInfo.xcprivacy /Users/obedsayyad/teach-gate-macOS-app/macos/PrivacyInfo.xcprivacy (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/obedsayyad/teach-gate-macOS-app/macos/PrivacyInfo.xcprivacy /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources
+
+CompileAssetCatalogVariant thinned /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/Assets.xcassets (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/Assets.xcassets --compile /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 11.0 --platform macosx
+/* com.apple.actool.compilation-results */
+/Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach Gate.build/Debug/Teach Gate-macOS.build/assetcatalog_generated_info.plist_thinned
+
+
+LinkStoryboards (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module Teach_Gate --target-device mac --minimum-deployment-target 11.0 --output-format human-readable-text --link /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/Base.lproj/Main.storyboardc
+
+LinkAssetCatalog /Users/obedsayyad/teach-gate-macOS-app/macos/Teach\ Gate-macOS/Assets.xcassets (in target 'Teach Gate-macOS' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-linkAssetCatalog --thinned /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_output/thinned --thinned-dependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_generated_info.plist_unthinned --output /Users/obedsayyad/teach-gate-macOS-app/macos/build/Debug/Teach\ Gate.app/Contents/Resources --plist-output /Users/obedsayyad/teach-gate-macOS-app/macos/build/Teach\ Gate.build/Debug/Teach\ Gate-macOS.build/assetcatalog_generated_info.plist
+
+warning: ONLY_ACTIVE_ARCH=YES requested with multiple ARCHS and no active architecture could be computed; building for all applicable architectures (in target 'TeachGateVPN' from project 'Teach Gate')
+warning: Skipping duplicate build file in Compile Sources build phase: /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m (in target 'TeachGateVPN' from project 'Teach Gate')
+warning: Skipping duplicate build file in Compile Sources build phase: /Users/obedsayyad/teach-gate-macOS-app/macos/TeachGateVPN/PacketTunnelProvider.m (in target 'TeachGateVPN' from project 'Teach Gate')

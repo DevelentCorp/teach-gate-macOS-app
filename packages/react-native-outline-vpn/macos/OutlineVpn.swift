@@ -225,8 +225,19 @@ class OutlineVpn: NSObject {
     // MARK: - Private Methods
     
     private func removeVpnConfiguration(completion: @escaping () -> Void) {
+        os_log("📝 removeVpnConfiguration: loading managers to remove", log: logger, type: .info)
         NETunnelProviderManager.loadAllFromPreferences { managers, error in
+            if let err = error as NSError? {
+                os_log("❌ removeVpnConfiguration: loadAllFromPreferences failed: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+                completion()
+                return
+            } else if let error = error {
+                os_log("❌ removeVpnConfiguration: loadAllFromPreferences failed with Error: %{public}@", log: self.logger, type: .error, String(describing: error))
+                completion()
+                return
+            }
             guard let managers = managers, !managers.isEmpty else {
+                os_log("ℹ️ removeVpnConfiguration: no managers present", log: self.logger, type: .info)
                 completion()
                 return
             }
@@ -235,7 +246,15 @@ class OutlineVpn: NSObject {
             
             for manager in managers {
                 group.enter()
-                manager.removeFromPreferences { _ in
+                os_log("🗑️ Removing manager: localizedDescription=%{public}@ providerBundleIdentifier=%{public}@", log: self.logger, type: .info, manager.localizedDescription ?? "<nil>", (manager.protocolConfiguration as? NETunnelProviderProtocol)?.providerBundleIdentifier ?? "<nil>")
+                manager.removeFromPreferences { err in
+                    if let err = err as NSError? {
+                        os_log("❌ removeFromPreferences failed: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+                    } else if let err = err {
+                        os_log("❌ removeFromPreferences failed with Error: %{public}@", log: self.logger, type: .error, String(describing: err))
+                    } else {
+                        os_log("✅ removeFromPreferences succeeded for manager.localizedDescription=%{public}@", log: self.logger, type: .info, manager.localizedDescription ?? "<nil>")
+                    }
                     group.leave()
                 }
             }
@@ -318,25 +337,51 @@ class OutlineVpn: NSObject {
         manager.localizedDescription = name
         manager.isEnabled = true
 
+        // Verbose saveToPreferences logging: capture NSError details (code, domain, userInfo) and manager metadata.
+        os_log("📝 Saving NETunnelProviderManager to preferences. manager.localizedDescription=%{public}@ providerBundleIdentifier=%{public}@ isEnabled=%{public}@", log: logger, type: .info, manager.localizedDescription ?? "<nil>", proto.providerBundleIdentifier ?? "<nil>", String(manager.isEnabled))
         try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
             manager.saveToPreferences { error in
-                if let error = error { cont.resume(throwing: error) }
-                else { cont.resume() }
+                if let err = error as NSError? {
+                    os_log("❌ saveToPreferences failed: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+                    cont.resume(throwing: err)
+                } else if let error = error {
+                    // Non-NSError fallback
+                    os_log("❌ saveToPreferences failed with Error: %{public}@", log: self.logger, type: .error, String(describing: error))
+                    cont.resume(throwing: error)
+                } else {
+                    os_log("✅ saveToPreferences succeeded for manager.localizedDescription=%{public}@", log: self.logger, type: .info, manager.localizedDescription ?? "<nil>")
+                    cont.resume()
+                }
             }
         }
 
         // Reload to ensure the manager reflects saved preferences before starting.
+        os_log("📝 Calling loadFromPreferences for manager.localizedDescription=%{public}@ providerBundleIdentifier=%{public}@", log: logger, type: .info, manager.localizedDescription ?? "<nil>", proto.providerBundleIdentifier ?? "<nil>")
         try await withCheckedThrowingContinuation { (cont: CheckedContinuation<Void, Error>) in
             manager.loadFromPreferences { error in
-                if let error = error { cont.resume(throwing: error) }
-                else { cont.resume() }
+                if let err = error as NSError? {
+                    os_log("❌ loadFromPreferences failed: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+                    cont.resume(throwing: err)
+                } else if let error = error {
+                    os_log("❌ loadFromPreferences failed with Error: %{public}@", log: self.logger, type: .error, String(describing: error))
+                    cont.resume(throwing: error)
+                } else {
+                    os_log("✅ loadFromPreferences succeeded for manager.localizedDescription=%{public}@", log: self.logger, type: .info, manager.localizedDescription ?? "<nil>")
+                    cont.resume()
+                }
             }
         }
 
         // Start the tunnel; manager already has providerConfiguration with id/transport.
+        os_log("📝 Attempting startVPNTunnel. connection.status=%{public}d manager.localizedDescription=%{public}@", log: logger, type: .info, manager.connection.status.rawValue, manager.localizedDescription ?? "<nil>")
         do {
             try manager.connection.startVPNTunnel()
+            os_log("✅ startVPNTunnel called successfully", log: logger, type: .info)
+        } catch let err as NSError {
+            os_log("❌ startVPNTunnel threw NSError: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+            throw err
         } catch {
+            os_log("❌ startVPNTunnel threw Error: %{public}@", log: self.logger, type: .error, String(describing: error))
             throw error
         }
 
@@ -367,11 +412,27 @@ class OutlineVpn: NSObject {
     // MARK: - Private helpers
 
     private func loadManagers() async throws -> [NETunnelProviderManager] {
-        try await withCheckedThrowingContinuation { (cont: CheckedContinuation<[NETunnelProviderManager], Error>) in
+        // Verbose loadAllFromPreferences wrapper to log NSError details and managers count.
+        os_log("📝 Calling NETunnelProviderManager.loadAllFromPreferences()", log: logger, type: .info)
+        return try await withCheckedThrowingContinuation { (cont: CheckedContinuation<[NETunnelProviderManager], Error>) in
             NETunnelProviderManager.loadAllFromPreferences { managers, error in
-                if let error = error {
+                if let err = error as NSError? {
+                    os_log("❌ loadAllFromPreferences failed: domain=%{public}@ code=%{public}d userInfo=%{public}@", log: self.logger, type: .error, err.domain, err.code, String(describing: err.userInfo))
+                    cont.resume(throwing: err)
+                } else if let error = error {
+                    os_log("❌ loadAllFromPreferences failed with Error: %{public}@", log: self.logger, type: .error, String(describing: error))
                     cont.resume(throwing: error)
                 } else {
+                    let count = managers?.count ?? 0
+                    os_log("✅ loadAllFromPreferences returned %{public}d manager(s)", log: self.logger, type: .info, count)
+                    // Log each manager's localizedDescription and its protocol providerBundleIdentifier if present
+                    if let managers = managers {
+                        for m in managers {
+                            let desc = m.localizedDescription ?? "<nil>"
+                            let pbid = (m.protocolConfiguration as? NETunnelProviderProtocol)?.providerBundleIdentifier ?? "<nil>"
+                            os_log("ℹ️ Manager found: localizedDescription=%{public}@ providerBundleIdentifier=%{public}@ isEnabled=%{public}@", log: self.logger, type: .info, desc, pbid, String(m.isEnabled))
+                        }
+                    }
                     cont.resume(returning: managers ?? [])
                 }
             }
