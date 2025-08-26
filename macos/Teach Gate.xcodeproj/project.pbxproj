@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		386D06212E5E1FAE0074731C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388FB0762E521FBC000B7E50 /* NetworkExtension.framework */; };
 		386D062A2E5E1FAE0074731C /* TeachGateVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 386D06202E5E1FAE0074731C /* TeachGateVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		386D06362E5E21AD0074731C /* OutlineAppleLib in Frameworks */ = {isa = PBXBuildFile; productRef = 386D06352E5E21AD0074731C /* OutlineAppleLib */; };
-		386D06382E5E21AD0074731C /* OutlineVPNExtensionLib in Frameworks */ = {isa = PBXBuildFile; productRef = 386D06372E5E21AD0074731C /* OutlineVPNExtensionLib */; };
+		386D063D2E5E23570074731C /* OutlineVPNExtensionLib in Frameworks */ = {isa = PBXBuildFile; productRef = 386D063C2E5E23570074731C /* OutlineVPNExtensionLib */; };
+		386D063F2E5E243B0074731C /* OutlineAppleLib in Frameworks */ = {isa = PBXBuildFile; productRef = 386D063E2E5E243B0074731C /* OutlineAppleLib */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
@@ -87,9 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				386D06362E5E21AD0074731C /* OutlineAppleLib in Frameworks */,
 				386D06212E5E1FAE0074731C /* NetworkExtension.framework in Frameworks */,
-				386D06382E5E21AD0074731C /* OutlineVPNExtensionLib in Frameworks */,
+				386D063D2E5E23570074731C /* OutlineVPNExtensionLib in Frameworks */,
+				386D063F2E5E243B0074731C /* OutlineAppleLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +205,8 @@
 			);
 			name = TeachGateVPN;
 			packageProductDependencies = (
-				386D06352E5E21AD0074731C /* OutlineAppleLib */,
-				386D06372E5E21AD0074731C /* OutlineVPNExtensionLib */,
+				386D063C2E5E23570074731C /* OutlineVPNExtensionLib */,
+				386D063E2E5E243B0074731C /* OutlineAppleLib */,
 			);
 			productName = TeachGateVPN;
 			productReference = 386D06202E5E1FAE0074731C /* TeachGateVPN.appex */;
@@ -262,7 +262,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				386D06342E5E21180074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */,
+				386D06392E5E23570074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -360,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd macos/go && go build -buildmode=c-archive -o tun2socks.a\n\n";
+			shellScript = "#!/bin/bash\ncd \"${SRCROOT}/go\"\nif [ ! -f \"tun2socks.a\" ]; then\n    echo \"Building tun2socks...\"\n    go build -buildmode=c-archive -o tun2socks.a ./outline/tun2socks/\nfi\n";
 		};
 		71CF2F99508B0C5DAAB0386A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -460,6 +460,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/go";
 				INFOPLIST_FILE = TeachGateVPN/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TeachGateVPN;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -468,11 +469,22 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+					"$(SRCROOT)/go",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ltun2socks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)  ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.develentcorp.teachgatedesk.TeachGateVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -502,6 +514,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/go";
 				INFOPLIST_FILE = TeachGateVPN/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TeachGateVPN;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -510,10 +523,20 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+					"$(SRCROOT)/go",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ltun2socks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.develentcorp.teachgatedesk.TeachGateVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -748,22 +771,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		386D06342E5E21180074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */ = {
+		386D06392E5E23570074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = OutlineAppleLib;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		386D06352E5E21AD0074731C /* OutlineAppleLib */ = {
+		386D063C2E5E23570074731C /* OutlineVPNExtensionLib */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 386D06342E5E21180074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */;
-			productName = OutlineAppleLib;
-		};
-		386D06372E5E21AD0074731C /* OutlineVPNExtensionLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 386D06342E5E21180074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */;
 			productName = OutlineVPNExtensionLib;
+		};
+		386D063E2E5E243B0074731C /* OutlineAppleLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 386D06392E5E23570074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */;
+			productName = OutlineAppleLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
