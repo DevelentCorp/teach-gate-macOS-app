@@ -16,7 +16,7 @@ class OutlineVpn: NSObject {
     public static let shared = OutlineVpn()
     
     private let logger = OSLog(subsystem: "com.develentcorp.teachgatedesk", category: "OutlineVpn")
-    private let appGroup = "group.com.develentcorp.teachgatedesk"
+    private let appGroup = "group.com.teachgatedesk.develentcorp"
     private let providerBundleIdentifier = "com.develentcorp.teachgatedesk.tgvpn"
     private var statusObserver: NSObjectProtocol?
     private var lastStatusLogTime: Date = Date.distantPast
