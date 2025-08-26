@@ -127,16 +127,24 @@ RCT_EXPORT_METHOD(startVpn:(NSDictionary *)config
           
           // Start the VPN tunnel
           NETunnelProviderSession *session = (NETunnelProviderSession *)manager.connection;
+          
+          os_log_info(log, "🔍 DIAGNOSTIC: Current VPN status before start: %{public}@", [self statusToString:session.status]);
+          NSLog(@"🔍 DIAGNOSTIC: Current VPN status before start: %@", [self statusToString:session.status]);
+          
           NSError *startError = nil;
           [session startTunnelWithOptions:nil andReturnError:&startError];
           
           if (startError) {
-            os_log_error(log, "❌ Failed to start VPN tunnel: %{public}@", startError.localizedDescription);
+            os_log_error(log, "❌ DIAGNOSTIC: startTunnelWithOptions FAILED immediately: %{public}@", startError.localizedDescription);
+            NSLog(@"🔍 DIAGNOSTIC: startTunnelWithOptions FAILED immediately: %@", startError.localizedDescription);
             reject(@"START_ERROR", @"Failed to start VPN tunnel", startError);
             return;
           }
           
-          os_log_info(log, "✅ VPN tunnel start command sent successfully");
+          os_log_info(log, "🔍 DIAGNOSTIC: startTunnelWithOptions call SUCCESS - but this only means the START COMMAND was sent");
+          NSLog(@"🔍 DIAGNOSTIC: startTunnelWithOptions call SUCCESS - but this only means the START COMMAND was sent");
+          os_log_info(log, "🔍 DIAGNOSTIC: Current VPN status after start command: %{public}@", [self statusToString:session.status]);
+          NSLog(@"🔍 DIAGNOSTIC: Current VPN status after start command: %@", [self statusToString:session.status]);
           
           // After successful start, enable on-demand
           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -213,9 +221,15 @@ RCT_EXPORT_METHOD(getVpnStatus:(RCTPromiseResolveBlock)resolve
       NETunnelProviderManager *manager = managers.firstObject;
       NEVPNStatus status = manager.connection.status;
       
-      BOOL isConnected = (status == NEVPNStatusConnected || 
-                          status == NEVPNStatusConnecting || 
-                          status == NEVPNStatusReasserting);
+      os_log_t log = os_log_create("com.develentcorp.teachgatedesk", "OutlineVpn");
+      os_log_info(log, "🔍 DIAGNOSTIC: getVpnStatus - Raw status: %ld (%{public}@)", (long)status, [self statusToString:status]);
+      NSLog(@"🔍 DIAGNOSTIC: getVpnStatus - Raw status: %ld (%@)", (long)status, [self statusToString:status]);
+      
+      // Only consider NEVPNStatusConnected as actually connected
+      BOOL isConnected = (status == NEVPNStatusConnected);
+      
+      os_log_info(log, "🔍 DIAGNOSTIC: getVpnStatus - Returning isConnected: %{public}@", isConnected ? @"YES" : @"NO");
+      NSLog(@"🔍 DIAGNOSTIC: getVpnStatus - Returning isConnected: %@", isConnected ? @"YES" : @"NO");
       
       resolve(@(isConnected));
     }];
@@ -225,7 +239,11 @@ RCT_EXPORT_METHOD(getVpnStatus:(RCTPromiseResolveBlock)resolve
 - (void)vpnStatusDidChange:(NSNotification *)notification {
   NEVPNConnection *connection = notification.object;
   if (connection) {
-    [self sendEventWithName:@"vpnStatusChanged" 
+    os_log_t log = os_log_create("com.develentcorp.teachgatedesk", "OutlineVpn");
+    os_log_info(log, "🔍 DIAGNOSTIC: VPN status changed to: %ld (%{public}@)", (long)connection.status, [self statusToString:connection.status]);
+    NSLog(@"🔍 DIAGNOSTIC: VPN status changed to: %ld (%@)", (long)connection.status, [self statusToString:connection.status]);
+    
+    [self sendEventWithName:@"vpnStatusChanged"
                        body:@{
                          @"status": @(connection.status),
                          @"statusText": [self statusToString:connection.status]

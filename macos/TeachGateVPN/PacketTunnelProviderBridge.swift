@@ -3,8 +3,11 @@ import NetworkExtension
 
 @objcMembers public class SwiftBridge: NSObject {
     @objc public class func getTunnelNetworkSettings() -> Any? {
-        // Returning nil lets the Objective-C provider handle absent settings gracefully during tests.
-        return nil
+        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "10.0.0.1")
+        settings.ipv4Settings = NEIPv4Settings(addresses: ["10.0.0.2"], subnetMasks: ["255.255.255.0"])
+        settings.ipv4Settings?.includedRoutes = [NEIPv4Route.default()]
+        settings.dnsSettings = NEDNSSettings(servers: ["8.8.8.8", "8.8.4.4"])
+        return settings
     }
 
     @objc public class func newInvalidConfigOutlineErrorWithMessage(_ message: String) -> Any? {

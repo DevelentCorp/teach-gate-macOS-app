@@ -122,8 +122,9 @@ NSString *const kDefaultPathKey = @"defaultPath";
 
 - (void)startTunnelWithOptions:(NSDictionary *)options
             completionHandler:(void (^)(NSError *))completion {
-  DDLogInfo(@"Starting tunnel");
-  DDLogDebug(@"Options are %@", options);
+  DDLogInfo(@"🔍 DIAGNOSTIC: startTunnelWithOptions called - Extension IS launching");
+  DDLogInfo(@"🔍 DIAGNOSTIC: Options are %@", options);
+  NSLog(@"🔍 DIAGNOSTIC: PacketTunnelProvider.startTunnelWithOptions called - Extension IS launching");
 
   // mimics fetchLastDisconnectErrorWithCompletionHandler on older systems
   void (^startDone)(NSError *) = ^(NSError *err) {
@@ -167,15 +168,32 @@ NSString *const kDefaultPathKey = @"defaultPath";
   // configure the system routes and start tun2socks directly.
   self.isUdpSupported = YES;
 
-  [self startRouting:[SwiftBridge getTunnelNetworkSettings]
+  DDLogInfo(@"🔍 DIAGNOSTIC: About to call startRouting with network settings");
+  NSLog(@"🔍 DIAGNOSTIC: About to call startRouting with network settings");
+  
+  id networkSettings = [SwiftBridge getTunnelNetworkSettings];
+  DDLogInfo(@"🔍 DIAGNOSTIC: Network settings returned: %@", networkSettings);
+  NSLog(@"🔍 DIAGNOSTIC: Network settings returned: %@", networkSettings);
+
+  [self startRouting:networkSettings
           completion:^(NSError *_Nullable error) {
             if (error != nil) {
+              DDLogError(@"🔍 DIAGNOSTIC: startRouting FAILED: %@", error.localizedDescription);
+              NSLog(@"🔍 DIAGNOSTIC: startRouting FAILED: %@", error.localizedDescription);
               return startDone([SwiftBridge newOutlineErrorFromNsError:error]);
             }
+            DDLogInfo(@"🔍 DIAGNOSTIC: startRouting SUCCESS - proceeding to startTun2Socks");
+            NSLog(@"🔍 DIAGNOSTIC: startRouting SUCCESS - proceeding to startTun2Socks");
+            
             NSError *tun2socksError = [self startTun2Socks:self.isUdpSupported];
             if (tun2socksError != nil) {
+              DDLogError(@"🔍 DIAGNOSTIC: startTun2Socks FAILED: %@", tun2socksError.localizedDescription);
+              NSLog(@"🔍 DIAGNOSTIC: startTun2Socks FAILED: %@", tun2socksError.localizedDescription);
               return startDone(tun2socksError);
             }
+            DDLogInfo(@"🔍 DIAGNOSTIC: VPN tunnel establishment COMPLETE");
+            NSLog(@"🔍 DIAGNOSTIC: VPN tunnel establishment COMPLETE");
+            
             [self listenForNetworkChanges];
             startDone(nil);
           }];
@@ -194,12 +212,17 @@ NSString *const kDefaultPathKey = @"defaultPath";
 
 - (void)startRouting:(NEPacketTunnelNetworkSettings *)settings
            completion:(void (^)(NSError *))completionHandler {
+  DDLogInfo(@"🔍 DIAGNOSTIC: startRouting called with settings: %@", settings);
+  NSLog(@"🔍 DIAGNOSTIC: startRouting called with settings: %@", settings);
+  
   PacketTunnelProvider * __unsafe_unretained weakSelf = self;
   [self setTunnelNetworkSettings:settings completionHandler:^(NSError * _Nullable error) {
     if (error != nil) {
-      DDLogError(@"Failed to start routing: %@", error.localizedDescription);
+      DDLogError(@"🔍 DIAGNOSTIC: setTunnelNetworkSettings FAILED: %@", error.localizedDescription);
+      NSLog(@"🔍 DIAGNOSTIC: setTunnelNetworkSettings FAILED: %@", error.localizedDescription);
     } else {
-      DDLogInfo(@"Routing started");
+      DDLogInfo(@"🔍 DIAGNOSTIC: setTunnelNetworkSettings SUCCESS - System routes established");
+      NSLog(@"🔍 DIAGNOSTIC: setTunnelNetworkSettings SUCCESS - System routes established");
       // Passing nil settings clears the tunnel network configuration. Indicate to the system that
       // the tunnel is being re-established if this is the case.
       weakSelf.reasserting = settings == nil;
