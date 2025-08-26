@@ -15,9 +15,9 @@ typealias RCTResponseSenderBlock = ([Any]) -> Void
 class OutlineVpn: NSObject {
     public static let shared = OutlineVpn()
     
-    private let logger = OSLog(subsystem: "com.teachgatedesk.develentcorp", category: "OutlineVpn")
-    private let appGroup = "group.com.teachgatedesk.develentcorp"
-    private let providerBundleIdentifier = "com.teachgatedesk.develentcorp.TeachGateVPN"
+    private let logger = OSLog(subsystem: "com.develentcorp.teachgatedesk", category: "OutlineVpn")
+    private let appGroup = "group.com.develentcorp.teachgatedesk"
+    private let providerBundleIdentifier = "com.develentcorp.teachgatedesk.tgvpn"
     private var statusObserver: NSObjectProtocol?
     private var lastStatusLogTime: Date = Date.distantPast
     private let statusLogThrottle: TimeInterval = 1.0 // Only log status changes once per second

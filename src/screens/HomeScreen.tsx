@@ -89,7 +89,7 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
         password,
         method,
         prefix: '\u0005\u00DC\u005F\u00E0\u0001\u0020',
-        providerBundleIdentifier: 'com.teachgatedesk.develentcorp.TeachGateVPN',
+        providerBundleIdentifier: 'com.develentcorp.teachgatedesk.tgvpn',
         serverAddress: 'TeachGateServer',
         tunnelId: 'TeachGateServer',
         localizedDescription: 'Teach Gate VPN',
