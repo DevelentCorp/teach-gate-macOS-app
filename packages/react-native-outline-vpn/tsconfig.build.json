@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib/typescript",
+    "skipLibCheck": true,
+    "target": "ES2019",
+    "module": "ESNext",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "noEmit": false,
+    "strict": false
+  },
+  "include": ["src/**/*"]
+}

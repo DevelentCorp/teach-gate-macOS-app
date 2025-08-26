@@ -1,0 +1,6 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace "Teach Gate.xcworkspace" -scheme "Teach Gate" -configuration Debug -sdk macosx
+
+Build settings from command line:
+    SDKROOT = macosx15.5
+

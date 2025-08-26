@@ -73,16 +73,6 @@ target 'Teach Gate-macOS' do
   pod 'CocoaLumberjack/Swift'
 end
 
-# Network Extension target for VPN functionality
-target 'TeachGateVPN' do
-  platform :macos, '11.0'
-  
-  # Structured logging for extension (CocoaLumberjack)
-  pod 'CocoaLumberjack/Swift'
-  # Outline VPN package (provides Tun2socks.xcframework and extension sources)
-  pod 'react-native-outline-vpn', :path => '../packages/react-native-outline-vpn'
-  
-end
 
 # Combined post_install hook for both targets
 post_install do |installer|
