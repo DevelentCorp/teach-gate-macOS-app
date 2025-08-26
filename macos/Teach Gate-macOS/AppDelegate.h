@@ -1,6 +1,6 @@
-#import <RCTAppDelegate.h>
 #import <Cocoa/Cocoa.h>
+#import <React/RCTBridgeDelegate.h>
 
-@interface AppDelegate : RCTAppDelegate
+@interface AppDelegate : NSObject <NSApplicationDelegate, RCTBridgeDelegate>
 
 @end

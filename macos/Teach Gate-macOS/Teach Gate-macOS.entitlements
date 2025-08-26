@@ -10,7 +10,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>com.develentcorp.teachgatedesk</string>
+		<string>group.com.develentcorp.teachgatedesk</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>

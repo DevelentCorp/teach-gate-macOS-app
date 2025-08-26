@@ -92,7 +92,8 @@ RCT_EXPORT_METHOD(startVpn:(NSDictionary *)config
       
       // Pass the full config to the extension
       NSMutableDictionary *providerConfig = [config mutableCopy];
-      providerConfig[@"tunnelId"] = config[@"tunnelId"] ?: @"TeachGateServer";
+      providerConfig[@"id"] = config[@"tunnelId"] ?: @"TeachGateServer";
+      providerConfig[@"transport"] = config[@"transport"] ?: @"{}"; // Default transport config
       protocol.providerConfiguration = providerConfig;
       
       manager.protocolConfiguration = protocol;
