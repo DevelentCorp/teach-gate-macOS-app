@@ -1,10 +1,21 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, Pressable, Image, Platform} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Image,
+  Platform,
+  NativeModules,
+  NativeEventEmitter,
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Buffer} from 'buffer';
 import ToggleSwitch from '../components/ToggleSwitch';
-// @ts-ignore - Will be available after linking
-import OutlineVpn from 'react-native-outline-vpn';
+
+// Native module bridge
+const {TeachGateVPNModule} = NativeModules as any;
+const vpnEventEmitter = new NativeEventEmitter(TeachGateVPNModule);
 
 interface Props {
   toggleSidebar: () => void;
@@ -41,8 +52,8 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
     const checkVpnStatus = async () => {
       try {
         if (Platform.OS === 'macos') {
-          const status = await OutlineVpn.getVpnStatus();
-          setIsConnected(status);
+          const status = await TeachGateVPNModule.getStatus();
+          setIsConnected(!!status);
           if (status) {
             calculateElapsed();
           }
@@ -65,40 +76,45 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
     return () => clearInterval(interval);
   }, [isConnected]);
 
-  const parseAccessUrl = (accessUrl: string) => {
-    try {
-      if (
-        !accessUrl.startsWith(
-          'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1',
-        )
-      )
-        throw new Error('Invalid Shadowsocks URL');
-      const cleaned = accessUrl.replace('ss://', '');
-      const [base64Part, addressPart] = cleaned.split('@');
-      if (!base64Part || !addressPart) throw new Error('Malformed URL');
+  // Subscribe to native VPN status/error events
+  useEffect(() => {
+    if (Platform.OS !== 'macos') return;
 
-      // For macOS we need to decode properly
-      const decoded = Buffer.from(base64Part, 'base64').toString('utf-8');
-      const [method, password] = decoded.split(':');
-      const [host, portStr] = addressPart.split(':');
-      const port = parseInt(portStr, 10);
+    const onStatus = async (payload: any) => {
+      try {
+        const status = payload?.status;
+        const statusText = String(payload?.statusText || '');
+        const connected =
+          status === 3 || statusText.toLowerCase() === 'connected';
+        setIsConnected(!!connected);
+        if (connected) {
+          await AsyncStorage.setItem(
+            CONNECTION_START_KEY,
+            Date.now().toString(),
+          );
+        } else {
+          await AsyncStorage.removeItem(CONNECTION_START_KEY);
+          setConnectionTime({hours: 0, minutes: 0, seconds: 0});
+        }
+      } catch {}
+    };
 
-      return {
-        host,
-        port,
-        password,
-        method,
-        prefix: '\u0005\u00DC\u005F\u00E0\u0001\u0020',
-        providerBundleIdentifier: 'com.develentcorp.teachgatedesk.tgvpn',
-        serverAddress: 'TeachGateServer',
-        tunnelId: 'TeachGateServer',
-        localizedDescription: 'Teach Gate VPN',
-      };
-    } catch (err) {
-      console.warn('Failed to parse accessUrl:', err);
-      return null;
-    }
-  };
+    const onError = (payload: any) => {
+      console.warn('VPN error event', payload);
+      setConnecting(false);
+    };
+
+    const sub1 = vpnEventEmitter.addListener('vpnStatusChanged', onStatus);
+    const sub2 = vpnEventEmitter.addListener('vpnError', onError);
+    return () => {
+      sub1.remove();
+      sub2.remove();
+    };
+  }, []);
+
+  // Use a Shadowsocks access URL (example). Replace with user-provided/access-key value in production.
+  const ACCESS_URL =
+    'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1';
 
   const toggleConnection = async () => {
     if (Platform.OS !== 'macos') {
@@ -111,28 +127,14 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
       setConnecting(true);
 
       if (isConnected) {
-        // Disconnect VPN with delay (8s)
+        // Request disconnect; UI will update via vpnStatusChanged event.
         setTimeout(async () => {
-          await OutlineVpn.stopVpn();
-          setIsConnected(false);
-          await AsyncStorage.removeItem(CONNECTION_START_KEY);
-          setConnectionTime({hours: 0, minutes: 0, seconds: 0});
+          await TeachGateVPNModule.disconnect();
           setConnecting(false);
         }, 8000);
       } else {
-        // ✅ Use your Shadowsocks access URL
-        const accessUrl =
-          'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1';
-
-        const config = parseAccessUrl(accessUrl);
-        if (!config) {
-          throw new Error('Invalid VPN config');
-        }
-
-        await OutlineVpn.startVpn(config);
-        await AsyncStorage.setItem(CONNECTION_START_KEY, Date.now().toString());
-        setIsConnected(true);
-        setConnectionTime({hours: 0, minutes: 0, seconds: 0});
+        // Connect using ss:// URL. Native module converts to Outline transport YAML.
+        await TeachGateVPNModule.connect(ACCESS_URL);
         setConnecting(false);
       }
     } catch (err) {

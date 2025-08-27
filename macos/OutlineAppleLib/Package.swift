@@ -36,7 +36,7 @@ let package = Package(
         .library(
             // OutlineVPNExtensionLib is used by the VPN extension
             name: "OutlineVPNExtensionLib",
-            targets: ["OutlineError"]
+            targets: ["OutlineError", "Tun2socks"]
         ),
     ],
     dependencies: [
@@ -44,6 +44,10 @@ let package = Package(
         .package(url: "https://github.com/getsentry/sentry-cocoa", from: "8.26.0"),
     ],
     targets: [
+        .binaryTarget(
+            name: "Tun2socks",
+            path: "../Tun2socks.xcframework"
+        ),
         .target(
             name: "OutlineCatalystApp",
             dependencies: [
@@ -51,7 +55,10 @@ let package = Package(
                 "OutlineNotification",
             ]
         ),
-        .target(name: "OutlineError"),
+        .target(
+            name: "OutlineError",
+            dependencies: ["Tun2socks"]
+        ),
         .target(name: "OutlineNotification"),
         .target(
             name: "OutlineSentryLogger",
@@ -64,6 +71,8 @@ let package = Package(
             name: "OutlineTunnel",
             dependencies: [
                 .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack"),
+                "OutlineError",
+                "Tun2socks",
             ]
         ),
     ]

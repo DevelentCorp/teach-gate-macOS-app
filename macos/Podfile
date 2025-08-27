@@ -69,15 +69,14 @@ target 'Teach Gate-macOS' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  # Structured logging for app (CocoaLumberjack)
-  pod 'CocoaLumberjack/Swift'
+  # Structured logging is provided by OutlineAppleLib Swift Package
+  # pod 'CocoaLumberjack/Swift' # Removed to avoid module conflicts
 end
 
 target 'TeachGateVPN' do
   platform :macos, '11.0'
-  pod 'CocoaLumberjack'
-  # Use static pods for app extensions
-  use_static_pods = true
+  # CocoaLumberjack will be available through OutlineAppleLib Swift Package
+  # No additional pods needed for VPN extension
 end
 
 

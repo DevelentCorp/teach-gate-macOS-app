@@ -4,9 +4,15 @@ module.exports = {
       scheme: 'Teach Gate-macOS',
     },
   },
-  // Re-enabled autolinking for local native packages so CocoaPods can pick up
-  // the local podspec for react-native-outline-vpn. Previously this package
-  // was disabled to avoid duplicate inclusion when the Podfile manually
-  // included the pod; the Podfile no longer contains a manual pod entry.
+  // Disable autolinking for the old package so it does not get pulled into Pods
+  dependencies: {
+    'react-native-outline-vpn': {
+      platforms: {
+        ios: null,
+        macos: null,
+        android: null,
+      },
+    },
+  },
   assets: ['./src/assets/fonts/'],
 };

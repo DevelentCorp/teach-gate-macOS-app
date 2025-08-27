@@ -22,7 +22,6 @@
     "react-native": "0.78.3",
     "react-native-gesture-handler": "^2.27.2",
     "react-native-macos": "^0.78.3",
-    "react-native-outline-vpn": "file:./packages/react-native-outline-vpn",
     "react-native-reanimated": "^3.18.0",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.13.1",

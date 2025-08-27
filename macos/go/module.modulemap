@@ -1,0 +1,5 @@
+module Tun2socks {
+  header "tun2socks.h"
+  link "tun2socks"
+  export *
+}
