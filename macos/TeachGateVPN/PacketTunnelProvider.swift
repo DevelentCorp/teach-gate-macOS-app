@@ -14,8 +14,7 @@
 
 import CocoaLumberjackSwift
 import NetworkExtension
-import OutlineError
-import Tun2socks
+import OutlineVPNExtensionLib
 
 /// SwiftBridge is a transitional class to allow the incremental migration of our PacketTunnelProvider from Objective-C to Swift.
 @objcMembers

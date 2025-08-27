@@ -19,7 +19,6 @@
 #include <ifaddrs.h>
 #include <netdb.h>
 
-@import Tun2socks;
 
 #ifdef DEBUG
 const DDLogLevel ddLogLevel = DDLogLevelDebug;
