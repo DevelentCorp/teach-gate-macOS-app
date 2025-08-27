@@ -36,7 +36,11 @@ let package = Package(
         .library(
             // OutlineVPNExtensionLib is used by the VPN extension
             name: "OutlineVPNExtensionLib",
-            targets: ["OutlineError", "Tun2socks"]
+            targets: ["OutlineError"]
+        ),
+        .library(
+            name: "Tun2socks",
+            targets: ["Tun2socks"]
         ),
     ],
     dependencies: [

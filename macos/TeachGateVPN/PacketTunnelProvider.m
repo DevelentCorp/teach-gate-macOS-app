@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import "PacketTunnelProvider.h"
-#import "VpnExtension-Swift.h"
+#import "TeachGateVPN-Swift.h"
 
 #include <arpa/inet.h>
 #include <ifaddrs.h>

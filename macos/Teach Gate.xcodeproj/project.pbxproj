@@ -10,6 +10,9 @@
 		386D06212E5E1FAE0074731C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388FB0762E521FBC000B7E50 /* NetworkExtension.framework */; };
 		386D062A2E5E1FAE0074731C /* TeachGateVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 386D06202E5E1FAE0074731C /* TeachGateVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		386D063D2E5E23570074731C /* OutlineVPNExtensionLib in Frameworks */ = {isa = PBXBuildFile; productRef = 386D063C2E5E23570074731C /* OutlineVPNExtensionLib */; };
+		386D064D2E5E24030074731C /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = 386D064B2E5E24010074731C /* CocoaLumberjack */; };
+		386D064E2E5E24040074731C /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 386D064C2E5E24020074731C /* CocoaLumberjackSwift */; };
+		386D064F2E5E24050074731C /* Tun2socks in Frameworks */ = {isa = PBXBuildFile; productRef = 386D06502E5E24060074731C /* Tun2socks */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
@@ -58,9 +61,9 @@
 		514201542437B4B40078DB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		514201562437B4B40078DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ABCDEF1234567890ABCDEF12 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachGateVPN/PacketTunnelProvider.m; sourceTree = "<group>"; };
+		ABCDEF1234567890ABCDEF12 /* TeachGateVPN/PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachGateVPN/PacketTunnelProvider.m; sourceTree = "<group>"; };
 		BEADF00B8E3D9DBB42863391 /* Pods-Teach Gate-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teach Gate-macOS.debug.xcconfig"; path = "Target Support Files/Pods-Teach Gate-macOS/Pods-Teach Gate-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D0F0F0F02E5D7362004A8AC1 /* PacketTunnelProviderBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachGateVPN/PacketTunnelProviderBridge.swift; sourceTree = "<group>"; };
+		D0F0F0F02E5D7362004A8AC1 /* TeachGateVPN/PacketTunnelProviderBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachGateVPN/PacketTunnelProviderBridge.swift; sourceTree = "<group>"; };
 		DFE5AD19F44269DA06D65ECD /* Pods-Teach Gate-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teach Gate-macOS.release.xcconfig"; path = "Target Support Files/Pods-Teach Gate-macOS/Pods-Teach Gate-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F0A1B2C33D4E5F6A7B8C9D00 /* TeachGateVPNModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeachGateVPNModule.h; sourceTree = "<group>"; };
@@ -69,7 +72,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		386D062B2E5E1FAE0074731C /* Exceptions for "TeachGateVPN" folder in "TeachGateVPN" target */ = {
+		386D062B2E5E1FAE0074731C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -79,29 +82,8 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		386D06222E5E1FAE0074731C /* TeachGateVPN */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				386D062B2E5E1FAE0074731C /* Exceptions for "TeachGateVPN" folder in "TeachGateVPN" target */,
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = TeachGateVPN;
-			sourceTree = "<group>";
-		};
-		388FB0782E521FBC000B7E50 /* TeachGateVPN */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = TeachGateVPN;
-			sourceTree = "<group>";
-		};
+		386D06222E5E1FAE0074731C /* TeachGateVPN */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (386D062B2E5E1FAE0074731C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TeachGateVPN; sourceTree = "<group>"; };
+		388FB0782E521FBC000B7E50 /* TeachGateVPN */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TeachGateVPN; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +93,9 @@
 			files = (
 				386D06212E5E1FAE0074731C /* NetworkExtension.framework in Frameworks */,
 				386D063D2E5E23570074731C /* OutlineVPNExtensionLib in Frameworks */,
+				386D064D2E5E24030074731C /* CocoaLumberjack in Frameworks */,
+				386D064E2E5E24040074731C /* CocoaLumberjackSwift in Frameworks */,
+				386D064F2E5E24050074731C /* Tun2socks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +124,8 @@
 		38F6A62B2E5D7362004A8AB4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				ABCDEF1234567890ABCDEF12 /* PacketTunnelProvider.m */,
-				D0F0F0F02E5D7362004A8AC1 /* PacketTunnelProviderBridge.swift */,
+				ABCDEF1234567890ABCDEF12 /* TeachGateVPN/PacketTunnelProvider.m */,
+				D0F0F0F02E5D7362004A8AC1 /* TeachGateVPN/PacketTunnelProviderBridge.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -235,6 +220,9 @@
 			name = TeachGateVPN;
 			packageProductDependencies = (
 				386D063C2E5E23570074731C /* OutlineVPNExtensionLib */,
+				386D064B2E5E24010074731C /* CocoaLumberjack */,
+				386D064C2E5E24020074731C /* CocoaLumberjackSwift */,
+				386D06502E5E24060074731C /* Tun2socks */,
 			);
 			productName = TeachGateVPN;
 			productReference = 386D06202E5E1FAE0074731C /* TeachGateVPN.appex */;
@@ -294,6 +282,7 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
 				386D06392E5E23570074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */,
+				386D064A2E5E24000074731C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -514,15 +503,13 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				"OTHER_LDFLAGS[arch=*]" = (
-					"$(inherited)",
-					" ",
-				);
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)  ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.develentcorp.teachgatedesk.TeachGateVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = TeachGateVPN/TeachGateVPN-Bridging-Header.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -577,6 +564,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = TeachGateVPN/TeachGateVPN-Bridging-Header.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -726,10 +714,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -789,10 +774,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = false;
@@ -839,10 +821,36 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		386D064A2E5E24000074731C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		386D063C2E5E23570074731C /* OutlineVPNExtensionLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OutlineVPNExtensionLib;
+		};
+		386D064B2E5E24010074731C /* CocoaLumberjack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 386D064A2E5E24000074731C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjack;
+		};
+		386D064C2E5E24020074731C /* CocoaLumberjackSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 386D064A2E5E24000074731C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
+		};
+		386D06502E5E24060074731C /* Tun2socks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 386D06392E5E23570074731C /* XCLocalSwiftPackageReference "OutlineAppleLib" */;
+			productName = Tun2socks;
 		};
 		F0A1B2C33D4E5F6A7B8C9D20 /* OutlineAppleLib */ = {
 			isa = XCSwiftPackageProductDependency;
