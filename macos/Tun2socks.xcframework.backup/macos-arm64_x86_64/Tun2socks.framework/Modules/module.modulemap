@@ -1,0 +1,10 @@
+framework module "Tun2socks" {
+	header "ref.h"
+    header "Platerrors.objc.h"
+    header "Tun2socks.objc.h"
+    header "Outline.objc.h"
+    header "Universe.objc.h"
+    header "Tun2socks.h"
+
+    export *
+}

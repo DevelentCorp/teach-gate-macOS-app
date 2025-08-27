@@ -73,11 +73,8 @@ target 'Teach Gate-macOS' do
   # pod 'CocoaLumberjack/Swift' # Removed to avoid module conflicts
 end
 
-target 'TeachGateVPN' do
-  platform :macos, '11.0'
-  # CocoaLumberjack will be available through OutlineAppleLib Swift Package
-  # No additional pods needed for VPN extension
-end
+# TeachGateVPN target removed from CocoaPods since it uses Swift Package Manager dependencies only
+# All dependencies (OutlineAppleLib, CocoaLumberjack, Sentry) come from Swift Package Manager
 
 
 # Combined post_install hook for both targets

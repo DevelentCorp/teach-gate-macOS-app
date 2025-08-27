@@ -20,9 +20,9 @@
 		BC580F71E6048EE0D477F913 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */; };
 		C8637CC61DEC7CFBEBB67B30 /* libPods-Teach Gate-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2700B69892A7B68CB78F242D /* libPods-Teach Gate-macOS.a */; };
 		E1E2E3E42E5E300100000002 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2E3E42E5E300100000001 /* PacketTunnelProvider.swift */; };
-		E61582ED99DEFE5E7A802AA7 /* libPods-TeachGateVPN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7FAAD95B597B762E5E9C2C /* libPods-TeachGateVPN.a */; };
 		F0A1B2C33D4E5F6A7B8C9D02 /* TeachGateVPNModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A1B2C33D4E5F6A7B8C9D01 /* TeachGateVPNModule.m */; };
 		F0A1B2C33D4E5F6A7B8C9D21 /* OutlineAppleLib in Frameworks */ = {isa = PBXBuildFile; productRef = F0A1B2C33D4E5F6A7B8C9D20 /* OutlineAppleLib */; };
+		F0A1B2C33D4E5F6A7B8C9D22 /* SwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1B2C33D4E5F6A7B8C9D23 /* SwiftBridge.swift */; };
 		F0A1B2C33D4E5F6A7B8C9E02 /* Tun2socks.xcframework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 386D06512E5E26010074731C /* Tun2socks.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0A1B2C33D4E5F6A7B8C9E04 /* Tun2socks.xcframework in Copy Frameworks VPN */ = {isa = PBXBuildFile; fileRef = 386D06512E5E26010074731C /* Tun2socks.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -76,12 +76,10 @@
 /* Begin PBXFileReference section */
 		0D4DAA09EBA99855C14A7249 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2700B69892A7B68CB78F242D /* libPods-Teach Gate-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Teach Gate-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DBA2DE086899614C288D030 /* Pods-TeachGateVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachGateVPN.debug.xcconfig"; path = "Target Support Files/Pods-TeachGateVPN/Pods-TeachGateVPN.debug.xcconfig"; sourceTree = "<group>"; };
 		386D06202E5E1FAE0074731C /* TeachGateVPN.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TeachGateVPN.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		386D06512E5E26010074731C /* Tun2socks.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Tun2socks.xcframework; sourceTree = "<group>"; };
 		388FB0762E521FBC000B7E50 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		38D859B42E3FA74F008031D3 /* Teach Gate-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Teach Gate-macOS.entitlements"; sourceTree = "<group>"; };
-		3D7FAAD95B597B762E5E9C2C /* libPods-TeachGateVPN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeachGateVPN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514201492437B4B30078DB4F /* Teach Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teach Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5142014B2437B4B30078DB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5142014C2437B4B30078DB4F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -91,13 +89,13 @@
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABCDEF1234567890ABCDEF12 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachGateVPN/PacketTunnelProvider.m; sourceTree = "<group>"; };
 		BEADF00B8E3D9DBB42863391 /* Pods-Teach Gate-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teach Gate-macOS.debug.xcconfig"; path = "Target Support Files/Pods-Teach Gate-macOS/Pods-Teach Gate-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		CDD8BDFC6450F6BC084C7D82 /* Pods-TeachGateVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachGateVPN.release.xcconfig"; path = "Target Support Files/Pods-TeachGateVPN/Pods-TeachGateVPN.release.xcconfig"; sourceTree = "<group>"; };
 		D0F0F0F02E5D7362004A8AC1 /* PacketTunnelProviderBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachGateVPN/PacketTunnelProviderBridge.swift; sourceTree = "<group>"; };
 		DFE5AD19F44269DA06D65ECD /* Pods-Teach Gate-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teach Gate-macOS.release.xcconfig"; path = "Target Support Files/Pods-Teach Gate-macOS/Pods-Teach Gate-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		E1E2E3E42E5E300100000001 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachGateVPN/PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F0A1B2C33D4E5F6A7B8C9D00 /* TeachGateVPNModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeachGateVPNModule.h; sourceTree = "<group>"; };
 		F0A1B2C33D4E5F6A7B8C9D01 /* TeachGateVPNModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachGateVPNModule.m; sourceTree = "<group>"; };
+		F0A1B2C33D4E5F6A7B8C9D23 /* SwiftBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -145,7 +143,6 @@
 				386D06522E5E26020074731C /* Tun2socks.xcframework in Frameworks */,
 				386D063D2E5E23570074731C /* OutlineVPNExtensionLib in Frameworks */,
 				386D063F2E5E243B0074731C /* OutlineAppleLib in Frameworks */,
-				E61582ED99DEFE5E7A802AA7 /* libPods-TeachGateVPN.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +166,6 @@
 				388FB0762E521FBC000B7E50 /* NetworkExtension.framework */,
 				386D06512E5E26010074731C /* Tun2socks.xcframework */,
 				2700B69892A7B68CB78F242D /* libPods-Teach Gate-macOS.a */,
-				3D7FAAD95B597B762E5E9C2C /* libPods-TeachGateVPN.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,6 +190,7 @@
 				514201532437B4B40078DB4F /* Main.storyboard */,
 				514201562437B4B40078DB4F /* Info.plist */,
 				514201572437B4B40078DB4F /* main.m */,
+				F0A1B2C33D4E5F6A7B8C9D23 /* SwiftBridge.swift */,
 				F0A1B2C33D4E5F6A7B8C9D10 /* VPN */,
 			);
 			path = "Teach Gate-macOS";
@@ -204,8 +201,6 @@
 			children = (
 				BEADF00B8E3D9DBB42863391 /* Pods-Teach Gate-macOS.debug.xcconfig */,
 				DFE5AD19F44269DA06D65ECD /* Pods-Teach Gate-macOS.release.xcconfig */,
-				2DBA2DE086899614C288D030 /* Pods-TeachGateVPN.debug.xcconfig */,
-				CDD8BDFC6450F6BC084C7D82 /* Pods-TeachGateVPN.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -260,7 +255,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 386D062C2E5E1FAE0074731C /* Build configuration list for PBXNativeTarget "TeachGateVPN" */;
 			buildPhases = (
-				8BAA7B1140181A9DAF276E2D /* [CP] Check Pods Manifest.lock */,
 				386D06332E5E200A0074731C /* ShellScript */,
 				386D061C2E5E1FAE0074731C /* Sources */,
 				386D061D2E5E1FAE0074731C /* Frameworks */,
@@ -470,28 +464,6 @@
 			shellScript = "#!/bin/bash\nset -e\nENTITLEMENTS=\"${SRCROOT}/TeachGateVPN/TeachGateVPN.entitlements\"\nSIGN_ID=\"${EXPANDED_CODE_SIGN_IDENTITY:-Apple Development: Obed Sayyad (L68KR9DKYL)}\"\nAPPEX_DIR1=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nAPPEX_DIR2=\"${TARGET_BUILD_DIR}\"\necho \"Searching for .appex in:\\n  ${APPEX_DIR1}\\n  ${APPEX_DIR2}\"\nfor DIR in \"${APPEX_DIR1}\" \"${APPEX_DIR2}\"; do\n  if [ -d \"${DIR}\" ]; then\n    find \"${DIR}\" -name \"*.appex\" -print0 | while IFS= read -r -d '' APPEX; do\n      echo \"Re-signing ${APPEX} with entitlements ${ENTITLEMENTS} using ${SIGN_ID}\";\n      /usr/bin/codesign --force --sign \"${SIGN_ID}\" --entitlements \"${ENTITLEMENTS}\" \"${APPEX}\" || echo \"codesign failed for ${APPEX}\";\n      /usr/bin/codesign -d --entitlements :- \"${APPEX}\" || echo \"codesign -d failed for ${APPEX}\";\n    done\n  else\n    echo \"No directory at ${DIR}\";\n  fi\ndone\n";
 			showEnvVarsInLog = 0;
 		};
-		8BAA7B1140181A9DAF276E2D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeachGateVPN-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,6 +482,7 @@
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
 				F0A1B2C33D4E5F6A7B8C9D02 /* TeachGateVPNModule.m in Sources */,
+				F0A1B2C33D4E5F6A7B8C9D22 /* SwiftBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +510,6 @@
 /* Begin XCBuildConfiguration section */
 		386D062D2E5E1FAE0074731C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DBA2DE086899614C288D030 /* Pods-TeachGateVPN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -600,7 +572,6 @@
 		};
 		386D062E2E5E1FAE0074731C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDD8BDFC6450F6BC084C7D82 /* Pods-TeachGateVPN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
