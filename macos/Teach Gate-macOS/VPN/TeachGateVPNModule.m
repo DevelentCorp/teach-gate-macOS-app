@@ -3,15 +3,8 @@
 
 // Import the generated OutlineTunnel Swift bridging header
 // Built with Outline's official gomobile bind process for compatibility
-#if __has_include("OutlineTunnel-Swift.h")
-#import "OutlineTunnel-Swift.h"
+@import OutlineTunnel;
 #define OUTLINE_AVAILABLE 1
-#elif __has_include(<OutlineTunnel/OutlineTunnel-Swift.h>)
-#import <OutlineTunnel/OutlineTunnel-Swift.h>
-#define OUTLINE_AVAILABLE 1
-#else
-#define OUTLINE_AVAILABLE 0
-#endif
 
 static NSString *const kEventVpnStatusChanged = @"vpnStatusChanged";
 static NSString *const kEventVpnError = @"vpnError";

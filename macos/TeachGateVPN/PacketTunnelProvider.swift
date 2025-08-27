@@ -12,37 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Use NSLog for VPN extension logging
-@inline(__always) func DDLogInfo(_ msg: @autoclosure () -> String) { NSLog("[INFO] %@", msg()) }
-@inline(__always) func DDLogDebug(_ msg: @autoclosure () -> String) { NSLog("[DEBUG] %@", msg()) }
-@inline(__always) func DDLogWarn(_ msg: @autoclosure () -> String) { NSLog("[WARN] %@", msg()) }
-@inline(__always) func DDLogError(_ msg: @autoclosure () -> String) { NSLog("[ERROR] %@", msg()) }
+import CocoaLumberjackSwift
 import NetworkExtension
-
-// Define minimal OutlineError stub since the module import is not working
-public enum OutlineError: Error {
-  case internalError(message: String)
-  case invalidConfig(message: String)
-  
-  public var code: String {
-    switch self {
-    case .internalError: return "internalError"
-    case .invalidConfig: return "invalidConfig"
-    }
-  }
-}
-
-public func toOutlineError(error: Error) -> OutlineError {
-  if let outlineError = error as? OutlineError {
-    return outlineError
-  }
-  return OutlineError.internalError(message: error.localizedDescription)
-}
-
-public func marshalErrorJson(error: Error) -> String {
-  let outlineErr = toOutlineError(error: error)
-  return "{\"code\":\"\(outlineErr.code)\",\"message\":\"\(error.localizedDescription)\"}"
-}
+import OutlineError
+import Tun2socks
 
 /// SwiftBridge is a transitional class to allow the incremental migration of our PacketTunnelProvider from Objective-C to Swift.
 @objcMembers
@@ -69,6 +42,28 @@ public class SwiftBridge: NSObject {
     return settings
   }
 
+  /** Creates a new Outline Client based on the given transportConfig. */
+  public static func newClient(id: String, transportConfig: String) -> OutlineNewClientResult {
+    let clientConfig = OutlineClientConfig()
+    do {
+      clientConfig.dataDir = try FileManager.default.url(
+        for: .applicationSupportDirectory,
+        in: .userDomainMask,
+        appropriateFor: nil,
+        create: true
+      ).path
+    } catch {
+      DDLogWarn("Error finding Application Support directory: \(error)")
+    }
+    let result = clientConfig.new(id, providerClientConfigText: transportConfig)
+    if result?.error != nil {
+      DDLogInfo(
+        "Failed to construct client: \(String(describing: result?.error))."
+      )
+    }
+    return result!
+  }
+
   /**
    Creates a NSError (of `OutlineError.errorDomain`) from the `OutlineError.internalError`.
    */
@@ -81,6 +76,16 @@ public class SwiftBridge: NSObject {
    */
   public static func newInvalidConfigOutlineError(message: String) -> NSError {
     return OutlineError.invalidConfig(message: message) as NSError
+  }
+
+  /**
+   Creates a NSError (of `OutlineError.errorDomain`) from a Go's PlatformError.
+   */
+  public static func newOutlineErrorFrom(platformError: PlaterrorsPlatformError?) -> NSError? {
+    guard let perr = platformError else {
+      return nil
+    }
+    return OutlineError.platformError(perr) as NSError
   }
 
   /**
@@ -275,119 +280,4 @@ func saveLastDisconnectErrorDetails(error: Error?) {
 
 func loadLastDisconnectErrorDetailsToIPCResponse() -> Data? {
   return UserDefaults.standard.data(forKey: lastDisconnectErrorPersistenceKey)
-}
-
-// MARK: - NEPacketTunnelProvider implementation
-
-private enum ExtensionIPCCommand {
-  static let fetchLastDetailedJsonError = "fetchLastDisconnectDetailedJsonError"
-}
-
-// Darwin AF_ constants for NEPacketTunnelFlow writeProtocols
-private let AF_INET_NUM: Int32 = 2
-private let AF_INET6_NUM: Int32 = 30
-
-public class PacketTunnelProvider: NEPacketTunnelProvider {
-  private var isReadingPackets = false
-
-  // MARK: Lifecycle
-
-  public override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
-    DDLogInfo("PacketTunnelProvider.startTunnel invoked")
-
-    // 1) Parse provider configuration
-    guard
-      let proto = (self.protocolConfiguration as? NETunnelProviderProtocol),
-      let providerConfig = proto.providerConfiguration,
-      let tunnelId = providerConfig["id"] as? String,
-      let transportConfig = providerConfig["transport"] as? String
-    else {
-      let err = SwiftBridge.newInvalidConfigOutlineError(message: "Missing provider configuration (id/transport)")
-      SwiftBridge.saveLastError(nsError: err)
-      completionHandler(err)
-      return
-    }
-
-    DDLogInfo("VPN config parsed - tunnelId: \(tunnelId), transport config length: \(transportConfig.count)")
-
-    // 2) Compute tunnel network settings
-    let settings = SwiftBridge.getTunnelNetworkSettings()
-
-    // 3) Apply settings
-    self.setTunnelNetworkSettings(settings) { [weak self] settingsError in
-      guard let self = self else { return }
-      if let settingsError = settingsError {
-        let err = SwiftBridge.newOutlineErrorFrom(nsError: settingsError) ?? SwiftBridge.newInternalOutlineError(message: settingsError.localizedDescription)
-        DDLogError("Failed to apply tunnel settings: \(settingsError)")
-        SwiftBridge.saveLastError(nsError: err)
-        completionHandler(err)
-        return
-      }
-
-      DDLogInfo("Tunnel network settings applied successfully")
-      
-      // 4) For now, we'll simulate a successful connection since we're focusing on system integration
-      // In a production environment, this would create the actual tunnel connection
-      // TODO: Integrate actual Tun2socks connection once framework import is resolved
-      
-      // 5) Start packet processing loop (placeholder)
-      self.startPacketReadLoop()
-
-      // Clear last saved error on success
-      SwiftBridge.saveLastError(nsError: nil)
-      DDLogInfo("PacketTunnelProvider.startTunnel completed successfully")
-      completionHandler(nil)
-    }
-  }
-
-  public override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
-    DDLogInfo("PacketTunnelProvider.stopTunnel reason=\(reason.rawValue)")
-    // Stop reading packets first.
-    self.isReadingPackets = false
-
-    // TODO: Disconnect actual tun2socks tunnel when framework is properly integrated
-
-    // Nothing specific to persist on clean shutdown.
-    SwiftBridge.saveLastError(nsError: nil)
-    completionHandler()
-  }
-
-  public override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)? = nil) {
-    guard let message = String(data: messageData, encoding: .utf8) else {
-      completionHandler?(nil)
-      return
-    }
-    DDLogDebug("PacketTunnelProvider.handleAppMessage \(message)")
-    switch message {
-    case ExtensionIPCCommand.fetchLastDetailedJsonError:
-      // Returns a PropertyList-encoded LastErrorIPCData or nil
-      completionHandler?(SwiftBridge.loadLastErrorToIPCResponse() as Data?)
-    default:
-      completionHandler?(nil)
-    }
-  }
-
-  // MARK: Packet I/O
-
-  private func startPacketReadLoop() {
-    guard !isReadingPackets else { return }
-    isReadingPackets = true
-    readPackets()
-  }
-
-  private func readPackets() {
-    guard isReadingPackets else { return }
-    self.packetFlow.readPackets { [weak self] packets, _ in
-      guard let self = self else { return }
-      
-      // TODO: Process packets through tun2socks tunnel when framework is integrated
-      // For now, we'll just log the packet count for validation
-      DDLogDebug("Received \(packets.count) packets for processing")
-      
-      // Continue loop if still active.
-      if self.isReadingPackets {
-        self.readPackets()
-      }
-    }
-  }
 }
