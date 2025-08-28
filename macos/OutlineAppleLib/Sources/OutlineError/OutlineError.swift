@@ -12,59 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import Foundation
-// For platerrors ErrorCode strings. Use local constants since Tun2socks bindings skip these.
-#if canImport(Tun2socks)
-import Tun2socks
-#endif
-
-// Define error constants locally since they're not available in Tun2socks bindings
-public let PlaterrorsInternalError = "internalError"
-public let PlaterrorsInvalidConfig = "invalidConfig"
-public let PlaterrorsVPNPermissionNotGranted = "vpnPermissionNotGranted"
-public let PlaterrorsSetupSystemVPNFailed = "setupSystemVPNFailed"
-
-// Extend PlaterrorsPlatformError to add missing code property
-#if canImport(Tun2socks)
-extension PlaterrorsPlatformError {
-  public var code: String {
-    // Extract code from the error JSON string since the code property isn't available
-    let errorJson = self.error()
-    if let data = errorJson.data(using: .utf8),
-       let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-       let code = json["code"] as? String {
-      return code
-    }
-    return PlaterrorsInternalError
-  }
-}
-
-public func PlaterrorsNewPlatformError(_ code: String, _ message: String) -> PlaterrorsPlatformError? {
-  // Use ToPlatformError with a custom NSError since NewPlatformError isn't available
-  let error = NSError(domain: "OutlineError", code: 1, userInfo: [NSLocalizedDescriptionKey: message])
-  return PlaterrorsToPlatformError(error)
-}
-
-#else
-@objcMembers
-public class PlaterrorsPlatformError: NSObject {
-  public let code: String
-  public let message: String
-  public init(code: String, message: String) {
-    self.code = code
-    self.message = message
-  }
-}
-
-public func PlaterrorsNewPlatformError(_ code: String, _ message: String) -> PlaterrorsPlatformError? {
-  return PlaterrorsPlatformError(code: code, message: message)
-}
-
-public func PlaterrorsMarshalJSONString(_ err: PlaterrorsPlatformError, _ marshalErr: inout NSError?) -> String {
-  marshalErr = nil
-  return "{\"code\":\"\(err.code)\",\"message\":\"\(err.message)\"}"
-}
-#endif
+import Tun2socks // For platerrors ErrorCode strings
 
 /// Defines keys used in the userInfo of a NSError.
 private enum OutlineErrorNSErrorKeys {

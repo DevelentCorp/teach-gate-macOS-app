@@ -20,7 +20,7 @@ import OutlineError
 @objcMembers
 public class OutlineVpn: NSObject {
   public static let shared = OutlineVpn()
-  private static let kVpnExtensionBundleId = "com.develentcorp.teachgatedesk.TeachGateVPN"
+  private static let kVpnExtensionBundleId = "\(Bundle.main.bundleIdentifier!).VpnExtension"
 
   public typealias VpnStatusObserver = (NEVPNStatus, String) -> Void
 
@@ -161,46 +161,6 @@ public class OutlineVpn: NSObject {
     return getTunnelId(forManager: manager) == tunnelId && isActiveSession(manager.connection)
   }
 
-  // MARK: - Objective-C bridging helpers
-
-  /// ObjC-friendly wrapper for async start(tunnelId:named:withTransport:)
-  @objc public func startWithCompletion(_ tunnelId: String,
-                                        named name: String?,
-                                        withTransport transportConfig: String,
-                                        completionHandler: @escaping (NSError?) -> Void) {
-    Task {
-      do {
-        try await self.start(tunnelId, named: name, withTransport: transportConfig)
-        completionHandler(nil)
-      } catch {
-        completionHandler(error as NSError)
-      }
-    }
-  }
-
-  /// ObjC-friendly wrapper for async stop(_:)
-  @objc public func stopWithId(_ tunnelId: String) {
-    Task {
-      await self.stop(tunnelId)
-    }
-  }
-
-  /// ObjC-friendly wrapper for async isActive(_:)
-  @objc public func isActiveWithCompletion(_ tunnelId: String, completionHandler: @escaping (Bool) -> Void) {
-    Task {
-      let active = await self.isActive(tunnelId)
-      completionHandler(active)
-    }
-  }
-
-  /// ObjC-friendly wrapper to observe status changes without exposing Swift closures to ObjC.
-  /// The status is delivered as the NEVPNStatus.rawValue (Int).
-  @objc public func onVpnStatusChangeObjc(_ observer: @escaping (Int, NSString) -> Void) {
-    self.onVpnStatusChange { status, tunnelId in
-      observer(Int(status.rawValue), tunnelId as NSString)
-    }
-  }
- 
   // MARK: - Helpers
 
   public func stopActiveVpn() async {

@@ -1,0 +1,106 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme "Teach Gate-macOS" -configuration Debug -derivedDataPath build build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  CocoaLumberjack: https://github.com/CocoaLumberjack/CocoaLumberjack.git @ 3.9.0
+  OutlineAppleLib: /Users/obedsayyad/teach-gate-macOS-app/macos/OutlineAppleLib @ local
+  Sentry: https://github.com/getsentry/sentry-cocoa @ 8.55.0
+  swift-log: https://github.com/apple/swift-log @ 1.6.4
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006000-000C019234FA401E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006000-000C019234FA401E, name:My Mac }
+{ platform:macOS, name:Any Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (16 targets)
+    Target 'Teach Gate-macOS' in project 'Teach Gate'
+        ➜ Explicit dependency on target 'TeachGateVPN' in project 'Teach Gate'
+    Target 'TeachGateVPN' in project 'Teach Gate'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'OutlineAppleLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'OutlineVPNExtensionLib' in project 'OutlineAppleLib'
+    Target 'OutlineVPNExtensionLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineError' in project 'OutlineAppleLib'
+    Target 'OutlineAppleLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineSentryLogger' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineTunnel' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineCatalystApp' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineNotification' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineError' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'Sentry' in project 'Sentry'
+    Target 'OutlineError' in project 'OutlineAppleLib' (no dependencies)
+    Target 'OutlineCatalystApp' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineNotification' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+    Target 'OutlineNotification' in project 'OutlineAppleLib' (no dependencies)
+    Target 'OutlineTunnel' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+    Target 'OutlineSentryLogger' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'Sentry' in project 'Sentry'
+    Target 'Sentry' in project 'Sentry' (no dependencies)
+    Target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 9be263e81b9395e8f54e9e2a02e13f1a
+Build description path: /Users/obedsayyad/teach-gate-macOS-app/macos/build/Build/Intermediates.noindex/XCBuildData/9be263e81b9395e8f54e9e2a02e13f1a.xcbuilddata
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'TeachGateVPN' from project 'Teach Gate')
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'TeachGateVPN' from project 'Teach Gate')
+/Users/obedsayyad/teach-gate-macOS-app/macos/Teach Gate.xcodeproj:1:1: error: Unable to open base configuration reference file '/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target Support Files/Pods-Teach Gate-macOS/Pods-Teach Gate-macOS.debug.xcconfig'. (in target 'Teach Gate-macOS' from project 'Teach Gate')
+warning: Run script build phase 'Bundle React Native code and images' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'Teach Gate-macOS' from project 'Teach Gate')
+warning: Run script build phase 'Resign Embedded Extensions' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'Teach Gate-macOS' from project 'Teach Gate')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Building project Teach Gate with scheme Teach Gate-macOS and configuration Debug
+(1 failure)

@@ -1,0 +1,47 @@
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+prepare_react_native_project!
+
+target 'Teach Gate-macOS' do
+  platform :macos, '11.0'
+  use_native_modules!
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  use_react_native!(
+    :path => '../node_modules/react-native-macos',
+    :hermes_enabled => false,
+    :fabric_enabled => ENV['RCT_NEW_ARCH_ENABLED'] == '1',
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  # Structured logging is provided by OutlineAppleLib Swift Package
+  # pod 'CocoaLumberjack/Swift' # Removed to avoid module conflicts
+end
+
+# TeachGateVPN target removed from CocoaPods since it uses Swift Package Manager dependencies only
+# All dependencies (OutlineAppleLib, CocoaLumberjack, Sentry) come from Swift Package Manager
+
+
+# Combined post_install hook for both targets
+post_install do |installer|
+  # React Native post install
+  react_native_post_install(installer)
+
+  
+  # Network Extension specific configurations
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # Ensure consistent deployment target
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '12.0'
+      # Enable Network Extension capabilities for TeachGateVPN target
+      if target.name == 'TeachGateVPN'
+        config.build_settings['CODE_SIGN_ENTITLEMENTS'] = 'TeachGateVPN/TeachGateVPN.entitlements'
+        # Optimize for Network Extensions
+        config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'YES'
+      end
+    end
+  end
+end

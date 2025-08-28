@@ -1,0 +1,9 @@
+== Discovering newest .xcarchive ==
+Newest archive: ./TeachGate.xcarchive
+== Launch candidate ==
+Archive app: ./TeachGate.xcarchive/Products/Applications/Teach Gate.app
+Debug app:   macos/build/Build/Products/Debug/Teach Gate.app
+Chosen app:  ./TeachGate.xcarchive/Products/Applications/Teach Gate.app
+
+== Opening app ==
+open exit code: 0

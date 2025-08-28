@@ -1,12 +1,3 @@
-begin
-  require 'xcodeproj'
-  if defined?(Xcodeproj::Project::Object::PBXProject::KNOWN_OBJECT_VERSION)
-    Xcodeproj::Project::Object::PBXProject::KNOWN_OBJECT_VERSION[70] = 'Xcode 16.0'
-  end
-rescue StandardError => e
-  Pod::UI.puts "Skipping xcodeproj KNOWN_OBJECT_VERSION[70] mapping: #{e}"
-end
-
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
