@@ -1,0 +1,19 @@
+=== Agent Rule Files Discovery (Fri Aug 29 02:17:04 IST 2025) ===
+--- NOT FOUND: AGENTS.md ---
+
+--- NOT FOUND: .roo/rules-code/AGENTS.md ---
+
+--- NOT FOUND: .roo/rules-debug/AGENTS.md ---
+
+--- NOT FOUND: .roo/rules-ask/AGENTS.md ---
+
+--- NOT FOUND: .roo/rules-architect/AGENTS.md ---
+
+--- NOT FOUND: .cursorrules ---
+
+--- NOT FOUND: .cursor/rules ---
+
+--- NOT FOUND: CLAUDE.md ---
+
+--- NOT FOUND: .github/copilot-instructions.md ---
+

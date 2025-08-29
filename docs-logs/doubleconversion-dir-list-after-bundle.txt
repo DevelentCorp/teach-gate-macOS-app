@@ -1,0 +1,2 @@
+ls: macos/Pods/Headers/Public/DoubleConversion: No such file or directory
+MODULEMAP_PRESENT_AFTER_BUNDLE=0

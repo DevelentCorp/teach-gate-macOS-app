@@ -1,0 +1,4 @@
+{
+    NSExtensionPointIdentifier = "com.apple.networkextension.packet-tunnel";
+    NSExtensionPrincipalClass = PacketTunnelProvider;
+}

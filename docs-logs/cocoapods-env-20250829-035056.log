@@ -1,0 +1,26 @@
+== PATHS ==
+/opt/homebrew/bin/pod
+/usr/bin/ruby
+/usr/bin/gem
+/opt/homebrew/bin/brew
+== VERSIONS ==
+1.16.2
+ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin24]
+Ignoring bigdecimal-3.1.7 because its extensions are not built. Try: gem pristine bigdecimal --version 3.1.7
+Ignoring date-3.3.4 because its extensions are not built. Try: gem pristine date --version 3.3.4
+Ignoring dbm-1.1.0 because its extensions are not built. Try: gem pristine dbm --version 1.1.0
+Ignoring etc-1.4.3 because its extensions are not built. Try: gem pristine etc --version 1.4.3
+Ignoring fcntl-1.1.0 because its extensions are not built. Try: gem pristine fcntl --version 1.1.0
+Ignoring io-console-0.7.2 because its extensions are not built. Try: gem pristine io-console --version 0.7.2
+Ignoring libxml-ruby-5.0.3 because its extensions are not built. Try: gem pristine libxml-ruby --version 5.0.3
+3.0.3.1
+Homebrew 4.6.7
+== Xcodeproj VERSION ==
+Ignoring bigdecimal-3.1.7 because its extensions are not built. Try: gem pristine bigdecimal --version 3.1.7
+Ignoring date-3.3.4 because its extensions are not built. Try: gem pristine date --version 3.3.4
+Ignoring dbm-1.1.0 because its extensions are not built. Try: gem pristine dbm --version 1.1.0
+Ignoring etc-1.4.3 because its extensions are not built. Try: gem pristine etc --version 1.4.3
+Ignoring fcntl-1.1.0 because its extensions are not built. Try: gem pristine fcntl --version 1.1.0
+Ignoring io-console-0.7.2 because its extensions are not built. Try: gem pristine io-console --version 0.7.2
+Ignoring libxml-ruby-5.0.3 because its extensions are not built. Try: gem pristine libxml-ruby --version 5.0.3
+1.27.0

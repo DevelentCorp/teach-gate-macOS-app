@@ -1,0 +1,40 @@
+==> Updating Homebrew...
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+caesiumclt: Fast and efficient lossy and/or lossless image compression tool
+claudekit: Intelligent guardrails and workflow automation for Claude Code
+imagineer: Image processing and conversion from the terminal
+netscanner: Network scanner with features like WiFi scanning, packetdump and more
+npq: Audit npm packages before you install them
+omekasy: Converts alphanumeric input to various Unicode styles
+rmpc: Terminal based Media Player Client with album art support
+rv: Ruby version manager
+standardebooks: Tools for producing ebook files
+tdd-guard: Automated TDD enforcement for Claude Code
+two-ms: Detect secrets in files and communication platforms
+==> New Casks
+font-source-han-sans-vf
+font-source-han-serif-vf
+paste: Limitless clipboard
+==> Outdated Formulae
+ca-certificates
+certifi
+gettext
+glib
+go
+harfbuzz
+jupyterlab
+node
+openjdk@17
+openssl@3
+pcre2
+pixman
+python@3.13
+readline
+sqlite
+tcl-tk
+zeromq
+
+You have 17 outdated formulae installed.
+You can upgrade them with brew upgrade
+or list them with brew outdated.

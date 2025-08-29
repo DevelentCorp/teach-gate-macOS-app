@@ -1,0 +1,11 @@
+warn Argument --configuration has been deprecated and will be removed in a future release, please use --mode instead.
+info Found Xcode workspace "Teach Gate.xcworkspace"
+info Building (using "xcodebuild -workspace /Users/obedsayyad/teach-gate-macOS-app/macos/Teach Gate.xcworkspace -configuration Debug -scheme Teach Gate-macOS")
+....................................................................................................................................................................................................................................................................................................................................
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006000-000C019234FA401E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006000-000C019234FA401E, name:My Mac }
+{ platform:macOS, name:Any Mac }
+info Launching app "com.develentcorp.teachgatedesk" from "/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app"
+success Successfully launched the app
+EXIT=0

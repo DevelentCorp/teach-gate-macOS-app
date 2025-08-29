@@ -43,5 +43,8 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<!-- Explicit override to deterministically locate the Packet Tunnel extension's bundle id -->
+	<key>VPNProviderBundleIdentifier</key>
+	<string>com.develentcorp.teachgatedesk.TeachGateVPN</string>
 </dict>
 </plist>

@@ -1,0 +1,13 @@
+total 80
+-rw-r--r--  1 obedsayyad  staff   434B Aug 29 02:17 agents-rule-files-discovery.txt
+-rw-r--r--  1 obedsayyad  staff     0B Aug 29 02:31 ls-docs-logs.txt
+-rw-r--r--  1 obedsayyad  staff   2.4K Aug 29 02:24 ls-root.txt
+-rw-r--r--  1 obedsayyad  staff     8B Aug 29 02:31 node-version.txt
+-rw-r--r--  1 obedsayyad  staff     7B Aug 29 02:31 npm-version.txt
+-rw-r--r--  1 obedsayyad  staff    99B Aug 29 02:26 pkg-scripts-and-jest-grep.txt
+-rw-r--r--  1 obedsayyad  staff   239B Aug 29 02:26 pkg-scripts-and-jest.txt
+-rw-r--r--  1 obedsayyad  staff     0B Aug 29 02:30 search-appregistry.txt
+-rw-r--r--  1 obedsayyad  staff     0B Aug 29 02:30 search-platform-index.txt
+-rw-r--r--  1 obedsayyad  staff   494B Aug 29 02:28 search-react-native-xcode-sh.txt
+-rw-r--r--  1 obedsayyad  staff   5.1K Aug 29 02:25 stack-discovery.txt
+-rw-r--r--  1 obedsayyad  staff    29B Aug 29 02:31 yarn-version.txt

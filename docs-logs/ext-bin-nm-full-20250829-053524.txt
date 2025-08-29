@@ -1,0 +1,74 @@
+0000000100001bb4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_0
+0000000100001bc4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_1
+0000000100001c4c (__TEXT,__text) non-external _OUTLINED_FUNCTION_10
+0000000100001c58 (__TEXT,__text) non-external _OUTLINED_FUNCTION_11
+0000000100001c64 (__TEXT,__text) non-external _OUTLINED_FUNCTION_12
+0000000100001c6c (__TEXT,__text) non-external _OUTLINED_FUNCTION_13
+0000000100001c74 (__TEXT,__text) non-external _OUTLINED_FUNCTION_14
+0000000100001c80 (__TEXT,__text) non-external _OUTLINED_FUNCTION_15
+0000000100001c88 (__TEXT,__text) non-external _OUTLINED_FUNCTION_16
+0000000100001c98 (__TEXT,__text) non-external _OUTLINED_FUNCTION_17
+0000000100001ca0 (__TEXT,__text) non-external _OUTLINED_FUNCTION_18
+0000000100001ca8 (__TEXT,__text) non-external _OUTLINED_FUNCTION_19
+0000000100001bd4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_2
+0000000100001cb4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_20
+0000000100001cc0 (__TEXT,__text) non-external _OUTLINED_FUNCTION_21
+0000000100001ccc (__TEXT,__text) non-external _OUTLINED_FUNCTION_22
+0000000100001cd4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_23
+0000000100001ce0 (__TEXT,__text) non-external _OUTLINED_FUNCTION_24
+0000000100001ce8 (__TEXT,__text) non-external _OUTLINED_FUNCTION_25
+0000000100001cf4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_26
+0000000100001cfc (__TEXT,__text) non-external _OUTLINED_FUNCTION_27
+0000000100001be8 (__TEXT,__text) non-external _OUTLINED_FUNCTION_3
+0000000100001bf4 (__TEXT,__text) non-external _OUTLINED_FUNCTION_4
+0000000100001c00 (__TEXT,__text) non-external _OUTLINED_FUNCTION_5
+0000000100001c14 (__TEXT,__text) non-external _OUTLINED_FUNCTION_6
+0000000100001c20 (__TEXT,__text) non-external _OUTLINED_FUNCTION_7
+0000000100001c30 (__TEXT,__text) non-external _OUTLINED_FUNCTION_8
+0000000100001c40 (__TEXT,__text) non-external _OUTLINED_FUNCTION_9
+0000000100000848 (__TEXT,__text) external ___debug_blank_executor_main
+00000001000013d4 (__TEXT,__text) external ___debug_blank_executor_run_user_entry_point
+0000000100000e18 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_0_0
+0000000100001b28 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_0_1_8_0
+0000000100001b80 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_0_2_8_2_8_2
+0000000100001ba0 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_2_1_8_32
+0000000100000e04 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_2_1_8_34
+0000000100001b60 (__TEXT,__text) non-external (was a private external) ___os_log_helper_16_2_2_8_34_8_34
+000000010000146c (__TEXT,__text) external ___previews_blank_executor_run_user_entry_point
+                 (undefined) external ___stack_chk_fail (from libSystem)
+                 (undefined) external ___stack_chk_guard (from libSystem)
+                 (undefined) external ___stderrp (from libSystem)
+0000000100008010 (__DATA,__common) external __cachedDebugDylibEntryPoint
+0000000100008008 (__DATA,__common) external __cachedDebugDylibHandle
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+                 (undefined) external __os_log_error_impl (from libSystem)
+                 (undefined) external __os_log_impl (from libSystem)
+                 (undefined) external _abort (from libSystem)
+0000000100001b3c (__TEXT,__text) external _abort_could_not_find_entry_point___debug_dylib
+0000000100001a90 (__TEXT,__text) external _abort_failed_to_open___debug_dylib
+0000000100001b54 (__TEXT,__text) external _abort_normaldylib_expected_but_found_pseudodylib___debug_dylib
+0000000100001b48 (__TEXT,__text) external _abort_pseudodylib_expected_but_found_normal___debug_dylib
+0000000100001470 (__TEXT,__text) external _assertDebugDylibStatus
+                 (undefined) external _calloc (from libSystem)
+0000000100008100 (__DATA,__common) external _debugDylibEntryPointName
+0000000100008200 (__DATA,__common) external _debugDylibInstallName
+0000000100008400 (__DATA,__common) external _debugDylibRelativePath
+0000000100008000 (__DATA,__common) external _didLoadDylibStringSections
+                 (undefined) external _dlerror (from libSystem)
+                 (undefined) external _dlopen (from libSystem)
+                 (undefined) external _dlsym (from libSystem)
+                 (undefined) external _free (from libSystem)
+                 (undefined) external _freopen (from libSystem)
+                 (undefined) external _fwrite (from libSystem)
+0000000100000e20 (__TEXT,__text) external _getDebugDylibEntryPoint
+0000000100001474 (__TEXT,__text) external _getDebugDylibHandle
+                 (undefined) external _getenv (from libSystem)
+                 (undefined) external _localtime (from libSystem)
+0000000100008800 (__DATA,__bss) non-external _logger
+                 (undefined) external _memcpy (from libSystem)
+                 (undefined) external _os_log_create (from libSystem)
+                 (undefined) external _os_log_type_enabled (from libSystem)
+                 (undefined) external _printf (from libSystem)
+                 (undefined) external _snprintf (from libSystem)
+                 (undefined) external _strcmp (from libSystem)
+                 (undefined) external _time (from libSystem)

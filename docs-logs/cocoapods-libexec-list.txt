@@ -1,0 +1,11 @@
+total 0
+drwxr-xr-x  10 obedsayyad  admin   320 Oct 31  2024 .
+drwxr-xr-x  10 obedsayyad  admin   320 Aug  1 19:54 ..
+drwxr-xr-x   7 obedsayyad  admin   224 Aug  1 19:54 bin
+drwxr-xr-x   2 obedsayyad  admin    64 Oct 31  2024 build_info
+drwxr-xr-x  36 obedsayyad  admin  1152 Oct 31  2024 cache
+drwxr-xr-x   2 obedsayyad  admin    64 Oct 31  2024 doc
+drwxr-xr-x   3 obedsayyad  admin    96 Oct 31  2024 extensions
+drwxr-xr-x  36 obedsayyad  admin  1152 Oct 31  2024 gems
+drwxr-xr-x   2 obedsayyad  admin    64 Oct 31  2024 plugins
+drwxr-xr-x  36 obedsayyad  admin  1152 Oct 31  2024 specifications

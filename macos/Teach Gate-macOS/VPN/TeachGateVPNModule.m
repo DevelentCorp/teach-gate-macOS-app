@@ -2,7 +2,6 @@
 #import <NetworkExtension/NetworkExtension.h>
 
 // Import the generated OutlineTunnel Swift bridging header
-// Built with Outline's official gomobile bind process for compatibility
 @import OutlineTunnel;
 #define OUTLINE_AVAILABLE 1
 
@@ -20,36 +19,22 @@ static NSString *const kDefaultDisplayName = @"Teach Gate VPN";
 RCT_EXPORT_MODULE(TeachGateVPNModule);
 
 + (BOOL)requiresMainQueueSetup {
-  // NETunnelProviderManager and NEVPN APIs are UI-permission sensitive; safest on main.
-  return YES;
+  return YES; // VPN APIs are UI-sensitive
 }
 
 - (NSArray<NSString *> *)supportedEvents {
   return @[kEventVpnStatusChanged, kEventVpnError];
 }
 
-- (void)startObserving {
-  self.hasListeners = YES;
-}
-
-- (void)stopObserving {
-  self.hasListeners = NO;
-}
+- (void)startObserving { self.hasListeners = YES; }
+- (void)stopObserving { self.hasListeners = NO; }
 
 - (instancetype)init {
   if (self = [super init]) {
-    // Subscribe to OutlineVpn status changes and forward to RN.
-#ifdef __IPHONE_13_0
-#endif
-#ifdef __has_include
-#endif
-#if 1  // OutlineTunnel is directly imported above
-    // Use the ObjC-bridged observer to avoid Swift closure bridging issues.
 #if OUTLINE_AVAILABLE
     [[OutlineVpn shared] onVpnStatusChangeObjc:^(__unused NSInteger statusValue, NSString * _Nonnull tunnelId) {
       [self emitStatusFromStatus:(NEVPNStatus)statusValue tunnelId:tunnelId];
     }];
-#endif
 #endif
   }
   return self;
@@ -61,44 +46,65 @@ RCT_EXPORT_METHOD(connect:(NSString *)configJson
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-#if 1  // OutlineTunnel is directly imported above
 #if OUTLINE_AVAILABLE
   NSString *transportYAML = [self toTransportYAML:configJson];
   if (transportYAML.length == 0) {
-    if (reject) reject(@"invalid_config", @"Configuration string is empty or invalid", nil);
+    if (reject) reject(@"ERR_INVALID_CONFIG", @"Configuration string is empty or invalid", nil);
     return;
   }
-  // Start the VPN via OutlineVpn (bridged async function with completion handler).
+
+  NSLog(@"🔍 DEBUG: Starting VPN connection with transport config length: %lu", (unsigned long)transportYAML.length);
+  
   [[OutlineVpn shared] startWithCompletion:kDefaultTunnelId
                                      named:kDefaultDisplayName
                              withTransport:transportYAML
                          completionHandler:^(NSError * _Nullable error) {
     if (error) {
+      NSLog(@"🔍 DEBUG: VPN connection failed with error: %@", error);
+      
+      // Enhanced error handling for common VPN issues
+      NSString *errorCode = [self errorCodeFromNSError:error];
+      NSString *errorMessage = [self errorMessageFromNSError:error];
+      
+      // Check for specific VPN extension issues
+      if ([errorMessage containsString:@"unexpected nil disconnect error"]) {
+        NSString *detailedMessage = @"VPN Extension communication failed. This usually indicates:\n"
+                                   @"• VPN Extension not properly embedded in app bundle\n"
+                                   @"• Network Extension entitlements missing\n"
+                                   @"• VPN permissions not granted by macOS\n"
+                                   @"• Extension process failed to start\n"
+                                   @"Please check Console.app for additional error details.";
+        errorCode = @"ERR_EXTENSION_FAILURE";
+        errorMessage = detailedMessage;
+      }
+      
       [self emitError:error forOperation:@"connect"];
-      if (reject) reject([self errorCodeFromNSError:error], [self errorMessageFromNSError:error], error);
+      if (reject) reject(errorCode, errorMessage, error);
       return;
     }
+    
+    NSLog(@"🔍 DEBUG: VPN connection established successfully");
     if (resolve) resolve(@(YES));
   }];
 #else
-  if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
-#endif
-#else
-  if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
+  NSLog(@"🔍 DEBUG: OutlineAppleLib not available - missing framework");
+  if (reject) reject(@"ERR_MISSING_FRAMEWORK", @"OutlineAppleLib is not linked to the host app target", nil);
 #endif
 }
 
 RCT_EXPORT_METHOD(disconnect:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-#if 1  // OutlineTunnel is directly imported above
 #if OUTLINE_AVAILABLE
-  // Stop has no completion handler; it triggers NEVPNStatusDidChange notifications.
-  [[OutlineVpn shared] stopWithId:kDefaultTunnelId];
-  if (resolve) resolve(@(YES));
-#else
-  if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
-#endif
+  [[OutlineVpn shared] isActiveWithCompletion:kDefaultTunnelId completionHandler:^(__unused BOOL active) {
+    // Always best-effort disconnect
+    @try {
+      [[OutlineVpn shared] stopWithId:kDefaultTunnelId];
+    } @catch (__unused NSException *exception) {
+      // Ignore "nil disconnect" crashes
+    }
+    if (resolve) resolve(@(YES));
+  }];
 #else
   if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
 #endif
@@ -107,15 +113,30 @@ RCT_EXPORT_METHOD(disconnect:(RCTPromiseResolveBlock)resolve
 RCT_EXPORT_METHOD(getStatus:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-#if 1  // OutlineTunnel is directly imported above
 #if OUTLINE_AVAILABLE
-  // Bridged async - completion handler returns BOOL active
   [[OutlineVpn shared] isActiveWithCompletion:kDefaultTunnelId completionHandler:^(BOOL active) {
     if (resolve) resolve(@(active));
   }];
 #else
   if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
 #endif
+}
+
+RCT_EXPORT_METHOD(toggleConnection:(NSString *)configJson
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+#if OUTLINE_AVAILABLE
+  [[OutlineVpn shared] isActiveWithCompletion:kDefaultTunnelId completionHandler:^(BOOL active) {
+    if (active) {
+      // Safe disconnect
+      [self disconnect:^(__unused id result) {
+        if (resolve) resolve(@(YES));
+      } rejecter:nil];
+    } else {
+      [self connect:configJson resolver:resolve rejecter:reject];
+    }
+  }];
 #else
   if (reject) reject(@"missing_outlinelib", @"OutlineAppleLib is not linked to the host app target", nil);
 #endif
@@ -162,24 +183,19 @@ RCT_EXPORT_METHOD(getStatus:(RCTPromiseResolveBlock)resolve
   if (input == nil) return @"";
   NSString *trimmed = [input stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
   if (trimmed.length == 0) return @"";
-  // Pass-through if already a YAML with "transport:" at the beginning (or anywhere)
   if ([trimmed containsString:@"\ntransport:"] || [trimmed hasPrefix:@"transport:"]) {
     return trimmed;
   }
-  // If it's JSON (legacy object), wrap as YAML transport: {json...}
   if ([trimmed hasPrefix:@"{"] && [trimmed hasSuffix:@"}"]) {
     return [NSString stringWithFormat:@"transport: %@", trimmed];
   }
-  // If it's an ss:// URL or quoted string, wrap as YAML.
   if ([trimmed hasPrefix:@"ss://"] || [trimmed hasPrefix:@"\"ss://"] || [trimmed hasPrefix:@"'ss://"]) {
     return [NSString stringWithFormat:@"transport: %@", trimmed];
   }
-  // Fallback: try to wrap raw input as a string
   return [NSString stringWithFormat:@"transport: \"%@\"", [self yamlEscape:trimmed]];
 }
 
 - (NSString *)yamlEscape:(NSString *)s {
-  // Minimal escaping for quotes/backslashes/newlines
   NSMutableString *m = [s mutableCopy];
   [m replaceOccurrencesOfString:@"\\" withString:@"\\\\"
                          options:0 range:NSMakeRange(0, m.length)];
@@ -191,7 +207,6 @@ RCT_EXPORT_METHOD(getStatus:(RCTPromiseResolveBlock)resolve
 }
 
 - (NSString *)errorCodeFromNSError:(NSError *)error {
-  // OutlineError exports a domain, but fallback to code string in localizedDescription.
   NSString *code = error.userInfo[@"DetailedJsonError_ErrorCode"];
   if (code.length > 0) return code;
   return error.domain ?: @"OutlineError";

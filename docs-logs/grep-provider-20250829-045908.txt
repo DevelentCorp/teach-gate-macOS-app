@@ -1,0 +1,113 @@
+macos/xcode/Outline/Classes/AppKitBridge/StatusItemController.swift:112:            let managers = try? await NETunnelProviderManager.loadAllFromPreferences()
+macos/xcode/Outline.xcodeproj/project.pbxproj:19:		5260B05F2C4F0A4E00CDF289 /* VpnExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5260B05C2C4F09FB00CDF289 /* VpnExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+macos/xcode/Outline.xcodeproj/project.pbxproj:66:			remoteInfo = VpnExtension;
+macos/xcode/Outline.xcodeproj/project.pbxproj:73:			remoteInfo = VpnExtension;
+macos/xcode/Outline.xcodeproj/project.pbxproj:87:			remoteInfo = VpnExtensionTest;
+macos/xcode/Outline.xcodeproj/project.pbxproj:98:				5260B05F2C4F0A4E00CDF289 /* VpnExtension.appex in Embed App Extensions */,
+macos/xcode/Outline.xcodeproj/project.pbxproj:366:				5260B05C2C4F09FB00CDF289 /* VpnExtension.appex */,
+macos/xcode/Outline.xcodeproj/project.pbxproj:367:				A29688D12D84A5F60070772E /* VpnExtensionTest.xctest */,
+macos/xcode/Outline.xcodeproj/project.pbxproj:615:		5260B05C2C4F09FB00CDF289 /* VpnExtension.appex */ = {
+macos/xcode/Outline.xcodeproj/project.pbxproj:618:			path = VpnExtension.appex;
+macos/xcode/Outline.xcodeproj/project.pbxproj:622:		A29688D12D84A5F60070772E /* VpnExtensionTest.xctest */ = {
+macos/xcode/Outline.xcodeproj/project.pbxproj:625:			path = VpnExtensionTest.xctest;
+macos/xcode/Outline.xcodeproj/project.pbxproj:705:			name = VpnExtension;
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:19:               BuildableName = "VpnExtension.appex"
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:20:               BlueprintName = "VpnExtension"
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:35:            BuildableName = "VpnExtension.appex"
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:36:            BlueprintName = "VpnExtension"
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:68:            BuildableName = "VpnExtension.appex"
+macos/xcode/Outline.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:69:            BlueprintName = "VpnExtension"
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:10:		522987052C4F273E009EE577 /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 522987042C4F273E009EE577 /* PacketTunnelProvider.m */; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:13:		522E63DA2C751A3A0010C3FA /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E63D92C751A3A0010C3FA /* PacketTunnelProvider.swift */; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:14:		522E63F02C768BA30010C3FA /* VpnExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E63EF2C768BA30010C3FA /* VpnExtensionTest.swift */; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:17:		522E64042C769F100010C3FA /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E63D92C751A3A0010C3FA /* PacketTunnelProvider.swift */; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:26:		522987032C4F273E009EE577 /* PacketTunnelProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:27:		522987042C4F273E009EE577 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:29:		522E63D82C751A390010C3FA /* VpnExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VpnExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:30:		522E63D92C751A3A0010C3FA /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:31:		522E63ED2C768BA30010C3FA /* VpnExtensionTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VpnExtensionTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:32:		522E63EF2C768BA30010C3FA /* VpnExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnExtensionTest.swift; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:33:		52334EAC2B0D58AD00817E56 /* VpnExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VpnExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:36:		52334EB42B0D58AD00817E56 /* VpnExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VpnExtension.entitlements; sourceTree = "<group>"; };
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:69:				522987032C4F273E009EE577 /* PacketTunnelProvider.h */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:70:				522987042C4F273E009EE577 /* PacketTunnelProvider.m */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:71:				522E63D92C751A3A0010C3FA /* PacketTunnelProvider.swift */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:72:				522E63D82C751A390010C3FA /* VpnExtension-Bridging-Header.h */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:77:		522E63EE2C768BA30010C3FA /* VpnExtensionTest */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:80:				522E63EF2C768BA30010C3FA /* VpnExtensionTest.swift */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:82:			path = VpnExtensionTest;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:88:				52334EB02B0D58AD00817E56 /* VpnExtension */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:89:				522E63EE2C768BA30010C3FA /* VpnExtensionTest */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:98:				52334EAC2B0D58AD00817E56 /* VpnExtension.appex */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:99:				522E63ED2C768BA30010C3FA /* VpnExtensionTest.xctest */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:113:		52334EB02B0D58AD00817E56 /* VpnExtension */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:118:				52334EB42B0D58AD00817E56 /* VpnExtension.entitlements */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:120:			path = VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:126:		522E63EC2C768BA30010C3FA /* VpnExtensionTest */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:128:			buildConfigurationList = 522E63F12C768BA30010C3FA /* Build configuration list for PBXNativeTarget "VpnExtensionTest" */;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:138:			name = VpnExtensionTest;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:143:			productName = VpnExtensionTest;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:144:			productReference = 522E63ED2C768BA30010C3FA /* VpnExtensionTest.xctest */;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:147:		52334EAB2B0D58AD00817E56 /* VpnExtension */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:149:			buildConfigurationList = 52334EB52B0D58AD00817E56 /* Build configuration list for PBXNativeTarget "VpnExtension" */;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:160:			name = VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:166:			productName = VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:167:			productReference = 52334EAC2B0D58AD00817E56 /* VpnExtension.appex */;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:275:				52334EAB2B0D58AD00817E56 /* VpnExtension */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:276:				522E63EC2C768BA30010C3FA /* VpnExtensionTest */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:303:				522E64042C769F100010C3FA /* PacketTunnelProvider.swift in Sources */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:304:				522E63F02C768BA30010C3FA /* VpnExtensionTest.swift in Sources */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:312:				522E63DA2C751A3A0010C3FA /* PacketTunnelProvider.swift in Sources */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:313:				522987052C4F273E009EE577 /* PacketTunnelProvider.m in Sources */,
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:322:			productRef = 5260B0832C4F18B200CDF289 /* PacketTunnelProvider */;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:335:				PRODUCT_BUNDLE_IDENTIFIER = org.getoutline.client.VpnExtensionTest;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:354:				PRODUCT_BUNDLE_IDENTIFIER = org.getoutline.client.VpnExtensionTest;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:495:				CODE_SIGN_ENTITLEMENTS = VpnExtension/VpnExtension.entitlements;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:500:				INFOPLIST_FILE = VpnExtension/Info.plist;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:501:				INFOPLIST_KEY_CFBundleDisplayName = VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:510:				PRODUCT_BUNDLE_IDENTIFIER = org.outline.ios.client.VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:511:				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.outline.macos.client.VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:520:				SWIFT_OBJC_BRIDGING_HEADER = "VpnExtension/Sources/VpnExtension-Bridging-Header.h";
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:532:				CODE_SIGN_ENTITLEMENTS = VpnExtension/VpnExtension.entitlements;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:537:				INFOPLIST_FILE = VpnExtension/Info.plist;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:538:				INFOPLIST_KEY_CFBundleDisplayName = VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:547:				PRODUCT_BUNDLE_IDENTIFIER = org.outline.ios.client.VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:548:				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = org.outline.macos.client.VpnExtension;
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:557:				SWIFT_OBJC_BRIDGING_HEADER = "VpnExtension/Sources/VpnExtension-Bridging-Header.h";
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:567:		522E63F12C768BA30010C3FA /* Build configuration list for PBXNativeTarget "VpnExtensionTest" */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:585:		52334EB52B0D58AD00817E56 /* Build configuration list for PBXNativeTarget "VpnExtension" */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:634:		5260B0832C4F18B200CDF289 /* PacketTunnelProvider */ = {
+macos/OutlineLib/OutlineLib.xcodeproj/project.pbxproj:637:			productName = PacketTunnelProvider;
+macos/OutlineLib/OutlineLib.xcodeproj/xcshareddata/xcschemes/VpnExtensionTest.xcscheme:23:               BuildableName = "VpnExtensionTest.xctest"
+macos/OutlineLib/OutlineLib.xcodeproj/xcshareddata/xcschemes/VpnExtensionTest.xcscheme:24:               BlueprintName = "VpnExtensionTest"
+macos/OutlineLib/OutlineLib.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:20:               BuildableName = "VpnExtension.appex"
+macos/OutlineLib/OutlineLib.xcodeproj/xcshareddata/xcschemes/VpnExtension.xcscheme:21:               BlueprintName = "VpnExtension"
+macos/OutlineLib/VpnExtensionTest/VpnExtensionTest.swift:19:final class VpnExtensionTest: XCTestCase {
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.swift:20:/// SwiftBridge is a transitional class to allow the incremental migration of our PacketTunnelProvider from Objective-C to Swift.
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.swift:249:  The workaround lets the app to use [NETunnelProviderSession sendProviderMessage] to get the
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.h:15:#ifndef PacketTunnelProvider_h
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.h:16:#define PacketTunnelProvider_h
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.h:23:@interface PacketTunnelProvider : NEPacketTunnelProvider
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.h:46:#endif /* PacketTunnelProvider_h */
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:15:#import "PacketTunnelProvider.h"
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:16:#import "VpnExtension-Swift.h"
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:32:@interface PacketTunnelProvider ()<Tun2socksTunWriter>
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:43:@implementation PacketTunnelProvider
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:75:    DDLogError(@"Failed to retrieve NETunnelProviderProtocol.");
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:78:  NETunnelProviderProtocol *protocol = (NETunnelProviderProtocol *)self.protocolConfiguration;
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:151:  __weak PacketTunnelProvider *weakSelf = self;
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.m:295:  __weak PacketTunnelProvider *weakSelf = self;
+macos/OutlineLib/VpnExtension/Info.plist:8:  <string>VpnExtension</string>
+macos/OutlineLib/VpnExtension/Info.plist:23:    <key>NSExtensionPointIdentifier</key>
+macos/OutlineLib/VpnExtension/Info.plist:26:    <string>PacketTunnelProvider</string>
+macos/TeachGateVPN/PacketTunnelProvider.swift:2:// VPN Extension placeholder. The real PacketTunnelProvider implementation
+macos/TeachGateVPN/PacketTunnelProvider.swift:4:// as 'PacketTunnelProvider'. This file must not declare a class with that
+macos/TeachGateVPN/Info.plist:7:		<key>NSExtensionPointIdentifier</key>
+macos/TeachGateVPN/Info.plist:10:		<string>PacketTunnelProvider</string>
+macos/README.md:122:The VpnExtension runs in a separate process and its output is not logged to the Xcode console. To view its log statements see the "Inspect Logs" section.
+macos/README.md:124:XCode doesn't automatically attach to the VpnExtension because it's started on demand by the system.
+macos/README.md:127:  - In XCode, select **Debug > Attach to Process > VpnExtension**
+macos/README.md:128:- If the VpnExtension is not running:
+macos/README.md:130:  - Fill **PID or Process Name** with `VpnExtension` and press **Attach**
+macos/README.md:146:pkill -9 VpnExtension
+macos/Teach Gate-macOS/main.jsbundle:732:__d(function(g,_r,_i,a,m,_e,d){var e=_r(d[0]);Object.defineProperty(_e,"__esModule",{value:!0}),_e.default=void 0;var t=e(_r(d[1])),n=e(_r(d[2])),o=(function(e,t){if("function"==typeof WeakMap)var n=new WeakMap,o=new WeakMap;return(function(e,t){if(!t&&e&&e.__esModule)return e;var r,i,s={__proto__:null,default:e};if(null===e||"object"!=typeof e&&"function"!=typeof e)return s;if(r=t?o:n){if(r.has(e))return r.get(e);r.set(e,s)}for(var l in e)"default"!==l&&{}.hasOwnProperty.call(e,l)&&((i=(r=Object.defineProperty)&&Object.getOwnPropertyDescriptor(e,l))&&(i.get||i.set)?r(s,l,i):s[l]=e[l]);return s})(e,t)})(_r(d[3])),r=_r(d[4]),i=e(_r(d[5])),s=e(_r(d[6])),l=e(_r(d[7])),u=_r(d[8]);var c='vpnConnectionStartTime',f=r.StyleSheet.create({container:{flex:1,alignItems:'center',paddingTop:80,backgroundColor:'#fff'},menuButton:{position:'absolute',top:40,left:20,backgroundColor:'#fff',padding:10,borderRadius:30,elevation:5,shadowColor:'#000',shadowOffset:{width:0,height:2},shadowOpacity:.3,shadowRadius:4,zIndex:1},header:{flexDirection:'row',alignItems:'center',marginBottom:20,marginTop:40},shield:{width:80,height:90,marginBottom:10,marginRight:20},heading:{fontSize:45,fontFamily:'Poppins-Bold',fontWeight:'700',color:'#00456A',textAlign:'center'},subheading:{fontSize:45,fontFamily:'Poppins-Bold',fontWeight:'700',color:'#CA2611',marginLeft:26},statusContainer:{alignItems:'center',marginTop:50},statusText:{fontSize:24,fontWeight:'bold',color:'#0B2838',marginTop:20},timerText:{fontSize:48,fontWeight:'bold',color:'#000',marginTop:20},ipText:{fontSize:18,color:'#000',marginTop:10},liveTVButton:{position:'absolute',bottom:30,right:30,flexDirection:'row',backgroundColor:'#fff',paddingVertical:10,height:50,width:150,alignItems:'center',justifyC

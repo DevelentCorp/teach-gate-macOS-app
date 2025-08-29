@@ -1,0 +1,28 @@
+{
+  "BuildMachineOSBuild" => "24D70"
+  "CFBundleDevelopmentRegion" => "en"
+  "CFBundleDisplayName" => "TeachGateVPN"
+  "CFBundleExecutable" => "TeachGateVPN"
+  "CFBundleIdentifier" => "com.develentcorp.teachgatedesk.TeachGateVPN"
+  "CFBundleInfoDictionaryVersion" => "6.0"
+  "CFBundleName" => "TeachGateVPN"
+  "CFBundlePackageType" => "XPC!"
+  "CFBundleShortVersionString" => "1.0"
+  "CFBundleSupportedPlatforms" => [
+    0 => "MacOSX"
+  ]
+  "CFBundleVersion" => "1"
+  "DTCompiler" => "com.apple.compilers.llvm.clang.1_0"
+  "DTPlatformBuild" => "24F74"
+  "DTPlatformName" => "macosx"
+  "DTPlatformVersion" => "15.5"
+  "DTSDKBuild" => "24F74"
+  "DTSDKName" => "macosx15.5"
+  "DTXcode" => "1640"
+  "DTXcodeBuild" => "16F6"
+  "LSMinimumSystemVersion" => "12.0"
+  "NSExtension" => {
+    "NSExtensionPointIdentifier" => "com.apple.networkextension.packet-tunnel"
+    "NSExtensionPrincipalClass" => "PacketTunnelProvider"
+  }
+}

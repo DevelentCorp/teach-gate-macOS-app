@@ -1,0 +1,2 @@
+APP_PATH=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app
+EXT_PATH=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex

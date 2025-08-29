@@ -1,0 +1,980 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace "macos/Teach Gate.xcworkspace" -scheme "Teach Gate-macOS" -destination platform=macOS -configuration Debug CODE_SIGNING_ALLOWED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  OutlineAppleLib: /Users/obedsayyad/teach-gate-macOS-app/macos/OutlineAppleLib @ local
+  CocoaLumberjack: https://github.com/CocoaLumberjack/CocoaLumberjack.git @ 3.9.0
+  swift-log: https://github.com/apple/swift-log @ 1.6.4
+  Sentry: https://github.com/getsentry/sentry-cocoa @ 8.55.0
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006000-000C019234FA401E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006000-000C019234FA401E, name:My Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (93 targets)
+    Target 'Teach Gate-macOS' in project 'Teach Gate'
+        ➜ Explicit dependency on target 'TeachGateVPN' in project 'Teach Gate'
+        ➜ Implicit dependency on target 'Pods-Teach Gate-macOS' in project 'Pods' via file 'libPods-Teach Gate-macOS.a' in build phase 'Link Binary'
+        ➜ Implicit dependency on target 'DoubleConversion' in project 'Pods' via options '-lDoubleConversion' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RCT-Folly' in project 'Pods' via options '-lRCT-Folly' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RCTDeprecation' in project 'Pods' via options '-lRCTDeprecation' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RCTTypeSafety' in project 'Pods' via options '-lRCTTypeSafety' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RNCAsyncStorage' in project 'Pods' via options '-lRNCAsyncStorage' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RNGestureHandler' in project 'Pods' via options '-lRNGestureHandler' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'RNReanimated' in project 'Pods' via options '-lRNReanimated' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-Core' in project 'Pods' via options '-lReact-Core' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-CoreModules' in project 'Pods' via options '-lReact-CoreModules' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-Fabric' in project 'Pods' via options '-lReact-Fabric' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-FabricComponents' in project 'Pods' via options '-lReact-FabricComponents' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-FabricImage' in project 'Pods' via options '-lReact-FabricImage' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-ImageManager' in project 'Pods' via options '-lReact-ImageManager' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-Mapbuffer' in project 'Pods' via options '-lReact-Mapbuffer' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-NativeModulesApple' in project 'Pods' via options '-lReact-NativeModulesApple' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTAnimation' in project 'Pods' via options '-lReact-RCTAnimation' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTAppDelegate' in project 'Pods' via options '-lReact-RCTAppDelegate' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTBlob' in project 'Pods' via options '-lReact-RCTBlob' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods' via options '-lReact-RCTFBReactNativeSpec' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTFabric' in project 'Pods' via options '-lReact-RCTFabric' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTImage' in project 'Pods' via options '-lReact-RCTImage' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTLinking' in project 'Pods' via options '-lReact-RCTLinking' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTNetwork' in project 'Pods' via options '-lReact-RCTNetwork' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTSettings' in project 'Pods' via options '-lReact-RCTSettings' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTText' in project 'Pods' via options '-lReact-RCTText' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RCTVibration' in project 'Pods' via options '-lReact-RCTVibration' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RuntimeApple' in project 'Pods' via options '-lReact-RuntimeApple' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-RuntimeCore' in project 'Pods' via options '-lReact-RuntimeCore' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-cxxreact' in project 'Pods' via options '-lReact-cxxreact' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-debug' in project 'Pods' via options '-lReact-debug' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-defaultsnativemodule' in project 'Pods' via options '-lReact-defaultsnativemodule' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-domnativemodule' in project 'Pods' via options '-lReact-domnativemodule' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-featureflags' in project 'Pods' via options '-lReact-featureflags' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-featureflagsnativemodule' in project 'Pods' via options '-lReact-featureflagsnativemodule' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-graphics' in project 'Pods' via options '-lReact-graphics' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-idlecallbacksnativemodule' in project 'Pods' via options '-lReact-idlecallbacksnativemodule' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jsc' in project 'Pods' via options '-lReact-jsc' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jserrorhandler' in project 'Pods' via options '-lReact-jserrorhandler' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jsi' in project 'Pods' via options '-lReact-jsi' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jsiexecutor' in project 'Pods' via options '-lReact-jsiexecutor' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jsinspector' in project 'Pods' via options '-lReact-jsinspector' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-jsinspectortracing' in project 'Pods' via options '-lReact-jsinspectortracing' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-logger' in project 'Pods' via options '-lReact-logger' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-microtasksnativemodule' in project 'Pods' via options '-lReact-microtasksnativemodule' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-perflogger' in project 'Pods' via options '-lReact-perflogger' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-performancetimeline' in project 'Pods' via options '-lReact-performancetimeline' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-rendererconsistency' in project 'Pods' via options '-lReact-rendererconsistency' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-rendererdebug' in project 'Pods' via options '-lReact-rendererdebug' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-runtimescheduler' in project 'Pods' via options '-lReact-runtimescheduler' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'React-utils' in project 'Pods' via options '-lReact-utils' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'ReactAppDependencyProvider' in project 'Pods' via options '-lReactAppDependencyProvider' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'ReactCodegen' in project 'Pods' via options '-lReactCodegen' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'ReactCommon' in project 'Pods' via options '-lReactCommon' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'SocketRocket' in project 'Pods' via options '-lSocketRocket' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'Yoga' in project 'Pods' via options '-lYoga' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'fmt' in project 'Pods' via options '-lfmt' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'glog' in project 'Pods' via options '-lglog' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'react-native-safe-area-context' in project 'Pods' via options '-lreact-native-safe-area-context' in build setting 'OTHER_LDFLAGS'
+        ➜ Implicit dependency on target 'react-native-webview' in project 'Pods' via options '-lreact-native-webview' in build setting 'OTHER_LDFLAGS'
+        ➜ Explicit dependency on target 'OutlineAppleLib' in project 'OutlineAppleLib'
+    Target 'Pods-Teach Gate-macOS' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'FBLazyVector' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTDeprecation' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'RNCAsyncStorage' in project 'Pods'
+        ➜ Explicit dependency on target 'RNGestureHandler' in project 'Pods'
+        ➜ Explicit dependency on target 'RNReanimated' in project 'Pods'
+        ➜ Explicit dependency on target 'React' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-CoreModules' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricComponents' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Mapbuffer' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTActionSheet' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTAnimation' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTAppDelegate' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTBlob' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTLinking' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTSettings' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTText' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTVibration' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeCore' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-defaultsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-domnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflagsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-idlecallbacksnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jserrorhandler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspectortracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsitracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-microtasksnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererconsistency' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rncore' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-timing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactAppDependencyProvider' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCodegen' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'SocketRocket' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'boost' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+        ➜ Explicit dependency on target 'react-native-safe-area-context' in project 'Pods'
+        ➜ Explicit dependency on target 'react-native-webview' in project 'Pods'
+    Target 'react-native-webview' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCodegen' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'react-native-safe-area-context' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+    Target 'ReactAppDependencyProvider' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCodegen' in project 'Pods'
+    Target 'React-rncore' in project 'Pods' (no dependencies)
+    Target 'React-jsitracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+    Target 'React' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTActionSheet' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTAnimation' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTBlob' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTLinking' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTSettings' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTText' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTVibration' in project 'Pods'
+    Target 'React-RCTVibration' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTSettings' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTLinking' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTAnimation' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTActionSheet' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+    Target 'RNReanimated' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCodegen' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'RNGestureHandler' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCodegen' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'ReactCodegen' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTAppDelegate' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-RCTAppDelegate' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-CoreModules' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeCore' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-defaultsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-defaultsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-domnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflagsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-idlecallbacksnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-microtasksnativemodule' in project 'Pods'
+    Target 'React-microtasksnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-idlecallbacksnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-featureflagsnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-domnativemodule' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricComponents' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+    Target 'React-RuntimeApple' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-CoreModules' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Mapbuffer' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeCore' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jserrorhandler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+    Target 'React-RuntimeCore' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jserrorhandler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-jserrorhandler' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-Mapbuffer' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-CoreModules' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTBlob' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'SocketRocket' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+    Target 'React-RCTBlob' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+    Target 'React-RCTFabric' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricComponents' in project 'Pods'
+        ➜ Explicit dependency on target 'React-FabricImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTText' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspectortracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererconsistency' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-RCTText' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+    Target 'React-RCTImage' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTNetwork' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-RCTFBReactNativeSpec' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+    Target 'React-FabricImage' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-FabricComponents' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-NativeModulesApple' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-ImageManager' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-Fabric' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererconsistency' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'ReactCommon' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-graphics' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'RNCAsyncStorage' in project 'Pods'
+        ➜ Explicit dependency on target 'RNCAsyncStorage-RNCAsyncStorage_resources' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+    Target 'RNCAsyncStorage-RNCAsyncStorage_resources' in project 'Pods' (no dependencies)
+    Target 'RCTTypeSafety' in project 'Pods'
+        ➜ Explicit dependency on target 'FBLazyVector' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTRequired' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core' in project 'Pods'
+    Target 'React-Core' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'RCTDeprecation' in project 'Pods'
+        ➜ Explicit dependency on target 'React-Core-React-Core_privacy' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'SocketRocket' in project 'Pods'
+        ➜ Explicit dependency on target 'Yoga' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'Yoga' in project 'Pods' (no dependencies)
+    Target 'SocketRocket' in project 'Pods' (no dependencies)
+    Target 'React-runtimescheduler' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererconsistency' in project 'Pods'
+        ➜ Explicit dependency on target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-timing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-utils' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-rendererdebug' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+    Target 'React-rendererconsistency' in project 'Pods' (no dependencies)
+    Target 'React-performancetimeline' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspectortracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-timing' in project 'Pods'
+    Target 'React-jsiexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-jsc' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+    Target 'React-cxxreact' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-callinvoker' in project 'Pods'
+        ➜ Explicit dependency on target 'React-cxxreact-React-cxxreact_privacy' in project 'Pods'
+        ➜ Explicit dependency on target 'React-debug' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-timing' in project 'Pods'
+        ➜ Explicit dependency on target 'boost' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-timing' in project 'Pods' (no dependencies)
+    Target 'React-logger' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-jsinspector' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsinspectortracing' in project 'Pods'
+        ➜ Explicit dependency on target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-runtimeexecutor' in project 'Pods'
+        ➜ Explicit dependency on target 'React-jsi' in project 'Pods'
+    Target 'React-perflogger' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+    Target 'React-jsinspectortracing' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+    Target 'React-featureflags' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+    Target 'React-jsi' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'boost' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'React-debug' in project 'Pods' (no dependencies)
+    Target 'React-cxxreact-React-cxxreact_privacy' in project 'Pods' (no dependencies)
+    Target 'React-callinvoker' in project 'Pods' (no dependencies)
+    Target 'React-Core-React-Core_privacy' in project 'Pods' (no dependencies)
+    Target 'RCTRequired' in project 'Pods' (no dependencies)
+    Target 'RCTDeprecation' in project 'Pods' (no dependencies)
+    Target 'RCT-Folly' in project 'Pods'
+        ➜ Explicit dependency on target 'DoubleConversion' in project 'Pods'
+        ➜ Explicit dependency on target 'RCT-Folly-RCT-Folly_privacy' in project 'Pods'
+        ➜ Explicit dependency on target 'boost' in project 'Pods'
+        ➜ Explicit dependency on target 'fast_float' in project 'Pods'
+        ➜ Explicit dependency on target 'fmt' in project 'Pods'
+        ➜ Explicit dependency on target 'glog' in project 'Pods'
+    Target 'glog' in project 'Pods'
+        ➜ Explicit dependency on target 'glog-glog_privacy' in project 'Pods'
+    Target 'glog-glog_privacy' in project 'Pods' (no dependencies)
+    Target 'fmt' in project 'Pods' (no dependencies)
+    Target 'fast_float' in project 'Pods' (no dependencies)
+    Target 'boost' in project 'Pods'
+        ➜ Explicit dependency on target 'boost-boost_privacy' in project 'Pods'
+    Target 'boost-boost_privacy' in project 'Pods' (no dependencies)
+    Target 'RCT-Folly-RCT-Folly_privacy' in project 'Pods' (no dependencies)
+    Target 'FBLazyVector' in project 'Pods' (no dependencies)
+    Target 'DoubleConversion' in project 'Pods' (no dependencies)
+    Target 'TeachGateVPN' in project 'Teach Gate'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'OutlineAppleLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineVPNExtensionLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+    Target 'OutlineVPNExtensionLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineError' in project 'OutlineAppleLib'
+    Target 'OutlineAppleLib' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineSentryLogger' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineTunnel' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineCatalystApp' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineNotification' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineError' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'Sentry' in project 'Sentry'
+    Target 'OutlineError' in project 'OutlineAppleLib' (no dependencies)
+    Target 'OutlineCatalystApp' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'OutlineNotification' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+    Target 'OutlineNotification' in project 'OutlineAppleLib' (no dependencies)
+    Target 'OutlineTunnel' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+    Target 'OutlineSentryLogger' in project 'OutlineAppleLib'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'Sentry' in project 'Sentry'
+    Target 'Sentry' in project 'Sentry' (no dependencies)
+    Target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjackSwift' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjackSwiftSupport' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack' in project 'CocoaLumberjack'
+        ➜ Explicit dependency on target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack'
+    Target 'CocoaLumberjack_CocoaLumberjack' in project 'CocoaLumberjack' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x objective-c++ -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -V
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x assembler-with-cpp -c /dev/null
+
+Build description signature: 73a12443e34106b5bd30e59070acdf23
+Build description path: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/XCBuildData/73a12443e34106b5bd30e59070acdf23.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+
+WriteAuxiliaryFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp (in target 'React-Core' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    write-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+-target arm64-apple-macos12.0 '-std=c++20' '-stdlib=libc++' -fobjc-arc -fobjc-weak -fmodules -fno-cxx-modules '-fmodules-cache-path=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex' '-fmodule-name=React' '-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG' -fpascal-strings -O0 -fno-common '-DPOD_CONFIGURATION_DEBUG=1' '-DDEBUG=1' '-DCOCOAPODS=1' '-DRCT_METRO_PORT=' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -g -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-generated-files.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-own-target-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-all-non-framework-target-headers.hmap -ivfsoverlay /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/Pods-8699adb1dd336b26511df848a716bd42-VFS/all-product-headers.yaml -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-project-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-callinvoker -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-cxxreact -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-debug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-featureflags -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsi -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsiexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspector -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspectortracing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-logger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-perflogger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-performancetimeline -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererconsistency -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererdebug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimeexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimescheduler -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-timing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-utils -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/Yoga -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fast_float -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fmt -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog -I/Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-macos/ReactCommon -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fast_float/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fmt/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/FlipperKit -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/ReactCommon -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-jsinspector/jsinspector_modern.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RCTDeprecation/RCTDeprecation.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources-normal/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources -F/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion/DoubleConversion.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCTDeprecation/RCTDeprecation.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/SocketRocket/SocketRocket.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/folly/RCT-Folly.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog/glog.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsi/React-jsi.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern/React-jsinspector.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern_tracing/React-jsinspectortracing.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_debug/React-debug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_featureflags/React-featureflags.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_renderer_debug/React-rendererdebug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_utils/React-utils.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/yoga/Yoga.modulemap' -DFOLLY_NO_CONFIG '-DFOLLY_MOBILE=1' '-DFOLLY_USE_LIBCPP=1' '-DFOLLY_CFG_NO_COROUTINES=1' '-DFOLLY_HAVE_CLOCK_GETTIME=1'
+
+WriteAuxiliaryFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/533656923a283fa776881f304837ed9e-common-args.resp (in target 'React-Core' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    write-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/533656923a283fa776881f304837ed9e-common-args.resp
+-target arm64-apple-macos12.0 '-fmodules-cache-path=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex' '-fmodule-name=React' -fpascal-strings -O0 -fno-common '-DPOD_CONFIGURATION_DEBUG=1' '-DDEBUG=1' '-DCOCOAPODS=1' '-DRCT_METRO_PORT=' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -g -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-generated-files.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-own-target-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-all-non-framework-target-headers.hmap -ivfsoverlay /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/Pods-8699adb1dd336b26511df848a716bd42-VFS/all-product-headers.yaml -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-project-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-callinvoker -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-cxxreact -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-debug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-featureflags -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsi -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsiexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspector -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspectortracing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-logger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-perflogger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-performancetimeline -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererconsistency -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererdebug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimeexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimescheduler -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-timing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-utils -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/Yoga -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fast_float -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fmt -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog -I/Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-macos/ReactCommon -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fast_float/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fmt/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/FlipperKit -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/ReactCommon -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-jsinspector/jsinspector_modern.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RCTDeprecation/RCTDeprecation.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources-normal/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources -F/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion/DoubleConversion.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCTDeprecation/RCTDeprecation.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/SocketRocket/SocketRocket.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/folly/RCT-Folly.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog/glog.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsi/React-jsi.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern/React-jsinspector.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern_tracing/React-jsinspectortracing.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_debug/React-debug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_featureflags/React-featureflags.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_renderer_debug/React-rendererdebug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_utils/React-utils.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/yoga/Yoga.modulemap'
+
+WriteAuxiliaryFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp (in target 'React-Core' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    write-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+-target arm64-apple-macos12.0 '-std=gnu11' -fobjc-arc -fobjc-weak -fmodules '-fmodules-cache-path=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex' '-fmodule-name=React' -fpascal-strings -O0 -fno-common '-DPOD_CONFIGURATION_DEBUG=1' '-DDEBUG=1' '-DCOCOAPODS=1' '-DRCT_METRO_PORT=' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -g -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-generated-files.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-own-target-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-all-non-framework-target-headers.hmap -ivfsoverlay /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/Pods-8699adb1dd336b26511df848a716bd42-VFS/all-product-headers.yaml -iquote /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/React-Core-project-headers.hmap -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Private/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-Core -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-callinvoker -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-cxxreact -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-debug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-featureflags -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsi -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsiexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspector -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-jsinspectortracing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-logger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-perflogger -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-performancetimeline -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererconsistency -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-rendererdebug -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimeexecutor -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-runtimescheduler -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-timing -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/React-utils -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/Yoga -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fast_float -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/fmt -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog -I/Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-macos/ReactCommon -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/boost -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/DoubleConversion -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fast_float/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/fmt/include -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/RCT-Folly -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/FlipperKit -I/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/ReactCommon -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-jsinspector/jsinspector_modern.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RCTDeprecation/RCTDeprecation.framework/Headers -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources-normal/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources/arm64 -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/React-Core.build/DerivedSources -F/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion/DoubleConversion.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/RCTDeprecation/RCTDeprecation.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/SocketRocket/SocketRocket.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/folly/RCT-Folly.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/glog/glog.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsi/React-jsi.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern/React-jsinspector.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/jsinspector_modern_tracing/React-jsinspectortracing.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_debug/React-debug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_featureflags/React-featureflags.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_renderer_debug/React-rendererdebug.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/react_utils/React-utils.modulemap' '-fmodule-map-file=/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/yoga/Yoga.modulemap'
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RNCAsyncStorage/RNCAsyncStorage_resources.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/RNCAsyncStorage/ResourceBundle-RNCAsyncStorage_resources-RNCAsyncStorage-Info.plist (in target 'RNCAsyncStorage-RNCAsyncStorage_resources' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/RNCAsyncStorage/ResourceBundle-RNCAsyncStorage_resources-RNCAsyncStorage-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RNCAsyncStorage/RNCAsyncStorage_resources.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-cxxreact/React-cxxreact_privacy.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/React-cxxreact/ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist (in target 'React-cxxreact-React-cxxreact_privacy' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/React-cxxreact/ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-cxxreact/React-cxxreact_privacy.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core/React-Core_privacy.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/React-Core/ResourceBundle-React-Core_privacy-React-Core-Info.plist (in target 'React-Core-React-Core_privacy' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/React-Core/ResourceBundle-React-Core_privacy-React-Core-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/React-Core/React-Core_privacy.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/glog/glog_privacy.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/glog/ResourceBundle-glog_privacy-glog-Info.plist (in target 'glog-glog_privacy' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/glog/ResourceBundle-glog_privacy-glog-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/glog/glog_privacy.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/boost/boost_privacy.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/boost/ResourceBundle-boost_privacy-boost-Info.plist (in target 'boost-boost_privacy' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/boost/ResourceBundle-boost_privacy-boost-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/boost/boost_privacy.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RCT-Folly/RCT-Folly_privacy.bundle/Contents/Info.plist /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/RCT-Folly/ResourceBundle-RCT-Folly_privacy-RCT-Folly-Info.plist (in target 'RCT-Folly-RCT-Folly_privacy' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    builtin-infoPlistUtility /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/RCT-Folly/ResourceBundle-RCT-Folly_privacy-RCT-Folly-Info.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/RCT-Folly/RCT-Folly_privacy.bundle/Contents/Info.plist
+
+ProcessInfoPlistFile /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/CocoaLumberjack_CocoaLumberjack.bundle/Contents/Info.plist /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack_CocoaLumberjack.build/empty-CocoaLumberjack_CocoaLumberjack.plist (in target 'CocoaLumberjack_CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack
+    builtin-infoPlistUtility /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack_CocoaLumberjack.build/empty-CocoaLumberjack_CocoaLumberjack.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/CocoaLumberjack_CocoaLumberjack.bundle/Contents/Info.plist
+
+MkDir /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/TeachGateVPN.appex (in target 'TeachGateVPN' from project 'Teach Gate')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    /bin/mkdir -p /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/TeachGateVPN.appex
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDDispatchQueueLogFormatter.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDDispatchQueueLogFormatter.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDDispatchQueueLogFormatter.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDFileLogger+Buffering.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDFileLogger+Buffering.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDFileLogger+Buffering.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDMultiFormatter.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDMultiFormatter.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDMultiFormatter.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDTTYLogger.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDTTYLogger.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDTTYLogger.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDContextFilterLogFormatter.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/Extensions/DDContextFilterLogFormatter.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDContextFilterLogFormatter.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDLoggerNames.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDLoggerNames.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLoggerNames.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDOSLogger.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDOSLogger.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDOSLogger.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDLog.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CocoaLumberjack' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/DerivedSources/resource_bundle_accessor.h -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.dia -c /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/DDLog.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.o -index-unit-output-path /CocoaLumberjack.build/Debug/CocoaLumberjack.build/Objects-normal/arm64/DDLog.o
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.o /Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-safe-area-context/ios/RNCSafeAreaViewMode.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-prefix.pch -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.dia -c /Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-safe-area-context/ios/RNCSafeAreaViewMode.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.o -index-unit-output-path /Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.o
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion/DoubleConversion.modulemap' not found (in target 'react-native-safe-area-context' from project 'Pods')
+
+ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.o /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-dummy.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.o.scan -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -include /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-prefix.pch -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-dummy.m -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.o -index-unit-output-path /Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.o
+error: module map file '/Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Headers/Public/DoubleConversion/DoubleConversion.modulemap' not found (in target 'react-native-safe-area-context' from project 'Pods')
+
+SwiftDriver OutlineNotification normal arm64 com.apple.xcode.tools.swift.compiler (in target 'OutlineNotification' from project 'OutlineAppleLib')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name OutlineNotification -Onone -enforce-exclusivity\=checked @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64/OutlineNotification.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos12.0 -g -module-cache-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore -swift-version 5 -I /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -parse-as-library -emit-localized-strings -emit-localized-strings-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64/OutlineNotification-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64/OutlineNotification.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64/OutlineNotification_const_extract_protocols.json -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/include -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/DerivedSources-normal/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/DerivedSources/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineNotification.build/Objects-normal/arm64/OutlineNotification-Swift.h -working-directory /Users/obedsayyad/teach-gate-macOS-app/macos -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver OutlineError normal arm64 com.apple.xcode.tools.swift.compiler (in target 'OutlineError' from project 'OutlineAppleLib')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name OutlineError -Onone -enforce-exclusivity\=checked @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64/OutlineError.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos12.0 -g -module-cache-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore -swift-version 5 -I /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -parse-as-library -emit-localized-strings -emit-localized-strings-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64/OutlineError-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64/OutlineError.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64/OutlineError_const_extract_protocols.json -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/include -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/DerivedSources-normal/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/DerivedSources/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/OutlineAppleLib.build/Debug/OutlineError.build/Objects-normal/arm64/OutlineError-Swift.h -working-directory /Users/obedsayyad/teach-gate-macOS-app/macos -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver CocoaLumberjackSwift normal arm64 com.apple.xcode.tools.swift.compiler (in target 'CocoaLumberjackSwift' from project 'CocoaLumberjack')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name CocoaLumberjackSwift -Onone -enforce-exclusivity\=checked @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/Objects-normal/arm64/CocoaLumberjackSwift.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -Xcc -fmodule-map-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/GeneratedModuleMaps/CocoaLumberjackSwiftSupport.modulemap -Xcc -fmodule-map-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/GeneratedModuleMaps/CocoaLumberjack.modulemap -DXcode -enable-upcoming-feature ExistentialAny -enable-upcoming-feature InternalImportsByDefault -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos10.13 -g -module-cache-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore -swift-version 6 -I /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/PackageFrameworks -F /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/PackageFrameworks -F /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/Objects-normal/arm64/CocoaLumberjackSwift-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/Objects-normal/arm64/CocoaLumberjackSwift.swiftmodule -user-module-version 3.9.0 -validate-clang-modules-once -clang-build-session-file /Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name cocoalumberjack -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/Objects-normal/arm64/CocoaLumberjackSwift_const_extract_protocols.json -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjackSwiftSupport/include -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/SourcePackages/checkouts/CocoaLumberjack/Sources/CocoaLumberjack/include -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/include -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/DerivedSources-normal/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/DerivedSources/arm64 -Xcc -I/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/CocoaLumberjack.build/Debug/CocoaLumberjackSwift.build/Objects-normal/arm64/CocoaLumberjackSwift-Swift.h -working-directory /Users/obedsayyad/teach-gate-macOS-app/macos -experimental-emit-module-separately -disable-cmo
+
+CompileC /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaContext.o /Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-safe-area-context/ios/RNCSafeAreaContext.mm normal arm64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -Wunguarded-availability -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp -include /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-prefix.pch -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaContext.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaContext.dia -c /Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-safe-area-context/ios/RNCSafeAreaContext.mm -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaContext.o -index-unit-output-path /Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaContext.o
+
+CompileC /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/vlog_is_on.o /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/glog/src/vlog_is_on.cc normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'glog' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Werror\=deprecated-objc-isa-usage -Werror\=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -Wunguarded-availability -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -Wno-shorten-64-to-32 -include /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/glog/glog-prefix.pch -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/vlog_is_on.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/vlog_is_on.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/glog/src/vlog_is_on.cc -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/vlog_is_on.o -index-unit-output-path /Pods.build/Debug/glog.build/Objects-normal/arm64/vlog_is_on.o
+
+CompileC /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/utilities.o /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/glog/src/utilities.cc normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'glog' from project 'Pods')
+    cd /Users/obedsayyad/teach-gate-macOS-app/macos/Pods
+    
+    Using response file: /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /Users/obedsayyad/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Werror\=deprecated-objc-isa-usage -Werror\=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -w -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -Wunguarded-availability -index-store-path /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Index.noindex/DataStore @/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -Wno-shorten-64-to-32 -include /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/glog/glog-prefix.pch -MMD -MT dependencies -MF /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/utilities.d --serialize-diagnostics /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/utilities.dia -c /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/glog/src/utilities.cc -o /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/glog.build/Objects-normal/arm64/utilities.o -index-unit-output-path /Pods.build/Debug/glog.build/Objects-normal/arm64/utilities.o
+
+note: Run script build phase '[CP-User] [RN]Check rncore' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'React-FabricComponents' from project 'Pods')
+note: Run script build phase '[CP-User] [RN]Check rncore' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'React-Fabric' from project 'Pods')
+note: Run script build phase '[CP-User] [RN]Check FBReactNativeSpec' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'React-RCTFBReactNativeSpec' from project 'Pods')
+note: Removed stale file '/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Teach Gate.build/Debug/Teach Gate-macOS.build/DerivedSources/Entitlements.plist'
+
+note: Removed stale file '/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Teach Gate.build/Debug/TeachGateVPN.build/DerivedSources/Entitlements.plist'
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewMode.o /Users/obedsayyad/teach-gate-macOS-app/node_modules/react-native-safe-area-context/ios/RNCSafeAreaViewMode.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+	ScanDependencies /Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Intermediates.noindex/Pods.build/Debug/react-native-safe-area-context.build/Objects-normal/arm64/react-native-safe-area-context-dummy.o /Users/obedsayyad/teach-gate-macOS-app/macos/Pods/Target\ Support\ Files/react-native-safe-area-context/react-native-safe-area-context-dummy.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+	Building workspace Teach Gate with scheme Teach Gate-macOS and configuration Debug
+(3 failures)

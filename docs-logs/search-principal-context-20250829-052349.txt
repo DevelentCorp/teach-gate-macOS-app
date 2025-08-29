@@ -1,0 +1,10 @@
+>>> macos/OutlineAppleLib/.build/index-build/checkouts/sentry-cocoa/Samples/iOS-Cocoapods-Swift6/TestKeyboardExtension/Info.plist
+    "NSExtensionPointIdentifier" => "com.apple.keyboard-service"
+    "NSExtensionPrincipalClass" => "$(PRODUCT_MODULE_NAME).KeyboardViewController"
+>>> macos/OutlineLib/VpnExtension/Info.plist
+  "CFBundleIdentifier" => "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    "NSExtensionPointIdentifier" => "com.apple.networkextension.packet-tunnel"
+    "NSExtensionPrincipalClass" => "PacketTunnelProvider"
+>>> macos/TeachGateVPN/Info.plist
+    "NSExtensionPointIdentifier" => "com.apple.networkextension.packet-tunnel"
+    "NSExtensionPrincipalClass" => "PacketTunnelProvider"

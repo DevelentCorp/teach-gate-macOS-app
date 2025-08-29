@@ -281,3 +281,7 @@ func saveLastDisconnectErrorDetails(error: Error?) {
 func loadLastDisconnectErrorDetailsToIPCResponse() -> Data? {
   return UserDefaults.standard.data(forKey: lastDisconnectErrorPersistenceKey)
 }
+
+// Export ObjC runtime symbol expected by Info.plist principal class.
+@objc(PacketTunnelProvider)
+class PacketTunnelProvider: NEPacketTunnelProvider {}

@@ -112,33 +112,40 @@ const HomeScreen: React.FC<Props> = ({toggleSidebar, goToScreen}) => {
     };
   }, []);
 
-  // Use a Shadowsocks access URL (example). Replace with user-provided/access-key value in production.
   const ACCESS_URL =
     'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCTE5zbXhBUTFmdVVsMndVWUtGcFNq@96.126.107.202:19834/?outline=1';
 
   const toggleConnection = async () => {
     if (Platform.OS !== 'macos') {
-      // Fallback for non-macOS platforms
       setIsConnected(prev => !prev);
       return;
     }
 
-    try {
-      setConnecting(true);
+    if (connecting) return;
+    setConnecting(true);
 
-      if (isConnected) {
-        // Request disconnect; UI will update via vpnStatusChanged event.
-        setTimeout(async () => {
-          await TeachGateVPNModule.disconnect();
-          setConnecting(false);
-        }, 8000);
-      } else {
-        // Connect using ss:// URL. Native module converts to Outline transport YAML.
-        await TeachGateVPNModule.connect(ACCESS_URL);
-        setConnecting(false);
-      }
+    try {
+      console.log('🔍 DEBUG: Starting VPN toggle operation...');
+      console.log(
+        '🔍 DEBUG: TeachGateVPNModule available:',
+        !!TeachGateVPNModule,
+      );
+      console.log(
+        '🔍 DEBUG: toggleConnection method available:',
+        !!TeachGateVPNModule?.toggleConnection,
+      );
+
+      await TeachGateVPNModule.toggleConnection(
+        JSON.stringify({accessKey: ACCESS_URL}),
+      );
+      console.log('🔍 DEBUG: VPN toggle completed successfully');
     } catch (err) {
-      console.error('Error toggling VPN:', err);
+      console.error(
+        '🔍 DEBUG: TeachGateVPNModule.toggleConnection failed:',
+        err,
+      );
+      console.error('🔍 DEBUG: Error details:', JSON.stringify(err, null, 2));
+    } finally {
       setConnecting(false);
     }
   };

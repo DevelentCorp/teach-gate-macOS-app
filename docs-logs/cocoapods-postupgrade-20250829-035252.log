@@ -1,0 +1,11 @@
+== POST-UPGRADE ==
+/opt/homebrew/bin/pod
+1.16.2
+Ignoring bigdecimal-3.1.7 because its extensions are not built. Try: gem pristine bigdecimal --version 3.1.7
+Ignoring date-3.3.4 because its extensions are not built. Try: gem pristine date --version 3.3.4
+Ignoring dbm-1.1.0 because its extensions are not built. Try: gem pristine dbm --version 1.1.0
+Ignoring etc-1.4.3 because its extensions are not built. Try: gem pristine etc --version 1.4.3
+Ignoring fcntl-1.1.0 because its extensions are not built. Try: gem pristine fcntl --version 1.1.0
+Ignoring io-console-0.7.2 because its extensions are not built. Try: gem pristine io-console --version 0.7.2
+Ignoring libxml-ruby-5.0.3 because its extensions are not built. Try: gem pristine libxml-ruby --version 5.0.3
+1.27.0

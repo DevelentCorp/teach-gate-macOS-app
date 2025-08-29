@@ -1,0 +1,72 @@
+total 0
+drwxr-xr-x  3 obedsayyad  staff  96 Aug 29 05:14 TeachGateVPN.appex
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex:
+total 0
+drwxr-xr-x  8 obedsayyad  staff  256 Aug 29 05:14 Contents
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents:
+total 40
+drwxr-xr-x  3 obedsayyad  staff     96 Aug 29 05:14 Frameworks
+-rw-r--r--  1 obedsayyad  staff   1589 Aug 29 05:14 Info.plist
+drwxr-xr-x  5 obedsayyad  staff    160 Aug 29 05:14 MacOS
+drwxr-xr-x  3 obedsayyad  staff     96 Aug 29 05:14 Resources
+drwxr-xr-x  3 obedsayyad  staff     96 Aug 29 05:14 _CodeSignature
+-rw-r--r--  1 obedsayyad  staff  13340 Aug 29 05:14 embedded.provisionprofile
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks:
+total 0
+drwxr-xr-x  5 obedsayyad  staff  160 Aug 29 05:14 Tun2socks.framework
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks/Tun2socks.framework:
+total 0
+lrwxr-xr-x  1 obedsayyad  staff   26 Aug 29 05:14 Resources -> Versions/Current/Resources
+lrwxr-xr-x  1 obedsayyad  staff   26 Aug 29 05:14 Tun2socks -> Versions/Current/Tun2socks
+drwxr-xr-x  4 obedsayyad  staff  128 Aug 29 05:14 Versions
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks/Tun2socks.framework/Versions:
+total 0
+drwxr-xr-x  5 obedsayyad  staff  160 Aug 29 05:14 A
+lrwxr-xr-x  1 obedsayyad  staff    1 Aug 29 05:14 Current -> A
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks/Tun2socks.framework/Versions/A:
+total 104
+drwxr-xr-x  3 obedsayyad  staff     96 Aug 29 05:14 Resources
+-rwxr-xr-x  1 obedsayyad  staff  51440 Aug 29 05:14 Tun2socks
+drwxr-xr-x  3 obedsayyad  staff     96 Aug 29 05:14 _CodeSignature
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks/Tun2socks.framework/Versions/A/Resources:
+total 8
+-rw-r--r--  1 obedsayyad  staff  559 Aug 29 05:14 Info.plist
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Frameworks/Tun2socks.framework/Versions/A/_CodeSignature:
+total 8
+-rw-r--r--  1 obedsayyad  staff  2442 Aug 29 05:14 CodeResources
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/MacOS:
+total 22248
+-rwxr-xr-x  1 obedsayyad  staff     57088 Aug 29 05:14 TeachGateVPN
+-rwxr-xr-x  1 obedsayyad  staff  11292832 Aug 29 05:14 TeachGateVPN.debug.dylib
+-rwxr-xr-x  1 obedsayyad  staff     35024 Aug 29 05:14 __preview.dylib
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Resources:
+total 0
+drwxr-xr-x  3 obedsayyad  staff  96 Aug 29 05:14 CocoaLumberjack_CocoaLumberjack.bundle
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Resources/CocoaLumberjack_CocoaLumberjack.bundle:
+total 0
+drwxr-xr-x  4 obedsayyad  staff  128 Aug 29 05:14 Contents
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Resources/CocoaLumberjack_CocoaLumberjack.bundle/Contents:
+total 8
+-rw-r--r--  1 obedsayyad  staff  1153 Aug 29 05:14 Info.plist
+drwxr-xr-x  3 obedsayyad  staff    96 Aug 29 05:14 Resources
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/Resources/CocoaLumberjack_CocoaLumberjack.bundle/Contents/Resources:
+total 8
+-rw-r--r--  1 obedsayyad  staff  793 Aug 29 05:14 PrivacyInfo.xcprivacy
+
+/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex/Contents/_CodeSignature:
+total 16
+-rw-r--r--  1 obedsayyad  staff  4172 Aug 29 05:14 CodeResources
+EXT_PATH=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex

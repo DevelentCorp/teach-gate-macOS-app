@@ -1,0 +1,11 @@
+total 168
+drwxr-xr-x  10 obedsayyad  admin    320 Oct 31  2024 .
+drwxr-xr-x  19 obedsayyad  admin    608 Oct 31  2024 ..
+-rw-r--r--   1 obedsayyad  admin   3353 Oct 31  2024 case_converter.rb
+drwxr-xr-x  20 obedsayyad  admin    640 Oct 31  2024 object
+-rw-r--r--   1 obedsayyad  admin  18397 Oct 31  2024 object.rb
+-rw-r--r--   1 obedsayyad  admin  18495 Oct 31  2024 object_attributes.rb
+-rw-r--r--   1 obedsayyad  admin   6601 Oct 31  2024 object_dictionary.rb
+-rw-r--r--   1 obedsayyad  admin   6589 Oct 31  2024 object_list.rb
+-rw-r--r--   1 obedsayyad  admin  13229 Oct 31  2024 project_helper.rb
+-rw-r--r--   1 obedsayyad  admin   4840 Oct 31  2024 uuid_generator.rb

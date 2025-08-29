@@ -1,0 +1,5 @@
+total 0
+lrwxr-xr-x   1 obedsayyad  staff   74 Aug 29 04:35 DoubleConversion-umbrella.h -> ../../../Target Support Files/DoubleConversion/DoubleConversion-umbrella.h
+lrwxr-xr-x   1 obedsayyad  staff   73 Aug 29 04:35 DoubleConversion.modulemap -> ../../../Target Support Files/DoubleConversion/DoubleConversion.modulemap
+drwxr-xr-x  12 obedsayyad  staff  384 Aug 29 04:35 double-conversion
+MODULEMAP_PRESENT_AFTER_PATCH=1

@@ -1,0 +1,200 @@
+module Xcodeproj
+  # This modules groups all the constants known to Xcodeproj.
+  #
+  module Constants
+    # @return [String] The last known iOS SDK (stable).
+    #
+    LAST_KNOWN_IOS_SDK = '18.0'
+
+    # @return [String] The last known OS X SDK (stable).
+    #
+    LAST_KNOWN_OSX_SDK = '15.0'
+
+    # @return [String] The last known tvOS SDK (stable).
+    #
+    LAST_KNOWN_TVOS_SDK = '18.0'
+
+    # @return [String] The last known visionOS SDK (unstable).
+    #
+    LAST_KNOWN_VISIONOS_SDK = '2.0'
+
+    # @return [String] The last known watchOS SDK (stable).
+    #
+    LAST_KNOWN_WATCHOS_SDK = '11.0'
+
+    # @return [String] The last known archive version to Xcodeproj.
+    #
+    LAST_KNOWN_ARCHIVE_VERSION = 1
+
+    # @return [String] The last known Swift version (stable).
+    #
+    LAST_KNOWN_SWIFT_VERSION = '5.0'
+
+    # @return [String] The default object version for Xcodeproj.
+    #
+    DEFAULT_OBJECT_VERSION = 46
+
+    # @return [String] The last known object version to Xcodeproj.
+    #
+    LAST_KNOWN_OBJECT_VERSION = 77
+
+    # @return [String] The last known Xcode version to Xcodeproj.
+    #
+    LAST_UPGRADE_CHECK = '1600'
+
+    # @return [String] The last known Xcode version to Xcodeproj.
+    #
+    LAST_SWIFT_UPGRADE_CHECK = '1600'
+
+    # @return [String] The version of `.xcscheme` files supported by Xcodeproj
+    #
+    XCSCHEME_FORMAT_VERSION = '1.3'
+
+    # @return [Hash] The all the known ISAs grouped by superclass.
+    #
+    KNOWN_ISAS = {
+      'AbstractObject' => %w(
+        PBXBuildFile
+        AbstractBuildPhase
+        PBXBuildRule
+        XCBuildConfiguration
+        XCConfigurationList
+        PBXContainerItemProxy
+        PBXFileReference
+        PBXGroup
+        PBXProject
+        PBXTargetDependency
+        PBXReferenceProxy
+        AbstractTarget
+      ),
+
+      'AbstractBuildPhase' => %w(
+        PBXCopyFilesBuildPhase
+        PBXResourcesBuildPhase
+        PBXSourcesBuildPhase
+        PBXFrameworksBuildPhase
+        PBXHeadersBuildPhase
+        PBXShellScriptBuildPhase
+      ),
+
+      'AbstractTarget' => %w(
+        PBXNativeTarget
+        PBXAggregateTarget
+        PBXLegacyTarget
+      ),
+
+      'PBXGroup' => %w(
+        XCVersionGroup
+        PBXVariantGroup
+      ),
+    }.freeze
+
+    # @return [Hash] The known file types corresponding to each extension.
+    #
+    FILE_TYPES_BY_EXTENSION = {
+      'a'            => 'archive.ar',
+      'apns'         => 'text',
+      'app'          => 'wrapper.application',
+      'appex'        => 'wrapper.app-extension',
+      'bundle'       => 'wrapper.plug-in',
+      'cpp'          => 'sourcecode.cpp.cpp',
+      'dylib'        => 'compiled.mach-o.dylib',
+      'entitlements' => 'text.plist.entitlements',
+      'framework'    => 'wrapper.framework',
+      'gif'          => 'image.gif',
+      'gpx'          => 'text.xml',
+      'h'            => 'sourcecode.c.h',
+      'hpp'          => 'sourcecode.cpp.h',
+      'm'            => 'sourcecode.c.objc',
+      'markdown'     => 'text',
+      'mdimporter'   => 'wrapper.cfbundle',
+      'modulemap'    => 'sourcecode.module',
+      'mov'          => 'video.quicktime',
+      'mp3'          => 'audio.mp3',
+      'octest'       => 'wrapper.cfbundle',
+      'pch'          => 'sourcecode.c.h',
+      'plist'        => 'text.plist.xml',
+      'png'          => 'image.png',
+      'sh'           => 'text.script.sh',
+      'sks'          => 'file.sks',
+      'storyboard'   => 'file.storyboard',
+      'strings'      => 'text.plist.strings',
+      'swift'        => 'sourcecode.swift',
+      'xcassets'     => 'folder.assetcatalog',
+      'xcconfig'     => 'text.xcconfig',
+      'xcdatamodel'  => 'wrapper.xcdatamodel',
+      'xcodeproj'    => 'wrapper.pb-project',
+      'xctest'       => 'wrapper.cfbundle',
+      'xib'          => 'file.xib',
+      'zip'          => 'archive.zip',
+    }.freeze
+
+    # @return [Hash] The compatibility version string for different object versions.
+    #
+    COMPATIBILITY_VERSION_BY_OBJECT_VERSION = {
+  70 => "Xcode 16.0",
+      77 => 'Xcode 16.0',
+      63 => 'Xcode 15.3',
+      60 => 'Xcode 15.0',
+      56 => 'Xcode 14.0',
+      55 => 'Xcode 13.0',
+      54 => 'Xcode 12.0',
+      53 => 'Xcode 11.4',
+      52 => 'Xcode 11.0',
+      51 => 'Xcode 10.0',
+      50 => 'Xcode 9.3',
+      48 => 'Xcode 8.0',
+      47 => 'Xcode 6.3',
+      46 => 'Xcode 3.2',
+      45 => 'Xcode 3.1',
+    }.freeze
+
+    # @return [Hash] The uniform type identifier of various product types.
+    #
+    PRODUCT_TYPE_UTI = {
+      :application                           => 'com.apple.product-type.application',
+      :application_on_demand_install_capable => 'com.apple.product-type.application.on-demand-install-capable',
+      :framework                             => 'com.apple.product-type.framework',
+      :dynamic_library                       => 'com.apple.product-type.library.dynamic',
+      :static_library                        => 'com.apple.product-type.library.static',
+      :bundle                                => 'com.apple.product-type.bundle',
+      :octest_bundle                         => 'com.apple.product-type.bundle',
+      :unit_test_bundle                      => 'com.apple.product-type.bundle.unit-test',
+      :ui_test_bundle                        => 'com.apple.product-type.bundle.ui-testing',
+      :app_extension                         => 'com.apple.product-type.app-extension',
+      :command_line_tool                     => 'com.apple.product-type.tool',
+      :watch_app                             => 'com.apple.product-type.application.watchapp',
+      :watch2_app                            => 'com.apple.product-type.application.watchapp2',
+      :watch2_app_container                  => 'com.apple.product-type.application.watchapp2-container',
+      :watch_extension                       => 'com.apple.product-type.watchkit-extension',
+      :watch2_extension                      => 'com.apple.product-type.watchkit2-extension',
+      :tv_extension                          => 'com.apple.product-type.tv-app-extension',
+      :messages_application                  => 'com.apple.product-type.application.messages',
+      :messages_extension                    => 'com.apple.product-type.app-extension.messages',
+      :sticker_pack                          => 'com.apple.product-type.app-extension.messages-sticker-pack',
+      :xpc_service                           => 'com.apple.product-type.xpc-service',
+    }.freeze
+
+    # @return [Hash] The extensions or the various product UTIs.
+    #
+    PRODUCT_UTI_EXTENSIONS = {
+      :application                           => 'app',
+      :application_on_demand_install_capable => 'app',
+      :framework                             => 'framework',
+      :dynamic_library                       => 'dylib',
+      :static_library                        => 'a',
+      :bundle                                => 'bundle',
+      :octest_bundle                         => 'octest',
+      :unit_test_bundle                      => 'xctest',
+      :ui_test_bundle                        => 'xctest',
+      :app_extension                         => 'appex',
+      :messages_application                  => 'app',
+      :messages_extension                    => 'appex',
+      :sticker_pack                          => 'appex',
+      :watch2_extension                      => 'appex',
+      :watch2_app                            => 'app',
+      :watch2_app_container                  => 'app',
+    }.freeze
+
+    # @return [Hash] The common build settings grouped by platform, and build
+    #         configuration name.

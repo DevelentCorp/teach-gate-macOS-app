@@ -1,0 +1,1 @@
+macos/OutlineLib/VpnExtension/Sources/PacketTunnelProvider.swift:20:/// SwiftBridge is a transitional class to allow the incremental migration of our PacketTunnelProvider from Objective-C to Swift.

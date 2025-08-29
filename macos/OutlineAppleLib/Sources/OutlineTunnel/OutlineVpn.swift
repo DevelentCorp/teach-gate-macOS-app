@@ -20,7 +20,9 @@ import OutlineError
 @objcMembers
 public class OutlineVpn: NSObject {
   public static let shared = OutlineVpn()
-  private static let kVpnExtensionBundleId = "\(Bundle.main.bundleIdentifier!).VpnExtension"
+  // Provider bundle identifier is resolved at runtime to avoid ERR_EXTENSION_FAILURE.
+  // Prefer explicit Info.plist key "VPNProviderBundleIdentifier", otherwise scan embedded appex.
+  // Resolution is implemented in VPNProviderBundleResolver.resolve()
 
   public typealias VpnStatusObserver = (NEVPNStatus, String) -> Void
 
@@ -151,8 +153,41 @@ public class OutlineVpn: NSObject {
   public func onVpnStatusChange(_ observer: @escaping(VpnStatusObserver)) {
     vpnStatusObserver = observer
   }
-
   
+  /** Objective-C compatible version of onVpnStatusChange. */
+  @objc public func onVpnStatusChangeObjc(_ observer: @escaping (NSInteger, String) -> Void) {
+    onVpnStatusChange { status, tunnelId in
+      observer(status.rawValue, tunnelId)
+    }
+  }
+
+  /** Objective-C compatible version of start with completion handler. */
+  @objc public func startWithCompletion(_ tunnelId: String, named name: String?, withTransport transportConfig: String, completionHandler: @escaping (Error?) -> Void) {
+    Task {
+      do {
+        try await self.start(tunnelId, named: name, withTransport: transportConfig)
+        completionHandler(nil)
+      } catch {
+        completionHandler(error)
+      }
+    }
+  }
+
+  /** Objective-C compatible version of stop. */
+  @objc public func stopWithId(_ tunnelId: String) {
+    Task {
+      await self.stop(tunnelId)
+    }
+  }
+
+  /** Objective-C compatible version of isActive with completion handler. */
+  @objc public func isActiveWithCompletion(_ tunnelId: String?, completionHandler: @escaping (Bool) -> Void) {
+    Task {
+      let result = await self.isActive(tunnelId)
+      completionHandler(result)
+    }
+  }
+
   /** Returns whether |tunnelId| is actively proxying through the VPN. */
   public func isActive(_ tunnelId: String?) async -> Bool {
     guard tunnelId != nil, let manager = await getTunnelManager() else {
@@ -188,7 +223,12 @@ public class OutlineVpn: NSObject {
     let config = NETunnelProviderProtocol()
     // TODO(fortuna): set to something meaningful if we can.
     config.serverAddress = "Outline"
-    config.providerBundleIdentifier = OutlineVpn.kVpnExtensionBundleId
+    // Resolve provider bundle identifier for the packet-tunnel extension.
+    if let providerID = VPNProviderBundleResolver.resolve() {
+      config.providerBundleIdentifier = providerID
+    } else {
+      DDLogWarn("VPN: Unable to resolve providerBundleIdentifier for PacketTunnel extension.")
+    }
     config.providerConfiguration = [
       ConfigKey.tunnelId: id,
       ConfigKey.transport: transportConfig

@@ -1,0 +1,3 @@
+macos/OutlineLib/VpnExtension/Info.plist:25:    <key>NSExtensionPrincipalClass</key>
+macos/TeachGateVPN/Info.plist:9:		<key>NSExtensionPrincipalClass</key>
+macos/OutlineAppleLib/.build/index-build/checkouts/sentry-cocoa/Samples/iOS-Cocoapods-Swift6/TestKeyboardExtension/Info.plist:20:		<key>NSExtensionPrincipalClass</key>

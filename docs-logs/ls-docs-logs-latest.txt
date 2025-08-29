@@ -1,0 +1,9 @@
+-rw-r--r--   1 obedsayyad  staff     646 Aug 29 04:28 pod-env-20250829-042812.txt
+-rw-r--r--   1 obedsayyad  staff   11744 Aug 29 04:35 pod-install-after-patch-20250829-043522.log
+-rw-r--r--   1 obedsayyad  staff    8350 Aug 29 04:36 pod-install-after-patch-20250829-043547.log
+-rw-r--r--   1 obedsayyad  staff      32 Aug 29 04:29 pod-libexec-shebang.txt
+-rw-r--r--   1 obedsayyad  staff     413 Aug 29 04:33 xcodeproj-compatibility-grep.txt
+-rw-r--r--   1 obedsayyad  staff    7562 Aug 29 04:35 xcodeproj-constants-preview.txt
+-rw-r--r--   1 obedsayyad  staff      62 Aug 29 04:34 xcodeproj-patch-20250829-043458.log
+-rw-r--r--   1 obedsayyad  staff      17 Aug 29 04:34 xcodeproj-patch-backup.txt
+-rw-r--r--   1 obedsayyad  staff     673 Aug 29 04:33 xcodeproj-project-dir-list.txt

@@ -1,0 +1,4 @@
+warn Argument --configuration has been deprecated and will be removed in a future release, please use --mode instead.
+info Found Xcode workspace "Teach Gate.xcworkspace"
+info Building (using "xcodebuild -workspace /Users/obedsayyad/teach-gate-macOS-app/macos/Teach Gate.xcworkspace -configuration Debug -scheme Teach Gate-macOS")
+..................

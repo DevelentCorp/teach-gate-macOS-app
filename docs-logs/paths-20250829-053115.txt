@@ -1,0 +1,3 @@
+BUILD_LOG=docs-logs/build-macos-20250829-052910-principal.log
+APP_PATH=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app
+EXT_PATH=/Users/obedsayyad/Library/Developer/Xcode/DerivedData/Teach_Gate-emufbnblddohuteyncugdtrmehmv/Build/Products/Debug/Teach Gate.app/Contents/PlugIns/TeachGateVPN.appex
